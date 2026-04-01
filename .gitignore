@@ -1,0 +1,37 @@
+# Environment and secrets
+.env
+.env.local
+*.key
+*.pem
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Data files
+data/
+*.csv
+*.json
+*.parquet
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Downstream inputs
+downstream_inputs/
+
+# Archive
+archive/
