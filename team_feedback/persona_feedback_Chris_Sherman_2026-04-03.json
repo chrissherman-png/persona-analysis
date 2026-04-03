@@ -1,0 +1,30 @@
+{
+  "reviewer": "Chris Sherman",
+  "timestamp": "2026-04-03T04:23:00.980Z",
+  "feedback": [
+    {
+      "change_id": "SMB.CX Champion.prevalence",
+      "change_path": "SMB.CX Champion",
+      "change_field": "prevalence",
+      "change_type": "modified",
+      "vote": "agree",
+      "comment": "Great change!"
+    },
+    {
+      "change_id": "SMB.CX Champion.goals.removed.2",
+      "change_path": "SMB.CX Champion",
+      "change_field": "goals",
+      "change_type": "deleted",
+      "vote": "agree",
+      "comment": "This felt too specific"
+    },
+    {
+      "change_id": "SMB.CX Champion.goals.added.1",
+      "change_path": "SMB.CX Champion",
+      "change_field": "goals",
+      "change_type": "added",
+      "vote": "agree",
+      "comment": "Great!"
+    }
+  ]
+}
