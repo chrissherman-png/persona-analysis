@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Persona Review - Team Feedback</title>
+    <title>Persona Review - Collaborative Feedback</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -36,6 +36,37 @@
             border-radius: 6px;
             font-size: 14px;
             margin-top: 8px;
+        }
+
+        .comment-summary {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(102,126,234,0.3);
+            display: none;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .comment-summary.show {
+            display: flex;
+        }
+
+        .comment-summary-icon {
+            font-size: 24px;
+        }
+
+        .comment-summary-text {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .comment-summary-count {
+            font-size: 20px;
+            font-weight: bold;
         }
 
         .segment-section {
@@ -186,6 +217,13 @@
             font-weight: 600;
             margin-left: 8px;
             text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .change-indicator:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
         }
 
         .badge-added {
@@ -210,145 +248,333 @@
             margin-left: 10px;
         }
 
-        .feedback-box {
-            background: white;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 10px 0;
-            border-left: 4px solid #667eea;
+        /* Vote controls */
+        .vote-controls {
+            display: inline-flex;
+            gap: 4px;
+            margin-left: 8px;
+            vertical-align: middle;
         }
 
-        .feedback-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .feedback-btn {
-            padding: 8px 16px;
-            border: 2px solid #e9ecef;
+        .vote-btn {
+            padding: 4px 8px;
+            border: 1px solid #e5e7eb;
             background: white;
-            border-radius: 6px;
+            border-radius: 4px;
             cursor: pointer;
-            font-weight: 500;
+            font-size: 16px;
             transition: all 0.2s;
+            position: relative;
         }
 
-        .feedback-btn:hover { border-color: #667eea; }
-        .feedback-btn.active-agree { background: #d1fae5; border-color: #10b981; }
-        .feedback-btn.active-disagree { background: #fee2e2; border-color: #ef4444; }
+        .vote-btn:hover {
+            border-color: #667eea;
+            transform: scale(1.1);
+        }
 
-        .comment-box {
-            margin-top: 10px;
+        .vote-btn.active-agree {
+            background: #d1fae5;
+            border-color: #10b981;
+        }
+
+        .vote-btn.active-disagree {
+            background: #fee2e2;
+            border-color: #ef4444;
+        }
+
+        .vote-count {
+            font-size: 11px;
+            font-weight: 600;
+            color: #666;
+            margin-left: 2px;
+        }
+
+        /* Tooltip for showing voters */
+        .vote-tooltip {
             display: none;
-        }
-        .comment-box.show { display: block; }
-        .comment-box textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #d1d5db;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #11110D;
+            color: white;
+            padding: 8px 12px;
             border-radius: 6px;
-            font-family: inherit;
-            min-height: 60px;
+            font-size: 12px;
+            white-space: normal;
+            max-width: 200px;
+            word-wrap: break-word;
+            margin-bottom: 5px;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            text-align: center;
         }
 
-        .action-bar {
-            position: sticky;
-            bottom: 0;
+        .vote-btn:hover .vote-tooltip {
+            display: block;
+        }
+
+        .vote-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #11110D;
+        }
+
+        /* Comment indicator */
+        .comment-indicator {
+            display: inline-block;
+            margin-left: 6px;
+            color: #667eea;
+            font-size: 14px;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .field-item:hover .comment-indicator,
+        li:hover .comment-indicator {
+            opacity: 1;
+        }
+
+        .comment-indicator.has-comments {
+            opacity: 1;
+            color: white;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 12px;
+            box-shadow: 0 2px 6px rgba(102,126,234,0.4);
+        }
+
+        .comment-indicator.has-comments:hover {
+            transform: scale(1.1);
+        }
+
+        /* Highlight items with comments */
+        .field-item:has(.comment-indicator.has-comments),
+        li:has(.comment-indicator.has-comments) {
+            background: linear-gradient(90deg, rgba(118,75,162,0.05) 0%, transparent 100%);
+            padding-left: 8px;
+            margin-left: -8px;
+            border-left: 3px solid rgba(118,75,162,0.3);
+            border-radius: 4px;
+        }
+
+        /* Comment popup */
+        .comment-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            z-index: 2000;
+            max-width: 500px;
+            width: 90%;
+            max-height: 70vh;
+            overflow: auto;
+        }
+
+        .comment-popup.show {
+            display: block;
+        }
+
+        .comment-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1999;
+        }
+
+        .comment-overlay.show {
+            display: block;
+        }
+
+        .comment-header {
             padding: 20px;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #e5e7eb;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .progress-info { font-size: 14px; color: #666; }
-        .submit-btn {
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .comment-header h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .comment-body {
+            padding: 20px;
+        }
+
+        .comment-list {
+            margin-bottom: 20px;
+        }
+
+        .comment-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            font-size: 13px;
+            color: #2D4C33;
+            margin-bottom: 4px;
+        }
+
+        .comment-text {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .comment-input {
+            margin-top: 15px;
+        }
+
+        .comment-input textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .comment-input button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #667eea;
             color: white;
             border: none;
-            border-radius: 8px;
-            font-size: 15px;
+            border-radius: 6px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
         }
-        .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-        .thank-you {
-            display: none;
-            text-align: center;
-            padding: 60px 20px;
-            background: white;
-            border-radius: 8px;
-            margin: 40px 0;
+        .comment-input button:hover {
+            background: #5568d3;
         }
-        .thank-you.show { display: block; }
+
+        .comment-input button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>📊 Buyer Persona Profiles - Team Review</h1>
-        <p>Review the complete profiles and provide feedback on changes</p>
+        <h1>📊 Buyer Persona Profiles - Collaborative Review</h1>
+        <p>Vote and comment on changes in real-time</p>
     </div>
 
     <div class="container">
         <div class="reviewer-info">
             <label for="reviewerName">
-                <strong>Your Name</strong>
+                <strong>Your Name</strong> (required for voting and commenting)
                 <input type="text" id="reviewerName" placeholder="Enter your name">
             </label>
+        </div>
+
+        <div class="comment-summary" id="commentSummary">
+            <span class="comment-summary-icon">💬</span>
+            <div class="comment-summary-text">
+                <strong id="commentCount">0</strong> items have comments - click the highlighted 💬 badges to view
+            </div>
         </div>
 
         <div id="profilesContainer">
             <!-- Profiles will be injected here -->
         </div>
+    </div>
 
-        <div class="thank-you" id="thankYou">
-            <div style="font-size: 64px; margin-bottom: 20px;">🎉</div>
-            <h2>Thank You!</h2>
-            <p id="thankYouMessage">Your feedback has been recorded.</p>
-            <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <button class="submit-btn" onclick="downloadFeedback()">Submit Feedback</button>
-                <button class="submit-btn" onclick="backToReview()" style="background: white; color: #667eea; border: 2px solid #667eea;">Back to Review</button>
+    <!-- Comment popup -->
+    <div class="comment-overlay" id="commentOverlay" onclick="closeCommentPopup()"></div>
+    <div class="comment-popup" id="commentPopup">
+        <div class="comment-header">
+            <h3>💬 Comments</h3>
+            <button class="close-btn" onclick="closeCommentPopup()">×</button>
+        </div>
+        <div class="comment-body">
+            <div class="comment-list" id="commentList"></div>
+            <div class="comment-input">
+                <textarea id="newComment" placeholder="Add your comment..."></textarea>
+                <button onclick="submitComment()">Post Comment</button>
             </div>
         </div>
     </div>
 
-    <div class="action-bar" id="actionBar">
-        <div class="progress-info">
-            <span id="reviewedCount">0</span> of <span id="totalChanges">0</span> changes reviewed
-        </div>
-        <button class="submit-btn" id="submitBtn" onclick="submitFeedback()" disabled>
-            Submit Feedback
-        </button>
-    </div>
-
     <script>
-        const CHANGES_DATA = [{"id": "SMB.CX Champion.prevalence", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "prevalence", "type": "modified", "old": "97% of SMB deals", "new": "95% of SMB deals"}, {"id": "SMB.CX Champion.goals.added.1", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "goals", "type": "added", "old": null, "new": "Implement self-service to deflect simple tickets", "item_value": "Implement self-service to deflect simple tickets"}, {"id": "SMB.CX Champion.goals.removed.2", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "goals", "type": "deleted", "old": "Implement AI-powered self-service to deflect 40-50% of simple tickets", "new": null, "item_value": "Implement AI-powered self-service to deflect 40-50% of simple tickets"}];
-        const PERSONAS_DATA = {"SMB": {"CX Champion": {"job_titles": ["VP Customer Service", "Director of Customer Support", "Head of Customer Experience", "Customer Service Manager", "Support Manager"], "reports_to": "COO or CEO", "team_size": "5-25 agents", "prevalence": "95% of SMB deals", "role_in_deal": "Primary Champion & Decision Driver", "goals": ["Reduce agent handle time and improve productivity", "Meet or exceed SLA targets (1-4 hour first response)", "Improve CSAT/NPS scores", "Scale support without adding headcount", "Implement self-service to deflect simple tickets"], "pain_points": ["Agents overwhelmed with ticket volume (backlog growing)", "Missing SLA targets due to manual routing and slow response times", "Customers calling for simple/repetitive questions that could be self-served", "No real-time visibility into team performance", "Manual reporting in Excel - hours wasted each week"], "challenges_from_gong": ["Integration gaps - switching between Zendesk, CRM, and 3+ other tools", "Incomplete help center - lacking self-service articles", "No AI/automation - manually routing and responding to every ticket", "Can't see what's happening in real-time - blind to bottlenecks", "Agent burnout from repetitive work"], "evaluation_criteria": ["**#1 Priority:** Ease of implementation & time to value (want live in 2-4 weeks)", "Simple, intuitive interface agents can learn in days", "Out-of-box integrations with existing tools (Salesforce, Slack)", "Clear ROI story - ticket deflection, faster resolution times", "Responsive support during onboarding"], "objections": ["\"We don't have time for a long implementation\"", "\"Our agents are already learning too many new tools\"", "\"We tried AI before and it didn't work\"", "\"Not sure if we can afford this right now\""], "key_messages": ["Live in 2 weeks with minimal IT involvement", "Agents love it - 4.5\u2605 ease of use rating", "Agent productivity up 30% in first 90 days (via automation)", "Self-service deflects 30-40% of tickets automatically", "Real-time dashboards replace Excel reporting"], "content_preferences": ["Customer testimonials from similar-sized companies", "Quick demo videos (5-10 min)", "ROI calculators", "Implementation timelines", "Free trial or POC to test with team"], "success_metrics": ["First response time (target: <1 hour)", "CSAT score", "Ticket volume & deflection rate", "Agent productivity (tickets per agent per day)", "Time to resolution"], "buying_behavior": {"decision_speed": "45-60 days", "committee_size": "3-4 people (CX Champion, C-Suite, Finance, sometimes IT)", "authority_level": "High - can often drive decision with C-Suite approval", "prefers": "Fast-moving pilots over long enterprise sales cycles"}}, "C-Suite Decision Maker": {"job_titles": ["CEO", "COO", "President", "Founder"], "reports_to": "Board or self (Owner)", "team_size": "Entire company (50-249 employees)", "prevalence": "68% of SMB deals", "role_in_deal": "Budget Holder & Final Approver", "goals": ["Enable company growth without proportional headcount increases", "Improve customer satisfaction and retention", "Operational efficiency - do more with less", "Make data-driven decisions about support investments", "Keep costs predictable and manageable"], "pain_points": ["Support costs rising faster than revenue", "Customer complaints about slow service impacting retention", "Hiring freeze but ticket volume up 30-40%", "Support team using outdated tools - slowing everything down", "No clear visibility into support ROI"], "challenges_from_gong": ["Scaling challenges - can't keep hiring agents to handle volume", "Lack of automation - too much manual work", "Poor customer experience hurting brand reputation", "No real-time business intelligence on support operations", "Tech debt - using 5-year-old support tool"], "evaluation_criteria": ["**#1 Priority:** Clear ROI - will this help us grow without adding headcount?", "Total cost of ownership (not just license cost)", "Implementation risk - can we do this without disrupting business?", "Scalability - will this grow with us to 500 employees?", "Vendor stability - is this company going to be around?"], "objections": ["\"How do I know this will actually improve our metrics?\"", "\"What if implementation goes wrong and our support grinds to a halt?\"", "\"Can we really afford this in this economy?\"", "\"We just invested in [other tool] last year\""], "key_messages": ["Grow support capacity 2x without doubling headcount (AI + automation)", "Predictable pricing - no surprise costs as you scale", "Fast implementation = minimal business disruption", "Proven ROI: customers see 30% productivity gains in 90 days", "Modern platform - won't need to replace again in 3 years"], "content_preferences": ["Executive briefings (15 min max)", "ROI case studies from similar companies", "Analyst reports (Gartner, Forrester)", "Board-ready business case templates", "CFO-approved pricing models"], "success_metrics": ["Cost per ticket", "Support cost as % of revenue", "Customer retention rate", "NPS", "Agent headcount vs. ticket volume ratio"], "buying_behavior": {"decision_speed": "Fast (30-60 days once engaged)", "committee_size": "2-3 (CEO, CX Champion, sometimes CFO)", "authority_level": "Ultimate - final say on budget", "prefers": "Concise business case, minimal meetings"}}, "IT Influencer": {"job_titles": ["IT Manager", "Head of IT", "Director of IT", "Systems Administrator"], "reports_to": "COO, CEO, or CTO", "team_size": "1-5 IT staff", "prevalence": "30% of SMB deals", "role_in_deal": "Advisor & Validator (not blocker)", "goals": ["Ensure security and compliance (SOC 2, data encryption)", "Minimize IT support burden - want tools that \"just work\"", "Protect existing infrastructure investments", "Enable integrations without custom development", "SSO and user provisioning automation"], "pain_points": ["Too many support requests for password resets and access issues", "Security audits flagging old/insecure tools", "Integration sprawl - too many point solutions to manage", "Shadow IT - teams buying tools without IT approval", "Lack of visibility into who has access to what data"], "challenges_from_gong": ["Security concerns even in SMB (SOC 2, encryption, SSO)", "Integration requirements - need to connect to existing stack", "Limited IT resources - can't support complex implementations", "Data residency and compliance questions", "API access for automation"], "evaluation_criteria": ["Security certifications (SOC 2 Type 2, ISO 27001)", "SSO support (SAML, Okta, Azure AD)", "API quality and documentation", "Pre-built integrations vs. custom development needs", "IT support load - how much will this require from our team?"], "objections": ["\"Does this meet our security requirements?\"", "\"How much custom development will we need?\"", "\"What happens if the integration breaks?\"", "\"Can we get this through our security review in time?\""], "key_messages": ["Enterprise-grade security built in (SOC 2, SSO, encryption)", "Zero IT burden - cloud-hosted, auto-updates, 99.9% uptime", "Pre-built integrations with 1000+ tools", "Robust APIs for custom workflows", "Dedicated security documentation for audits"], "content_preferences": ["Security whitepapers", "API documentation", "Integration guides", "Architecture diagrams", "Compliance certifications"], "success_metrics": ["Security audit pass rate", "System uptime", "Integration stability", "IT support tickets related to the tool", "User provisioning time"], "buying_behavior": {"decision_speed": "Quick review (1-2 weeks)", "committee_size": "Solo or with CISO", "authority_level": "Advisory - can flag risks but rarely blocks", "prefers": "Technical documentation, sandbox access"}}, "Operations Leader": {"job_titles": ["Operations Manager", "Service Delivery Manager", "Director of Operations"], "reports_to": "COO or CX Champion", "team_size": "Oversees support ops + WFM", "prevalence": "22% of SMB deals", "role_in_deal": "Influencer (when present)", "goals": ["Optimize agent scheduling and capacity planning", "Improve quality assurance and coaching", "Reduce operational costs", "Better workforce management and forecasting", "Identify process improvement opportunities"], "pain_points": ["Manual scheduling in spreadsheets", "Can't forecast volume accurately - over/understaffed", "QA done manually on <5% of interactions", "No visibility into agent performance patterns", "Process bottlenecks not visible until too late"], "challenges_from_gong": ["Workforce management gaps - scheduling, forecasting", "Quality assurance limitations - can't review at scale", "Reporting fragmented across multiple tools", "No real-time operational visibility", "Process inefficiencies hard to identify"], "evaluation_criteria": ["WFM capabilities or integrations", "QA and coaching tools", "Reporting and analytics depth", "Real-time operational dashboards", "Process automation capabilities"], "objections": ["\"We already have WFM tools - will this integrate?\"", "\"Can this handle our QA workflows?\"", "\"Is the reporting customizable enough?\""], "key_messages": ["Built-in QA tools to review 100% of interactions (AI-powered)", "Integrates with WFM platforms (Calabrio, Verint, etc.)", "Real-time operational dashboards", "Agent performance analytics and coaching tools", "Workflow automation to eliminate manual processes"], "content_preferences": ["WFM integration guides", "QA best practices", "Operational metrics benchmarks", "Process optimization case studies"], "success_metrics": ["Schedule adherence", "Occupancy rate", "QA score trends", "Process cycle time", "Operational cost per ticket"], "buying_behavior": {"decision_speed": "N/A - not decision maker", "committee_size": "Consulted when present", "authority_level": "Low - provides input to CX Champion", "prefers": "Detailed operational demos"}}, "Finance/Procurement Gatekeeper": {"job_titles": ["CFO", "Finance Director", "Controller", "VP Finance"], "reports_to": "CEO or Board", "team_size": "Finance team (2-10 people)", "prevalence": "42% of SMB deals", "role_in_deal": "Budget Approver", "goals": ["Control costs and maintain budget discipline", "Ensure ROI on technology investments", "Predictable, manageable cash flow", "Avoid surprise costs or overages", "Negotiate favorable contract terms"], "pain_points": ["Support costs growing faster than revenue", "Software sprawl - too many subscriptions", "Getting nickel-and-dimed with add-on fees", "Can't justify ROI on existing support tool", "Cash flow constraints - can't commit to large annual prepays"], "challenges_from_gong": ["Economic sensitivity - longer approval cycles, more scrutiny", "Preference for monthly/quarterly payment terms (cash flow)", "ROI justification requirements increasing", "Budget frozen or cut", "Vendor consolidation pressure"], "evaluation_criteria": ["Total cost of ownership (license + implementation + training)", "Payment terms flexibility (monthly vs. annual)", "ROI evidence from similar companies", "Contract terms (auto-renewal, cancellation policy)", "Price predictability as we scale"], "objections": ["\"Can we really afford this right now?\"", "\"What's the payback period?\"", "\"Why is this better than just hiring another agent?\"", "\"Can we do monthly payments instead of annual?\""], "key_messages": ["Clear ROI: 30% productivity gain = 5-6 month payback", "Flexible payment terms available", "Predictable per-agent pricing - no surprise fees", "Cheaper than hiring: one agent salary = 10+ licenses", "Vendor consolidation - replace 3 tools with one"], "content_preferences": ["ROI calculators", "TCO comparisons", "Pricing guides", "Payment terms options", "Reference customers with similar budget profiles"], "success_metrics": ["Cost per ticket", "Support cost as % of revenue", "Payback period", "Avoided hiring costs", "Vendor consolidation savings"], "buying_behavior": {"decision_speed": "Gatekeeper (adds 1-2 weeks)", "committee_size": "Solo review or with CEO", "authority_level": "High - can block deals", "prefers": "Financial analysis, minimal sales fluff"}}}, "Commercial": {"CX Champion": {"job_titles": ["VP Customer Service", "VP Customer Experience", "Director of Customer Support", "Head of Global Support", "Senior Director CX"], "reports_to": "COO, Chief Customer Officer, or CEO", "team_size": "25-100 agents (often multi-region)", "prevalence": "92% of Commercial deals", "role_in_deal": "Primary Champion (but needs coalition)", "goals": ["Scale support operations across regions/brands", "Drive 55-60% ticket deflection through self-service + AI", "Improve CSAT while reducing cost-per-ticket", "Modernize support tech stack (replace legacy tools)", "Build self-service culture with customers"], "pain_points": ["Managing 50-100 agents across multiple teams/shifts", "Complex SLA requirements (different per client/tier)", "Legacy tools can't handle current scale", "No unified view across email, chat, phone, social", "Executive pressure to reduce costs while improving CX"], "challenges_from_gong": ["Integration complexity - custom dispatch systems, multi-client data", "Self-service culture shift - not just tools, behavioral change", "Reporting gaps - need custom dashboards for executives", "Process automation needs - not just ticket routing", "Skills-based routing for specialized teams"], "evaluation_criteria": ["Enterprise scalability - can this handle 100+ agents and grow to 500?", "Advanced automation - intent-based routing, AI-powered triage", "Multi-org/multi-brand support", "Customization - workflows, fields, automations", "Change management support during rollout"], "objections": ["\"We have too many custom requirements\"", "\"Our team is already overwhelmed - can't handle a big migration\"", "\"How long will implementation really take?\"", "\"What if our agents hate it?\""], "key_messages": ["Built for enterprise complexity - multi-org, custom workflows, advanced routing", "Change management included - dedicated team to ensure adoption", "Phased rollout - start with one team, expand when ready", "Agent-loved - 4.6\u2605 rating, faster than legacy tools", "Proven at scale - customers with 500+ agents"], "content_preferences": ["Enterprise customer case studies", "Executive briefings with VP-level champions", "Analyst reports (Gartner Magic Quadrant)", "ROI models for mid-market", "Reference calls with similar companies"], "success_metrics": ["CSAT / NPS", "Ticket deflection rate (target: 55-60%)", "Cost per ticket", "First response time by tier", "Agent utilization rate"], "buying_behavior": {"decision_speed": "90-120 days", "committee_size": "6-8 people (CX, IT, Ops, Finance, Procurement, C-Suite)", "authority_level": "Medium - needs buy-in from IT, Finance, Ops", "prefers": "Structured evaluation, proof-of-concept, reference checks"}}, "C-Suite Decision Maker": {"job_titles": ["COO", "CEO", "Chief Customer Officer", "President"], "reports_to": "Board", "team_size": "Entire company (250-1,499 employees)", "prevalence": "54% of Commercial deals", "role_in_deal": "Budget Holder (appears late in process)", "goals": ["Platform consolidation - reduce vendor count", "Improve customer retention and LTV", "Enable profitable growth", "Modernize tech stack to support next 5 years", "Data-driven decision making"], "pain_points": ["Support org using 5-10 different tools (fragmented)", "Customer churn tied to poor support experience", "Can't get clear visibility into support operations", "Legacy tools holding back innovation", "Board asking tough questions about support ROI"], "challenges_from_gong": ["Platform vs. point solution debate - prefer vendor consolidation", "Strategic investment - need 3-5 year vision", "Risk mitigation - big migrations are high stakes", "ROI proof for board/investors", "Competitive differentiation through CX"], "evaluation_criteria": ["Strategic platform play - can this replace 3+ tools?", "Future-proof - AI roadmap, innovation velocity", "Vendor stability and financial health", "Implementation risk and timeline", "Executive sponsorship and support from vendor"], "objections": ["\"Why not just keep what we have?\"", "\"What's the business case for this level of investment?\"", "\"What if this impacts customer experience during transition?\"", "\"Are we backing the right vendor for 5+ years?\""], "key_messages": ["Platform consolidation - replace 3-5 tools with one", "Proven at your scale - 1000+ mid-market customers", "AI-first roadmap - built for next 5 years", "Risk mitigation - phased rollout, rollback plans", "Executive sponsorship - dedicated CSM and EBC support"], "content_preferences": ["Board-ready business case", "Strategic roadmap briefings", "Industry analyst validation", "Executive roundtables with peers", "Financial analyst reports"], "success_metrics": ["Customer retention rate", "Support cost as % of revenue", "NPS", "Vendor consolidation savings", "Time to implement innovation"], "buying_behavior": {"decision_speed": "Appears in week 6-8 of deal", "committee_size": "Final approver (reviews deal packaged by team)", "authority_level": "Ultimate - signs off on budget", "prefers": "Concise executive briefing, peer references"}}, "IT Influencer": {"job_titles": ["VP IT", "Director of IT", "Head of Information Security", "IT Manager", "CISO"], "reports_to": "CTO, COO, or CEO", "team_size": "5-25 IT staff", "prevalence": "85% of Commercial deals", "role_in_deal": "Co-Champion & Validator (critical path)", "goals": ["Ensure enterprise-grade security and compliance", "Manage integrations and API strategy", "Minimize technical debt and shadow IT", "Enable IT governance (SSO, user provisioning, audit logs)", "Protect customer data and meet regulatory requirements"], "pain_points": ["Security audits finding vulnerabilities in old tools", "Integration sprawl - too many point-to-point connections", "Compliance requirements (GDPR, HIPAA, SOC 2, ISO)", "Legacy tools without modern APIs", "Shadow IT circumventing security policies"], "challenges_from_gong": ["AI governance scrutiny - how is AI trained? Where is data stored?", "Data residency requirements (EU, APAC)", "Enterprise integration complexity", "Security validation at demo stage (not end of cycle)", "Can veto deals if security concerns not addressed"], "evaluation_criteria": ["**#1 Priority:** Security & compliance (SOC 2 Type 2, ISO 27001, GDPR, HIPAA)", "API quality - RESTful, well-documented, versioned", "SSO/SAML, SCIM provisioning", "Data governance - encryption, residency, retention policies", "AI transparency - how models work, what data they use"], "objections": ["\"How do you ensure AI doesn't expose sensitive customer data?\"", "\"Can you meet our data residency requirements?\"", "\"What happens if your API changes and breaks our integrations?\"", "\"Do you have SOC 2 Type 2 and penetration test results?\""], "key_messages": ["Enterprise security built-in - SOC 2 Type 2, ISO 27001, GDPR, HIPAA", "AI governance - transparent models, customer data isolation, audit trails", "Enterprise APIs - RESTful, 99.9% uptime SLA, versioned", "Data residency options - EU, APAC, US regions", "Dedicated security documentation for your audit"], "content_preferences": ["Security whitepapers", "Compliance certifications", "API documentation and sandbox", "Architecture diagrams", "Penetration test results (under NDA)"], "success_metrics": ["Security audit pass rate", "Zero data breaches", "API uptime and reliability", "Integration stability", "Compliance certification maintenance"], "buying_behavior": {"decision_speed": "Involved at demo stage (week 2-3)", "committee_size": "Works with security team", "authority_level": "High - can veto deals", "prefers": "Technical deep dives, proof-of-concept"}}, "Operations Leader": {"job_titles": ["Director of Service Operations", "VP Operations", "Workforce Management Manager", "Quality Assurance Director", "Service Delivery Manager"], "reports_to": "COO or CX Champion", "team_size": "Oversees ops, WFM, QA teams", "prevalence": "45% of Commercial deals (EMERGING)", "role_in_deal": "Key Influencer (growing importance)", "goals": ["Optimize workforce management and capacity planning", "Scale QA from <1% to 100% of interactions (AI-powered)", "Improve operational efficiency and reduce waste", "Real-time visibility into 50-100 agent operations", "Data-driven process improvements"], "pain_points": ["Manual WFM in spreadsheets - can't forecast accurately", "QA team can only review <1% of interactions manually", "No real-time visibility into agent performance", "Process bottlenecks not visible until quarterly reviews", "Over/understaffing costs millions annually"], "challenges_from_gong": ["WFM integration requirements - need to connect to existing tools", "Quality assurance at scale - AI needed", "Real-time operational dashboards", "Agent performance analytics and coaching", "Multi-team visibility (8+ teams across regions)"], "evaluation_criteria": ["WFM capabilities or integrations (Verint, Calabrio, NICE)", "AI-powered QA to review 100% of interactions", "Real-time operational dashboards", "Agent performance management tools", "Customizable reporting for different stakeholders"], "objections": ["\"Will this integrate with our WFM platform?\"", "\"Can your AI QA handle our complex quality rubrics?\"", "\"Is reporting flexible enough for our needs?\"", "\"What if agents game the new metrics?\""], "key_messages": ["AI-powered QA - review 100% of interactions, not just 1%", "WFM integrations - Verint, Calabrio, NICE, custom APIs", "Real-time ops center - visibility into all teams", "Agent coaching tools - turn QA insights into performance gains", "Proven ROI - 15-20% efficiency gains from better WFM"], "content_preferences": ["WFM integration guides", "QA automation case studies", "Operational efficiency benchmarks", "Workforce optimization ROI models"], "success_metrics": ["Schedule adherence %", "Occupancy rate", "QA score trends", "Cost per interaction", "Agent attrition rate"], "buying_behavior": {"decision_speed": "Influential throughout process", "committee_size": "Works closely with CX Champion", "authority_level": "Medium-High - can influence decision", "prefers": "Operational deep dives, metrics-focused demos"}}, "Finance/Procurement Gatekeeper": {"job_titles": ["CFO", "VP Finance", "Procurement Director", "Vendor Management", "Director of Procurement"], "reports_to": "CEO or Board", "team_size": "Finance/procurement team", "prevalence": "58% of Commercial deals", "role_in_deal": "Gatekeeper (appears at demo stage, not just contracting)", "goals": ["Negotiate favorable contract terms", "Ensure compliance with procurement policies", "Vendor risk management and due diligence", "Budget optimization and cost control", "Vendor consolidation to reduce complexity"], "pain_points": ["Software sprawl - managing 100+ vendor relationships", "Shadow IT spending not going through procurement", "Unfavorable contract terms inherited from previous deals", "Vendor financial instability risks", "Lack of visibility into true total cost"], "challenges_from_gong": ["Procurement appearing 40% earlier - at demo stage, not just negotiation", "Formal RFP/RFI processes - need structured responses", "Vendor risk assessment requirements", "3+ vendor comparison mandates", "More scrutiny on contract terms and pricing"], "evaluation_criteria": ["Total cost of ownership (licensing, implementation, training, support)", "Contract terms (auto-renewal, cancellation, SLAs, penalties)", "Vendor financial stability (Dun & Bradstreet, funding)", "Pricing scalability (what happens at 2x, 3x growth?)", "Reference checks from procurement peers"], "objections": ["\"Your pricing doesn't fit our budget model\"", "\"We need more favorable contract terms\"", "\"How do we know you'll be around in 5 years?\"", "\"Why are you more expensive than [Competitor]?\""], "key_messages": ["Transparent pricing - no hidden fees, predictable scaling", "Flexible contract terms available for enterprises", "Financially stable - [funding status, customer count]", "TCO advantage - replace 3 tools, reduce implementation costs", "Procurement-ready - RFP templates, vendor risk docs, references"], "content_preferences": ["RFP response templates", "Vendor risk assessment questionnaires", "Financial statements and stability proof", "Pricing comparison matrices", "Procurement peer references"], "success_metrics": ["Cost savings vs. budget", "Contract compliance", "Vendor consolidation progress", "Risk mitigation", "Favorable payment terms achieved"], "buying_behavior": {"decision_speed": "Gatekeeper (adds 2-4 weeks)", "committee_size": "Works with legal and finance", "authority_level": "High - can block deals", "prefers": "Formal RFP process, detailed financial analysis"}}}};
+        const CHANGES_DATA = [{"id": "SMB.CX Champion.prevalence", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "prevalence", "type": "modified", "old": "97% of SMB deals", "new": "98% of SMB deals"}, {"id": "SMB.CX Champion.goals.added.1", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "goals", "type": "added", "old": null, "new": "Implement self-service to deflect simple tickets", "item_value": "Implement self-service to deflect simple tickets"}, {"id": "SMB.CX Champion.goals.added.2", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "goals", "type": "added", "old": null, "new": "Reduce customer churn by improving support experience", "item_value": "Reduce customer churn by improving support experience"}, {"id": "SMB.CX Champion.goals.removed.3", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "goals", "type": "deleted", "old": "Implement AI-powered self-service to deflect 40-50% of simple tickets", "new": null, "item_value": "Implement AI-powered self-service to deflect 40-50% of simple tickets"}, {"id": "SMB.CX Champion.pain_points.added.4", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "pain_points", "type": "added", "old": null, "new": "High agent turnover due to repetitive work and burnout", "item_value": "High agent turnover due to repetitive work and burnout"}, {"id": "SMB.CX Champion.objections.added.5", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "objections", "type": "added", "old": null, "new": "\"We tried AI before and it gave wrong answers to customers\"", "item_value": "\"We tried AI before and it gave wrong answers to customers\""}, {"id": "SMB.CX Champion.objections.added.6", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "objections", "type": "added", "old": null, "new": "\"What if the AI makes mistakes with customer data?\"", "item_value": "\"What if the AI makes mistakes with customer data?\""}, {"id": "SMB.CX Champion.objections.removed.7", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "objections", "type": "deleted", "old": "\"We tried AI before and it didn't work\"", "new": null, "item_value": "\"We tried AI before and it didn't work\""}, {"id": "SMB.CX Champion.key_messages.added.8", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "key_messages", "type": "added", "old": null, "new": "95% AI accuracy rate with built-in safeguards and human oversight", "item_value": "95% AI accuracy rate with built-in safeguards and human oversight"}, {"id": "Commercial.CX Champion.challenges_from_gong.added.9", "path": "Commercial.CX Champion", "persona": "CX Champion", "segment": "Commercial", "field": "challenges_from_gong", "type": "added", "old": null, "new": "Multi-language support requirements for global teams", "item_value": "Multi-language support requirements for global teams"}, {"id": "Commercial.CX Champion.buying_behavior.decision_speed", "path": "Commercial.CX Champion", "persona": "CX Champion", "segment": "Commercial", "field": "buying_behavior.decision_speed", "type": "modified", "old": "90-120 days", "new": "75-100 days"}];
+        const PERSONAS_DATA = {"SMB": {"CX Champion": {"job_titles": ["VP Customer Service", "Director of Customer Support", "Head of Customer Experience", "Customer Service Manager", "Support Manager"], "reports_to": "COO or CEO", "team_size": "5-25 agents", "prevalence": "98% of SMB deals", "role_in_deal": "Primary Champion & Decision Driver", "goals": ["Reduce agent handle time and improve productivity", "Meet or exceed SLA targets (1-4 hour first response)", "Improve CSAT/NPS scores", "Scale support without adding headcount", "Implement self-service to deflect simple tickets", "Reduce customer churn by improving support experience"], "pain_points": ["Agents overwhelmed with ticket volume (backlog growing)", "Missing SLA targets due to manual routing and slow response times", "Customers calling for simple/repetitive questions that could be self-served", "No real-time visibility into team performance", "Manual reporting in Excel - hours wasted each week", "High agent turnover due to repetitive work and burnout"], "challenges_from_gong": ["Integration gaps - switching between Zendesk, CRM, and 3+ other tools", "Incomplete help center - lacking self-service articles", "No AI/automation - manually routing and responding to every ticket", "Can't see what's happening in real-time - blind to bottlenecks", "Agent burnout from repetitive work"], "evaluation_criteria": ["**#1 Priority:** Ease of implementation & time to value (want live in 2-4 weeks)", "Simple, intuitive interface agents can learn in days", "Out-of-box integrations with existing tools (Salesforce, Slack)", "Clear ROI story - ticket deflection, faster resolution times", "Responsive support during onboarding"], "objections": ["\"We don't have time for a long implementation\"", "\"Our agents are already learning too many new tools\"", "\"We tried AI before and it gave wrong answers to customers\"", "\"Not sure if we can afford this right now\"", "\"What if the AI makes mistakes with customer data?\""], "key_messages": ["Live in 2 weeks with minimal IT involvement", "Agents love it - 4.5\u2605 ease of use rating", "Agent productivity up 30% in first 90 days (via automation)", "Self-service deflects 30-40% of tickets automatically", "Real-time dashboards replace Excel reporting", "95% AI accuracy rate with built-in safeguards and human oversight"], "content_preferences": ["Customer testimonials from similar-sized companies", "Quick demo videos (5-10 min)", "ROI calculators", "Implementation timelines", "Free trial or POC to test with team"], "success_metrics": ["First response time (target: <1 hour)", "CSAT score", "Ticket volume & deflection rate", "Agent productivity (tickets per agent per day)", "Time to resolution"], "buying_behavior": {"decision_speed": "45-60 days", "committee_size": "3-4 people (CX Champion, C-Suite, Finance, sometimes IT)", "authority_level": "High - can often drive decision with C-Suite approval", "prefers": "Fast-moving pilots over long enterprise sales cycles"}}, "C-Suite Decision Maker": {"job_titles": ["CEO", "COO", "President", "Founder"], "reports_to": "Board or self (Owner)", "team_size": "Entire company (50-249 employees)", "prevalence": "68% of SMB deals", "role_in_deal": "Budget Holder & Final Approver", "goals": ["Enable company growth without proportional headcount increases", "Improve customer satisfaction and retention", "Operational efficiency - do more with less", "Make data-driven decisions about support investments", "Keep costs predictable and manageable"], "pain_points": ["Support costs rising faster than revenue", "Customer complaints about slow service impacting retention", "Hiring freeze but ticket volume up 30-40%", "Support team using outdated tools - slowing everything down", "No clear visibility into support ROI"], "challenges_from_gong": ["Scaling challenges - can't keep hiring agents to handle volume", "Lack of automation - too much manual work", "Poor customer experience hurting brand reputation", "No real-time business intelligence on support operations", "Tech debt - using 5-year-old support tool"], "evaluation_criteria": ["**#1 Priority:** Clear ROI - will this help us grow without adding headcount?", "Total cost of ownership (not just license cost)", "Implementation risk - can we do this without disrupting business?", "Scalability - will this grow with us to 500 employees?", "Vendor stability - is this company going to be around?"], "objections": ["\"How do I know this will actually improve our metrics?\"", "\"What if implementation goes wrong and our support grinds to a halt?\"", "\"Can we really afford this in this economy?\"", "\"We just invested in [other tool] last year\""], "key_messages": ["Grow support capacity 2x without doubling headcount (AI + automation)", "Predictable pricing - no surprise costs as you scale", "Fast implementation = minimal business disruption", "Proven ROI: customers see 30% productivity gains in 90 days", "Modern platform - won't need to replace again in 3 years"], "content_preferences": ["Executive briefings (15 min max)", "ROI case studies from similar companies", "Analyst reports (Gartner, Forrester)", "Board-ready business case templates", "CFO-approved pricing models"], "success_metrics": ["Cost per ticket", "Support cost as % of revenue", "Customer retention rate", "NPS", "Agent headcount vs. ticket volume ratio"], "buying_behavior": {"decision_speed": "Fast (30-60 days once engaged)", "committee_size": "2-3 (CEO, CX Champion, sometimes CFO)", "authority_level": "Ultimate - final say on budget", "prefers": "Concise business case, minimal meetings"}}, "IT Influencer": {"job_titles": ["IT Manager", "Head of IT", "Director of IT", "Systems Administrator"], "reports_to": "COO, CEO, or CTO", "team_size": "1-5 IT staff", "prevalence": "30% of SMB deals", "role_in_deal": "Advisor & Validator (not blocker)", "goals": ["Ensure security and compliance (SOC 2, data encryption)", "Minimize IT support burden - want tools that \"just work\"", "Protect existing infrastructure investments", "Enable integrations without custom development", "SSO and user provisioning automation"], "pain_points": ["Too many support requests for password resets and access issues", "Security audits flagging old/insecure tools", "Integration sprawl - too many point solutions to manage", "Shadow IT - teams buying tools without IT approval", "Lack of visibility into who has access to what data"], "challenges_from_gong": ["Security concerns even in SMB (SOC 2, encryption, SSO)", "Integration requirements - need to connect to existing stack", "Limited IT resources - can't support complex implementations", "Data residency and compliance questions", "API access for automation"], "evaluation_criteria": ["Security certifications (SOC 2 Type 2, ISO 27001)", "SSO support (SAML, Okta, Azure AD)", "API quality and documentation", "Pre-built integrations vs. custom development needs", "IT support load - how much will this require from our team?"], "objections": ["\"Does this meet our security requirements?\"", "\"How much custom development will we need?\"", "\"What happens if the integration breaks?\"", "\"Can we get this through our security review in time?\""], "key_messages": ["Enterprise-grade security built in (SOC 2, SSO, encryption)", "Zero IT burden - cloud-hosted, auto-updates, 99.9% uptime", "Pre-built integrations with 1000+ tools", "Robust APIs for custom workflows", "Dedicated security documentation for audits"], "content_preferences": ["Security whitepapers", "API documentation", "Integration guides", "Architecture diagrams", "Compliance certifications"], "success_metrics": ["Security audit pass rate", "System uptime", "Integration stability", "IT support tickets related to the tool", "User provisioning time"], "buying_behavior": {"decision_speed": "Quick review (1-2 weeks)", "committee_size": "Solo or with CISO", "authority_level": "Advisory - can flag risks but rarely blocks", "prefers": "Technical documentation, sandbox access"}}, "Operations Leader": {"job_titles": ["Operations Manager", "Service Delivery Manager", "Director of Operations"], "reports_to": "COO or CX Champion", "team_size": "Oversees support ops + WFM", "prevalence": "22% of SMB deals", "role_in_deal": "Influencer (when present)", "goals": ["Optimize agent scheduling and capacity planning", "Improve quality assurance and coaching", "Reduce operational costs", "Better workforce management and forecasting", "Identify process improvement opportunities"], "pain_points": ["Manual scheduling in spreadsheets", "Can't forecast volume accurately - over/understaffed", "QA done manually on <5% of interactions", "No visibility into agent performance patterns", "Process bottlenecks not visible until too late"], "challenges_from_gong": ["Workforce management gaps - scheduling, forecasting", "Quality assurance limitations - can't review at scale", "Reporting fragmented across multiple tools", "No real-time operational visibility", "Process inefficiencies hard to identify"], "evaluation_criteria": ["WFM capabilities or integrations", "QA and coaching tools", "Reporting and analytics depth", "Real-time operational dashboards", "Process automation capabilities"], "objections": ["\"We already have WFM tools - will this integrate?\"", "\"Can this handle our QA workflows?\"", "\"Is the reporting customizable enough?\""], "key_messages": ["Built-in QA tools to review 100% of interactions (AI-powered)", "Integrates with WFM platforms (Calabrio, Verint, etc.)", "Real-time operational dashboards", "Agent performance analytics and coaching tools", "Workflow automation to eliminate manual processes"], "content_preferences": ["WFM integration guides", "QA best practices", "Operational metrics benchmarks", "Process optimization case studies"], "success_metrics": ["Schedule adherence", "Occupancy rate", "QA score trends", "Process cycle time", "Operational cost per ticket"], "buying_behavior": {"decision_speed": "N/A - not decision maker", "committee_size": "Consulted when present", "authority_level": "Low - provides input to CX Champion", "prefers": "Detailed operational demos"}}, "Finance/Procurement Gatekeeper": {"job_titles": ["CFO", "Finance Director", "Controller", "VP Finance"], "reports_to": "CEO or Board", "team_size": "Finance team (2-10 people)", "prevalence": "42% of SMB deals", "role_in_deal": "Budget Approver", "goals": ["Control costs and maintain budget discipline", "Ensure ROI on technology investments", "Predictable, manageable cash flow", "Avoid surprise costs or overages", "Negotiate favorable contract terms"], "pain_points": ["Support costs growing faster than revenue", "Software sprawl - too many subscriptions", "Getting nickel-and-dimed with add-on fees", "Can't justify ROI on existing support tool", "Cash flow constraints - can't commit to large annual prepays"], "challenges_from_gong": ["Economic sensitivity - longer approval cycles, more scrutiny", "Preference for monthly/quarterly payment terms (cash flow)", "ROI justification requirements increasing", "Budget frozen or cut", "Vendor consolidation pressure"], "evaluation_criteria": ["Total cost of ownership (license + implementation + training)", "Payment terms flexibility (monthly vs. annual)", "ROI evidence from similar companies", "Contract terms (auto-renewal, cancellation policy)", "Price predictability as we scale"], "objections": ["\"Can we really afford this right now?\"", "\"What's the payback period?\"", "\"Why is this better than just hiring another agent?\"", "\"Can we do monthly payments instead of annual?\""], "key_messages": ["Clear ROI: 30% productivity gain = 5-6 month payback", "Flexible payment terms available", "Predictable per-agent pricing - no surprise fees", "Cheaper than hiring: one agent salary = 10+ licenses", "Vendor consolidation - replace 3 tools with one"], "content_preferences": ["ROI calculators", "TCO comparisons", "Pricing guides", "Payment terms options", "Reference customers with similar budget profiles"], "success_metrics": ["Cost per ticket", "Support cost as % of revenue", "Payback period", "Avoided hiring costs", "Vendor consolidation savings"], "buying_behavior": {"decision_speed": "Gatekeeper (adds 1-2 weeks)", "committee_size": "Solo review or with CEO", "authority_level": "High - can block deals", "prefers": "Financial analysis, minimal sales fluff"}}}, "Commercial": {"CX Champion": {"job_titles": ["VP Customer Service", "VP Customer Experience", "Director of Customer Support", "Head of Global Support", "Senior Director CX"], "reports_to": "COO, Chief Customer Officer, or CEO", "team_size": "25-100 agents (often multi-region)", "prevalence": "92% of Commercial deals", "role_in_deal": "Primary Champion (but needs coalition)", "goals": ["Scale support operations across regions/brands", "Drive 55-60% ticket deflection through self-service + AI", "Improve CSAT while reducing cost-per-ticket", "Modernize support tech stack (replace legacy tools)", "Build self-service culture with customers"], "pain_points": ["Managing 50-100 agents across multiple teams/shifts", "Complex SLA requirements (different per client/tier)", "Legacy tools can't handle current scale", "No unified view across email, chat, phone, social", "Executive pressure to reduce costs while improving CX"], "challenges_from_gong": ["Integration complexity - custom dispatch systems, multi-client data", "Self-service culture shift - not just tools, behavioral change", "Reporting gaps - need custom dashboards for executives", "Process automation needs - not just ticket routing", "Skills-based routing for specialized teams", "Multi-language support requirements for global teams"], "evaluation_criteria": ["Enterprise scalability - can this handle 100+ agents and grow to 500?", "Advanced automation - intent-based routing, AI-powered triage", "Multi-org/multi-brand support", "Customization - workflows, fields, automations", "Change management support during rollout"], "objections": ["\"We have too many custom requirements\"", "\"Our team is already overwhelmed - can't handle a big migration\"", "\"How long will implementation really take?\"", "\"What if our agents hate it?\""], "key_messages": ["Built for enterprise complexity - multi-org, custom workflows, advanced routing", "Change management included - dedicated team to ensure adoption", "Phased rollout - start with one team, expand when ready", "Agent-loved - 4.6\u2605 rating, faster than legacy tools", "Proven at scale - customers with 500+ agents"], "content_preferences": ["Enterprise customer case studies", "Executive briefings with VP-level champions", "Analyst reports (Gartner Magic Quadrant)", "ROI models for mid-market", "Reference calls with similar companies"], "success_metrics": ["CSAT / NPS", "Ticket deflection rate (target: 55-60%)", "Cost per ticket", "First response time by tier", "Agent utilization rate"], "buying_behavior": {"decision_speed": "75-100 days", "committee_size": "6-8 people (CX, IT, Ops, Finance, Procurement, C-Suite)", "authority_level": "Medium - needs buy-in from IT, Finance, Ops", "prefers": "Structured evaluation, proof-of-concept, reference checks"}}, "C-Suite Decision Maker": {"job_titles": ["COO", "CEO", "Chief Customer Officer", "President"], "reports_to": "Board", "team_size": "Entire company (250-1,499 employees)", "prevalence": "54% of Commercial deals", "role_in_deal": "Budget Holder (appears late in process)", "goals": ["Platform consolidation - reduce vendor count", "Improve customer retention and LTV", "Enable profitable growth", "Modernize tech stack to support next 5 years", "Data-driven decision making"], "pain_points": ["Support org using 5-10 different tools (fragmented)", "Customer churn tied to poor support experience", "Can't get clear visibility into support operations", "Legacy tools holding back innovation", "Board asking tough questions about support ROI"], "challenges_from_gong": ["Platform vs. point solution debate - prefer vendor consolidation", "Strategic investment - need 3-5 year vision", "Risk mitigation - big migrations are high stakes", "ROI proof for board/investors", "Competitive differentiation through CX"], "evaluation_criteria": ["Strategic platform play - can this replace 3+ tools?", "Future-proof - AI roadmap, innovation velocity", "Vendor stability and financial health", "Implementation risk and timeline", "Executive sponsorship and support from vendor"], "objections": ["\"Why not just keep what we have?\"", "\"What's the business case for this level of investment?\"", "\"What if this impacts customer experience during transition?\"", "\"Are we backing the right vendor for 5+ years?\""], "key_messages": ["Platform consolidation - replace 3-5 tools with one", "Proven at your scale - 1000+ mid-market customers", "AI-first roadmap - built for next 5 years", "Risk mitigation - phased rollout, rollback plans", "Executive sponsorship - dedicated CSM and EBC support"], "content_preferences": ["Board-ready business case", "Strategic roadmap briefings", "Industry analyst validation", "Executive roundtables with peers", "Financial analyst reports"], "success_metrics": ["Customer retention rate", "Support cost as % of revenue", "NPS", "Vendor consolidation savings", "Time to implement innovation"], "buying_behavior": {"decision_speed": "Appears in week 6-8 of deal", "committee_size": "Final approver (reviews deal packaged by team)", "authority_level": "Ultimate - signs off on budget", "prefers": "Concise executive briefing, peer references"}}, "IT Influencer": {"job_titles": ["VP IT", "Director of IT", "Head of Information Security", "IT Manager", "CISO"], "reports_to": "CTO, COO, or CEO", "team_size": "5-25 IT staff", "prevalence": "85% of Commercial deals", "role_in_deal": "Co-Champion & Validator (critical path)", "goals": ["Ensure enterprise-grade security and compliance", "Manage integrations and API strategy", "Minimize technical debt and shadow IT", "Enable IT governance (SSO, user provisioning, audit logs)", "Protect customer data and meet regulatory requirements"], "pain_points": ["Security audits finding vulnerabilities in old tools", "Integration sprawl - too many point-to-point connections", "Compliance requirements (GDPR, HIPAA, SOC 2, ISO)", "Legacy tools without modern APIs", "Shadow IT circumventing security policies"], "challenges_from_gong": ["AI governance scrutiny - how is AI trained? Where is data stored?", "Data residency requirements (EU, APAC)", "Enterprise integration complexity", "Security validation at demo stage (not end of cycle)", "Can veto deals if security concerns not addressed"], "evaluation_criteria": ["**#1 Priority:** Security & compliance (SOC 2 Type 2, ISO 27001, GDPR, HIPAA)", "API quality - RESTful, well-documented, versioned", "SSO/SAML, SCIM provisioning", "Data governance - encryption, residency, retention policies", "AI transparency - how models work, what data they use"], "objections": ["\"How do you ensure AI doesn't expose sensitive customer data?\"", "\"Can you meet our data residency requirements?\"", "\"What happens if your API changes and breaks our integrations?\"", "\"Do you have SOC 2 Type 2 and penetration test results?\""], "key_messages": ["Enterprise security built-in - SOC 2 Type 2, ISO 27001, GDPR, HIPAA", "AI governance - transparent models, customer data isolation, audit trails", "Enterprise APIs - RESTful, 99.9% uptime SLA, versioned", "Data residency options - EU, APAC, US regions", "Dedicated security documentation for your audit"], "content_preferences": ["Security whitepapers", "Compliance certifications", "API documentation and sandbox", "Architecture diagrams", "Penetration test results (under NDA)"], "success_metrics": ["Security audit pass rate", "Zero data breaches", "API uptime and reliability", "Integration stability", "Compliance certification maintenance"], "buying_behavior": {"decision_speed": "Involved at demo stage (week 2-3)", "committee_size": "Works with security team", "authority_level": "High - can veto deals", "prefers": "Technical deep dives, proof-of-concept"}}, "Operations Leader": {"job_titles": ["Director of Service Operations", "VP Operations", "Workforce Management Manager", "Quality Assurance Director", "Service Delivery Manager"], "reports_to": "COO or CX Champion", "team_size": "Oversees ops, WFM, QA teams", "prevalence": "45% of Commercial deals (EMERGING)", "role_in_deal": "Key Influencer (growing importance)", "goals": ["Optimize workforce management and capacity planning", "Scale QA from <1% to 100% of interactions (AI-powered)", "Improve operational efficiency and reduce waste", "Real-time visibility into 50-100 agent operations", "Data-driven process improvements"], "pain_points": ["Manual WFM in spreadsheets - can't forecast accurately", "QA team can only review <1% of interactions manually", "No real-time visibility into agent performance", "Process bottlenecks not visible until quarterly reviews", "Over/understaffing costs millions annually"], "challenges_from_gong": ["WFM integration requirements - need to connect to existing tools", "Quality assurance at scale - AI needed", "Real-time operational dashboards", "Agent performance analytics and coaching", "Multi-team visibility (8+ teams across regions)"], "evaluation_criteria": ["WFM capabilities or integrations (Verint, Calabrio, NICE)", "AI-powered QA to review 100% of interactions", "Real-time operational dashboards", "Agent performance management tools", "Customizable reporting for different stakeholders"], "objections": ["\"Will this integrate with our WFM platform?\"", "\"Can your AI QA handle our complex quality rubrics?\"", "\"Is reporting flexible enough for our needs?\"", "\"What if agents game the new metrics?\""], "key_messages": ["AI-powered QA - review 100% of interactions, not just 1%", "WFM integrations - Verint, Calabrio, NICE, custom APIs", "Real-time ops center - visibility into all teams", "Agent coaching tools - turn QA insights into performance gains", "Proven ROI - 15-20% efficiency gains from better WFM"], "content_preferences": ["WFM integration guides", "QA automation case studies", "Operational efficiency benchmarks", "Workforce optimization ROI models"], "success_metrics": ["Schedule adherence %", "Occupancy rate", "QA score trends", "Cost per interaction", "Agent attrition rate"], "buying_behavior": {"decision_speed": "Influential throughout process", "committee_size": "Works closely with CX Champion", "authority_level": "Medium-High - can influence decision", "prefers": "Operational deep dives, metrics-focused demos"}}, "Finance/Procurement Gatekeeper": {"job_titles": ["CFO", "VP Finance", "Procurement Director", "Vendor Management", "Director of Procurement"], "reports_to": "CEO or Board", "team_size": "Finance/procurement team", "prevalence": "58% of Commercial deals", "role_in_deal": "Gatekeeper (appears at demo stage, not just contracting)", "goals": ["Negotiate favorable contract terms", "Ensure compliance with procurement policies", "Vendor risk management and due diligence", "Budget optimization and cost control", "Vendor consolidation to reduce complexity"], "pain_points": ["Software sprawl - managing 100+ vendor relationships", "Shadow IT spending not going through procurement", "Unfavorable contract terms inherited from previous deals", "Vendor financial instability risks", "Lack of visibility into true total cost"], "challenges_from_gong": ["Procurement appearing 40% earlier - at demo stage, not just negotiation", "Formal RFP/RFI processes - need structured responses", "Vendor risk assessment requirements", "3+ vendor comparison mandates", "More scrutiny on contract terms and pricing"], "evaluation_criteria": ["Total cost of ownership (licensing, implementation, training, support)", "Contract terms (auto-renewal, cancellation, SLAs, penalties)", "Vendor financial stability (Dun & Bradstreet, funding)", "Pricing scalability (what happens at 2x, 3x growth?)", "Reference checks from procurement peers"], "objections": ["\"Your pricing doesn't fit our budget model\"", "\"We need more favorable contract terms\"", "\"How do we know you'll be around in 5 years?\"", "\"Why are you more expensive than [Competitor]?\""], "key_messages": ["Transparent pricing - no hidden fees, predictable scaling", "Flexible contract terms available for enterprises", "Financially stable - [funding status, customer count]", "TCO advantage - replace 3 tools, reduce implementation costs", "Procurement-ready - RFP templates, vendor risk docs, references"], "content_preferences": ["RFP response templates", "Vendor risk assessment questionnaires", "Financial statements and stability proof", "Pricing comparison matrices", "Procurement peer references"], "success_metrics": ["Cost savings vs. budget", "Contract compliance", "Vendor consolidation progress", "Risk mitigation", "Favorable payment terms achieved"], "buying_behavior": {"decision_speed": "Gatekeeper (adds 2-4 weeks)", "committee_size": "Works with legal and finance", "authority_level": "High - can block deals", "prefers": "Formal RFP process, detailed financial analysis"}}}};
 
-        let feedback = {};
         let reviewerName = '';
+        let allData = {
+            votes: {},      // changeId -> {agree: ['name1', 'name2'], disagree: ['name3']}
+            comments: {}    // changeId -> [{author: 'name', text: 'comment', timestamp}]
+        };
+        let currentCommentId = null;
 
-        // Load saved feedback
-        const saved = localStorage.getItem('persona_team_feedback');
-        if (saved) {
-            const savedData = JSON.parse(saved);
-            feedback = savedData.feedback || {};
-            reviewerName = savedData.reviewerName || '';
+        // Load saved data
+        const savedData = localStorage.getItem('persona_collaborative_data');
+        if (savedData) {
+            const parsed = JSON.parse(savedData);
+            allData = parsed.allData || allData;
+            reviewerName = parsed.reviewerName || '';
             document.getElementById('reviewerName').value = reviewerName;
         }
 
         function init() {
             renderProfiles();
-            updateProgress();
 
             document.getElementById('reviewerName').addEventListener('input', (e) => {
-                reviewerName = e.target.value;
-                saveFeedback();
+                reviewerName = e.target.value.trim();
+                saveData();
             });
+        }
+
+        function saveData() {
+            localStorage.setItem('persona_collaborative_data', JSON.stringify({
+                allData,
+                reviewerName,
+                timestamp: new Date().toISOString()
+            }));
         }
 
         function renderProfiles() {
@@ -363,7 +589,6 @@
             });
 
             let html = '';
-            let totalChanges = 0;
 
             ['SMB', 'Commercial'].forEach(segment => {
                 html += `<div class="segment-section ${segment.toLowerCase()}">`;
@@ -430,27 +655,45 @@
             });
 
             container.innerHTML = html;
-            document.getElementById('totalChanges').textContent = CHANGES_DATA.length;
+            updateCommentSummary();
+        }
+
+        function updateCommentSummary() {
+            // Count items with comments
+            const itemsWithComments = Object.keys(allData.comments).filter(id => allData.comments[id].length > 0).length;
+
+            const summaryEl = document.getElementById('commentSummary');
+            const countEl = document.getElementById('commentCount');
+
+            if (itemsWithComments > 0) {
+                countEl.textContent = itemsWithComments;
+                summaryEl.classList.add('show');
+            } else {
+                summaryEl.classList.remove('show');
+            }
         }
 
         function renderField(label, value, segment, persona, field, changesMap) {
             const key = `${segment}.${persona}.${field}`;
             const changes = changesMap[key] || [];
+            const changeId = changes.length > 0 ? changes[0].id : null;
 
             let html = `<div class="field-item"><span class="field-label">${label}:</span> `;
 
             if (changes.length > 0) {
                 const change = changes[0];
                 if (change.type === 'modified') {
-                    html += `${value} <span class="change-indicator badge-modified">Modified</span>`;
+                    html += `${value} <span class="change-indicator badge-modified" onclick="toggleVoteControls('${changeId}')">Modified</span>`;
+                    html += renderVoteControls(changeId);
                     html += `<span class="old-value">was: ${change.old}</span>`;
-                    html += renderFeedbackBox(change);
                 } else if (change.type === 'added') {
-                    html += `${value} <span class="change-indicator badge-added">New</span>`;
-                    html += renderFeedbackBox(change);
+                    html += `${value} <span class="change-indicator badge-added" onclick="toggleVoteControls('${changeId}')">New</span>`;
+                    html += renderVoteControls(changeId);
                 }
+                html += renderCommentIndicator(changeId);
             } else {
                 html += value;
+                html += renderCommentIndicator(`${segment}.${persona}.${field}.text`);
             }
 
             html += `</div>`;
@@ -463,23 +706,28 @@
 
             let html = '<ul style="margin-left: 18px; margin-top: 6px; font-size: 14px; line-height: 1.5;">';
 
-            items.forEach(item => {
+            items.forEach((item, idx) => {
                 const addedChange = changes.find(c => c.type === 'added' && c.item_value === item);
+                const itemId = addedChange ? addedChange.id : `${segment}.${persona}.${field}.item${idx}`;
 
                 if (addedChange) {
-                    html += `<li style="margin: 5px 0;">${item} <span class="change-indicator badge-added">New</span>`;
-                    html += renderFeedbackBox(addedChange);
+                    html += `<li style="margin: 5px 0;">${item} <span class="change-indicator badge-added" onclick="toggleVoteControls('${addedChange.id}')">New</span>`;
+                    html += renderVoteControls(addedChange.id);
+                    html += renderCommentIndicator(addedChange.id);
                     html += `</li>`;
                 } else {
-                    html += `<li style="margin: 5px 0;">${item}</li>`;
+                    html += `<li style="margin: 5px 0;">${item}`;
+                    html += renderCommentIndicator(itemId);
+                    html += `</li>`;
                 }
             });
 
             // Show removed items
             const removedChanges = changes.filter(c => c.type === 'deleted');
             removedChanges.forEach(change => {
-                html += `<li style="margin: 5px 0; color: #dc2626; text-decoration: line-through;">${change.item_value} <span class="change-indicator badge-deleted">Removed</span>`;
-                html += renderFeedbackBox(change);
+                html += `<li style="margin: 5px 0; color: #dc2626; text-decoration: line-through;">${change.item_value} <span class="change-indicator badge-deleted" onclick="toggleVoteControls('${change.id}')">Removed</span>`;
+                html += renderVoteControls(change.id);
+                html += renderCommentIndicator(change.id);
                 html += `</li>`;
             });
 
@@ -487,144 +735,139 @@
             return html;
         }
 
-        function renderFeedbackBox(change) {
-            const changeId = change.id;
-            const userFeedback = feedback[changeId];
-            const agreeActive = userFeedback?.vote === 'agree' ? 'active-agree' : '';
-            const disagreeActive = userFeedback?.vote === 'disagree' ? 'active-disagree' : '';
-            const showComment = userFeedback?.vote ? 'show' : '';
+        function renderVoteControls(changeId) {
+            const votes = allData.votes[changeId] || {agree: [], disagree: []};
+            const userAgree = votes.agree.includes(reviewerName);
+            const userDisagree = votes.disagree.includes(reviewerName);
+
+            const agreeClass = userAgree ? 'active-agree' : '';
+            const disagreeClass = userDisagree ? 'active-disagree' : '';
+
+            const agreeTooltip = votes.agree.length > 0 ? votes.agree.join(', ') : 'No votes yet';
+            const disagreeTooltip = votes.disagree.length > 0 ? votes.disagree.join(', ') : 'No votes yet';
 
             return `
-                <div class="feedback-box">
-                    <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Your feedback:</div>
-                    <div class="feedback-buttons">
-                        <button class="feedback-btn ${agreeActive}" onclick="vote('${changeId}', 'agree')">
-                            👍 Agree
-                        </button>
-                        <button class="feedback-btn ${disagreeActive}" onclick="vote('${changeId}', 'disagree')">
-                            👎 Disagree
-                        </button>
-                    </div>
-                    <div class="comment-box ${showComment}" id="comment-${changeId}">
-                        <textarea placeholder="Add a comment (optional)..." onchange="addComment('${changeId}', this.value)">${userFeedback?.comment || ''}</textarea>
-                    </div>
-                </div>
+                <span class="vote-controls" id="vote-${changeId}">
+                    <button class="vote-btn ${agreeClass}" onclick="vote('${changeId}', 'agree')">
+                        👍<span class="vote-count">${votes.agree.length || ''}</span>
+                        <span class="vote-tooltip">${agreeTooltip}</span>
+                    </button>
+                    <button class="vote-btn ${disagreeClass}" onclick="vote('${changeId}', 'disagree')">
+                        👎<span class="vote-count">${votes.disagree.length || ''}</span>
+                        <span class="vote-tooltip">${disagreeTooltip}</span>
+                    </button>
+                </span>
             `;
         }
 
-        function vote(changeId, vote) {
-            if (!feedback[changeId]) feedback[changeId] = {};
+        function renderCommentIndicator(id) {
+            const comments = allData.comments[id] || [];
+            const hasComments = comments.length > 0;
+            const iconClass = hasComments ? 'has-comments' : '';
+            const count = hasComments ? comments.length : '';
 
-            if (feedback[changeId].vote === vote) {
-                delete feedback[changeId].vote;
-                document.getElementById(`comment-${changeId}`)?.classList.remove('show');
-            } else {
-                feedback[changeId].vote = vote;
-                document.getElementById(`comment-${changeId}`)?.classList.add('show');
-            }
-
-            saveFeedback();
-            updateProgress();
-            renderProfiles();
+            return `<span class="comment-indicator ${iconClass}" onclick="openCommentPopup('${id}')">💬${count}</span>`;
         }
 
-        function addComment(changeId, comment) {
-            if (!feedback[changeId]) feedback[changeId] = {};
-            feedback[changeId].comment = comment;
-            saveFeedback();
+        function toggleVoteControls(changeId) {
+            // Just for click handling - votes are always visible
         }
 
-        function updateProgress() {
-            const reviewed = Object.keys(feedback).filter(k => feedback[k].vote).length;
-            document.getElementById('reviewedCount').textContent = reviewed;
-            document.getElementById('submitBtn').disabled = reviewed === 0 || !reviewerName;
-        }
-
-        function saveFeedback() {
-            localStorage.setItem('persona_team_feedback', JSON.stringify({
-                feedback,
-                reviewerName,
-                timestamp: new Date().toISOString()
-            }));
-            updateProgress();
-        }
-
-        function submitFeedback() {
+        function vote(changeId, voteType) {
             if (!reviewerName) {
-                alert('Please enter your name');
+                alert('Please enter your name to vote');
+                document.getElementById('reviewerName').focus();
                 return;
             }
 
-            // Count feedback
-            const reviewCount = Object.keys(feedback).filter(id => feedback[id].vote).length;
-
-            document.getElementById('profilesContainer').style.display = 'none';
-            document.getElementById('actionBar').style.display = 'none';
-            document.getElementById('thankYou').classList.add('show');
-            document.getElementById('thankYouMessage').innerHTML = `You've reviewed <strong>${reviewCount}</strong> change${reviewCount !== 1 ? 's' : ''}.<br>Click "Submit Feedback" to send your feedback, or "Back to Review" to make changes.`;
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        function backToReview() {
-            document.getElementById('profilesContainer').style.display = 'block';
-            document.getElementById('actionBar').style.display = 'flex';
-            document.getElementById('thankYou').classList.remove('show');
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        async function downloadFeedback() {
-            const result = {
-                reviewer: reviewerName,
-                timestamp: new Date().toISOString(),
-                feedback: Object.keys(feedback).map(changeId => {
-                    const change = CHANGES_DATA.find(c => c.id === changeId);
-                    return {
-                        change_id: changeId,
-                        change_path: change?.path || '',
-                        change_field: change?.field || '',
-                        change_type: change?.type || '',
-                        vote: feedback[changeId].vote,
-                        comment: feedback[changeId].comment || ''
-                    };
-                }).filter(f => f.vote)
-            };
-
-            // Submit to GitHub Issues automatically
-            try {
-                const response = await fetch('https://api.github.com/repos/chrissherman-png/persona-analysis/issues', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/vnd.github.v3+json'
-                    },
-                    body: JSON.stringify({
-                        title: `Persona Feedback - ${reviewerName} - ${new Date().toISOString().split('T')[0]}`,
-                        body: '```json\n' + JSON.stringify(result, null, 2) + '\n```',
-                        labels: ['persona-feedback']
-                    })
-                });
-
-                if (response.ok) {
-                    alert('✓ Feedback submitted successfully!\n\nYour feedback has been automatically sent. Thank you!\n\nYou can return to this page anytime to view or update your submission.');
-                    // Keep localStorage so they can come back and edit
-                } else {
-                    throw new Error('Submission failed');
-                }
-            } catch (error) {
-                console.error('Error submitting feedback:', error);
-                alert('⚠️ Auto-submit unavailable. Downloading backup file instead.\n\nPlease send this file to your coordinator.');
-
-                // Fallback to download
-                const blob = new Blob([JSON.stringify(result, null, 2)], {type: 'application/json'});
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `persona_feedback_${reviewerName.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.json`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
+            if (!allData.votes[changeId]) {
+                allData.votes[changeId] = {agree: [], disagree: []};
             }
+
+            const votes = allData.votes[changeId];
+
+            // Toggle vote
+            if (voteType === 'agree') {
+                if (votes.agree.includes(reviewerName)) {
+                    // Remove agree vote
+                    votes.agree = votes.agree.filter(n => n !== reviewerName);
+                } else {
+                    // Add agree vote, remove disagree if present
+                    votes.agree.push(reviewerName);
+                    votes.disagree = votes.disagree.filter(n => n !== reviewerName);
+                }
+            } else {
+                if (votes.disagree.includes(reviewerName)) {
+                    // Remove disagree vote
+                    votes.disagree = votes.disagree.filter(n => n !== reviewerName);
+                } else {
+                    // Add disagree vote, remove agree if present
+                    votes.disagree.push(reviewerName);
+                    votes.agree = votes.agree.filter(n => n !== reviewerName);
+                }
+            }
+
+            saveData();
+            renderProfiles();
+        }
+
+        function openCommentPopup(id) {
+            if (!reviewerName) {
+                alert('Please enter your name to comment');
+                document.getElementById('reviewerName').focus();
+                return;
+            }
+
+            currentCommentId = id;
+            const comments = allData.comments[id] || [];
+
+            // Render comments
+            let html = '';
+            if (comments.length === 0) {
+                html = '<p style="color: #666; font-size: 14px;">No comments yet. Be the first!</p>';
+            } else {
+                comments.forEach(comment => {
+                    html += `
+                        <div class="comment-item">
+                            <div class="comment-author">${comment.author}</div>
+                            <div class="comment-text">${comment.text}</div>
+                        </div>
+                    `;
+                });
+            }
+
+            document.getElementById('commentList').innerHTML = html;
+            document.getElementById('newComment').value = '';
+            document.getElementById('commentPopup').classList.add('show');
+            document.getElementById('commentOverlay').classList.add('show');
+        }
+
+        function closeCommentPopup() {
+            document.getElementById('commentPopup').classList.remove('show');
+            document.getElementById('commentOverlay').classList.remove('show');
+            currentCommentId = null;
+        }
+
+        function submitComment() {
+            const text = document.getElementById('newComment').value.trim();
+            if (!text) {
+                alert('Please enter a comment');
+                return;
+            }
+
+            if (!allData.comments[currentCommentId]) {
+                allData.comments[currentCommentId] = [];
+            }
+
+            allData.comments[currentCommentId].push({
+                author: reviewerName,
+                text: text,
+                timestamp: new Date().toISOString()
+            });
+
+            saveData();
+            renderProfiles();
+            openCommentPopup(currentCommentId); // Refresh popup
         }
 
         window.addEventListener('DOMContentLoaded', init);
