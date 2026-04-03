@@ -46,8 +46,10 @@
 
 - Price sensitivity - need startup/small business pricing
 - Self-service implementation required - no IT department
+- Evaluating against Zoho Desk, HubSpot Service Hub, Freshdesk
+- Integration needs: Moodle (education), Respond.io (messaging), basic CRMs
+- Common verticals: tutoring services, education portals, healthcare services
 - Mobile-first needs - managing support on the go
-- Simple, consumer-grade UX expected
 - Need immediate value - can't wait months for ROI
 
 ### How They Evaluate Solutions
@@ -65,9 +67,11 @@ Free trial to test before buying
 ### Common Objections
 
 - "This is too expensive for our size"
+- "I'm already using Zoho Desk - why switch?"
 - "Looks complicated - don't have time to learn"
 - "Do I really need this or can I just use email?"
 - "What if my business doesn't grow as expected?"
+- "Will this integrate with my student portal/LMS?"
 
 ### Key Messages That Resonate
 
@@ -1196,9 +1200,12 @@ Reference checks from procurement peers
 ### Customer Service Challenges (from Gong data)
 
 - Multi-year digital transformation roadmaps
+- Contract renewals - optimizing costs while improving CX
 - Global rollout complexity - 5+ regions, compliance requirements
+- Government/public sector requirements - accessibility, transparency
+- BPO/outsourcing support operations - quotation management, travel
 - Change management at scale - 100s of agents to train
-- Integration with enterprise systems (SAP, Oracle, ServiceNow)
+- Integration with enterprise systems (SAP, Oracle, ServiceNow, X plan)
 - Executive buy-in for $500K-$2M+ investment
 
 ### How They Evaluate Solutions
@@ -1216,7 +1223,9 @@ Change management & consulting services included
 ### Common Objections
 
 - "We've already invested millions in our current platform"
+- "Our contract is up for renewal - need to cut costs, not increase them"
 - "Too risky to migrate 500+ agents"
+- "Government procurement requirements make this a 9-12 month process"
 - "Our business is too complex for out-of-box solutions"
 - "How long will implementation really take?"
 
@@ -1310,9 +1319,10 @@ Professional services team for complex implementations
 ### Common Objections
 
 - "Does this meet our enterprise security standards?"
-- "How will this integrate with our SAP/Oracle/ServiceNow environment?"
+- "How will this integrate with our SAP/Oracle/ServiceNow/X plan environment?"
 - "What's the total cost of implementation and maintenance?"
-- "Can you handle our data residency requirements?"
+- "Can you handle our government data residency and compliance requirements?"
+- "Do you have pre-built integrations for financial services BPO workflows?"
 
 ### Key Messages That Resonate
 
