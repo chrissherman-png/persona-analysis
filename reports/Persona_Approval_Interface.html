@@ -590,33 +590,47 @@
             refreshStatus.textContent = 'Fetching feedback...';
 
             try {
-                // Fetch feedback files from GitHub API
+                // Fetch feedback from GitHub Issues
                 const repoOwner = 'chrissherman-png';
                 const repoName = 'persona-analysis';
-                const feedbackPath = 'team_feedback';
 
-                const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${feedbackPath}`);
+                const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/issues?labels=persona-feedback&state=all`);
 
                 if (!response.ok) {
-                    throw new Error('Failed to fetch feedback files');
+                    throw new Error('Failed to fetch feedback');
                 }
 
-                const files = await response.json();
-                const feedbackFiles = files.filter(file => file.name.startsWith('persona_feedback_') && file.name.endsWith('.json'));
+                const issues = await response.json();
 
-                if (feedbackFiles.length === 0) {
-                    refreshStatus.textContent = 'No feedback files found';
+                if (issues.length === 0) {
+                    refreshStatus.textContent = 'No feedback submitted yet';
                     setTimeout(() => refreshStatus.textContent = '', 3000);
                     refreshBtn.disabled = false;
                     return;
                 }
 
-                // Fetch each feedback file
+                // Parse feedback from issue bodies
                 const feedbackData = [];
-                for (const file of feedbackFiles) {
-                    const fileResponse = await fetch(file.download_url);
-                    const data = await fileResponse.json();
-                    feedbackData.push(data);
+                issues.forEach(issue => {
+                    try {
+                        // Extract JSON from code block
+                        const match = issue.body.match(/```json
+([\s\S]*?)
+```/);
+                        if (match) {
+                            const data = JSON.parse(match[1]);
+                            feedbackData.push(data);
+                        }
+                    } catch (e) {
+                        console.error('Error parsing issue:', issue.number, e);
+                    }
+                });
+
+                if (feedbackData.length === 0) {
+                    refreshStatus.textContent = 'No valid feedback found';
+                    setTimeout(() => refreshStatus.textContent = '', 3000);
+                    refreshBtn.disabled = false;
+                    return;
                 }
 
                 // Recalculate vote counts

@@ -558,7 +558,7 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        function downloadFeedback() {
+        async function downloadFeedback() {
             const result = {
                 reviewer: reviewerName,
                 timestamp: new Date().toISOString(),
@@ -575,19 +575,44 @@
                 }).filter(f => f.vote)
             };
 
-            const blob = new Blob([JSON.stringify(result, null, 2)], {type: 'application/json'});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `persona_feedback_${reviewerName.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.json`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
+            // Submit to GitHub Issues automatically
+            try {
+                const response = await fetch('https://api.github.com/repos/chrissherman-png/persona-analysis/issues', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/vnd.github.v3+json'
+                    },
+                    body: JSON.stringify({
+                        title: `Persona Feedback - ${reviewerName} - ${new Date().toISOString().split('T')[0]}`,
+                        body: '```json\n' + JSON.stringify(result, null, 2) + '\n```',
+                        labels: ['persona-feedback']
+                    })
+                });
 
-            localStorage.removeItem('persona_team_feedback');
+                if (response.ok) {
+                    localStorage.removeItem('persona_team_feedback');
+                    alert('✓ Feedback submitted successfully!\n\nYour feedback has been automatically sent. Thank you!');
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                console.error('Error submitting feedback:', error);
+                alert('⚠️ Auto-submit unavailable. Downloading backup file instead.\n\nPlease send this file to your coordinator.');
 
-            alert('Feedback downloaded! Please send this file to the coordinator.');
+                // Fallback to download
+                const blob = new Blob([JSON.stringify(result, null, 2)], {type: 'application/json'});
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `persona_feedback_${reviewerName.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                localStorage.removeItem('persona_team_feedback');
+            }
         }
 
         window.addEventListener('DOMContentLoaded', init);
