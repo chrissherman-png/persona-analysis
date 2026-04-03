@@ -791,65 +791,65 @@
             let html = '';
 
             ['SMB', 'Commercial'].forEach(segment => {
-                html += \`<div class="segment-section">\`;
-                html += \`<div class="segment-title">\${segment} SEGMENT PERSONAS</div>\`;
-                html += \`<div style="color: #666; margin-top: 10px;">Company Size: \${segment === 'SMB' ? '50-249' : '250-1,499'} employees</div>\`;
+                html += '<div class="segment-section">';
+                html += '<div class="segment-title">' + segment + ' SEGMENT PERSONAS</div>';
+                html += '<div style="color: #666; margin-top: 10px;">Company Size: ' + (segment === 'SMB' ? '50-249' : '250-1,499') + ' employees</div>';
 
                 Object.keys(personas[segment]).forEach(personaName => {
                     const persona = personas[segment][personaName];
-                    html += \`<div class="persona-card">\`;
-                    html += \`<div class="persona-title">\${personaName}</div>\`;
-                    html += \`<div class="persona-content">\`;
+                    html += '<div class="persona-card">';
+                    html += '<div class="persona-title">' + personaName + '</div>';
+                    html += '<div class="persona-content">';
 
                     // LEFT COLUMN
-                    html += \`<div class="persona-column">\`;
-                    html += \`<div class="section-header">Profile Overview</div>\`;
-                    html += \`<div class="field-item"><span class="field-label">Job Titles:</span> \${persona.job_titles.join(', ')}</div>\`;
-                    html += \`<div class="field-item"><span class="field-label">Reports To:</span> \${persona.reports_to}</div>\`;
-                    html += \`<div class="field-item"><span class="field-label">Team Size:</span> \${persona.team_size}</div>\`;
-                    html += \`<div class="field-item"><span class="field-label">Prevalence in Deals:</span> \${persona.prevalence}</div>\`;
-                    html += \`<div class="field-item"><span class="field-label">Role in Buying Process:</span> \${persona.role_in_deal}</div>\`;
+                    html += '<div class="persona-column">';
+                    html += '<div class="section-header">Profile Overview</div>';
+                    html += '<div class="field-item"><span class="field-label">Job Titles:</span> ' + persona.job_titles.join(', ') + '</div>';
+                    html += '<div class="field-item"><span class="field-label">Reports To:</span> ' + persona.reports_to + '</div>';
+                    html += '<div class="field-item"><span class="field-label">Team Size:</span> ' + persona.team_size + '</div>';
+                    html += '<div class="field-item"><span class="field-label">Prevalence in Deals:</span> ' + persona.prevalence + '</div>';
+                    html += '<div class="field-item"><span class="field-label">Role in Buying Process:</span> ' + persona.role_in_deal + '</div>';
 
-                    html += \`<div class="section-header">Goals & Priorities</div>\`;
-                    html += \`<ul>\${persona.goals.map(g => \`<li>\${g}</li>\`).join('')}</ul>\`;
+                    html += '<div class="section-header">Goals & Priorities</div>';
+                    html += '<ul>' + persona.goals.map(g => '<li>' + g + '</li>').join('') + '</ul>';
 
-                    html += \`<div class="section-header">Pain Points</div>\`;
-                    html += \`<ul>\${persona.pain_points.map(p => \`<li>\${p}</li>\`).join('')}</ul>\`;
+                    html += '<div class="section-header">Pain Points</div>';
+                    html += '<ul>' + persona.pain_points.map(p => '<li>' + p + '</li>').join('') + '</ul>';
 
-                    html += \`<div class="section-header">Customer Service Challenges</div>\`;
-                    html += \`<ul>\${persona.challenges_from_gong.map(c => \`<li>\${c}</li>\`).join('')}</ul>\`;
-                    html += \`</div>\`; // left column
+                    html += '<div class="section-header">Customer Service Challenges</div>';
+                    html += '<ul>' + persona.challenges_from_gong.map(c => '<li>' + c + '</li>').join('') + '</ul>';
+                    html += '</div>'; // left column
 
                     // RIGHT COLUMN
-                    html += \`<div class="persona-column">\`;
-                    html += \`<div class="section-header">Evaluation Criteria</div>\`;
-                    html += \`<ul>\${persona.evaluation_criteria.map(e => \`<li>\${e}</li>\`).join('')}</ul>\`;
+                    html += '<div class="persona-column">';
+                    html += '<div class="section-header">Evaluation Criteria</div>';
+                    html += '<ul>' + persona.evaluation_criteria.map(e => '<li>' + e + '</li>').join('') + '</ul>';
 
-                    html += \`<div class="section-header">Common Objections</div>\`;
-                    html += \`<ul>\${persona.objections.map(o => \`<li>\${o}</li>\`).join('')}</ul>\`;
+                    html += '<div class="section-header">Common Objections</div>';
+                    html += '<ul>' + persona.objections.map(o => '<li>' + o + '</li>').join('') + '</ul>';
 
-                    html += \`<div class="section-header">Key Messages</div>\`;
-                    html += \`<ul>\${persona.key_messages.map(m => \`<li>\${m}</li>\`).join('')}</ul>\`;
+                    html += '<div class="section-header">Key Messages</div>';
+                    html += '<ul>' + persona.key_messages.map(m => '<li>' + m + '</li>').join('') + '</ul>';
 
-                    html += \`<div class="section-header">Content Preferences</div>\`;
-                    html += \`<ul>\${persona.content_preferences.map(c => \`<li>\${c}</li>\`).join('')}</ul>\`;
+                    html += '<div class="section-header">Content Preferences</div>';
+                    html += '<ul>' + persona.content_preferences.map(c => '<li>' + c + '</li>').join('') + '</ul>';
 
-                    html += \`<div class="section-header">Success Metrics</div>\`;
-                    html += \`<ul>\${persona.success_metrics.map(s => \`<li>\${s}</li>\`).join('')}</ul>\`;
+                    html += '<div class="section-header">Success Metrics</div>';
+                    html += '<ul>' + persona.success_metrics.map(s => '<li>' + s + '</li>').join('') + '</ul>';
 
-                    html += \`<div class="section-header">Buying Behavior</div>\`;
+                    html += '<div class="section-header">Buying Behavior</div>';
                     const bb = persona.buying_behavior;
-                    html += \`<div class="field-item"><span class="field-label">Decision Speed:</span> \${bb.decision_speed}</div>\`;
-                    html += \`<div class="field-item"><span class="field-label">Committee Size:</span> \${bb.committee_size}</div>\`;
-                    html += \`<div class="field-item"><span class="field-label">Authority Level:</span> \${bb.authority_level}</div>\`;
-                    html += \`<div class="field-item"><span class="field-label">Prefers:</span> \${bb.prefers}</div>\`;
-                    html += \`</div>\`; // right column
+                    html += '<div class="field-item"><span class="field-label">Decision Speed:</span> ' + bb.decision_speed + '</div>';
+                    html += '<div class="field-item"><span class="field-label">Committee Size:</span> ' + bb.committee_size + '</div>';
+                    html += '<div class="field-item"><span class="field-label">Authority Level:</span> ' + bb.authority_level + '</div>';
+                    html += '<div class="field-item"><span class="field-label">Prefers:</span> ' + bb.prefers + '</div>';
+                    html += '</div>'; // right column
 
-                    html += \`</div>\`; // persona-content
-                    html += \`</div>\`; // persona-card
+                    html += '</div>'; // persona-content
+                    html += '</div>'; // persona-card
                 });
 
-                html += \`</div>\`; // segment-section
+                html += '</div>'; // segment-section
             });
 
             return html;
