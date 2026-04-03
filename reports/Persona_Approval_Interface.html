@@ -618,11 +618,11 @@
                 issues.forEach(issue => {
                     try {
                         // Extract JSON from code block
-                        const match = issue.body.match(/```json
-([\s\S]*?)
-```/);
-                        if (match) {
-                            const data = JSON.parse(match[1]);
+                        const jsonStart = issue.body.indexOf('```json') + 7;
+                        const jsonEnd = issue.body.indexOf('```', jsonStart);
+                        if (jsonStart > 6 && jsonEnd > jsonStart) {
+                            const jsonText = issue.body.substring(jsonStart, jsonEnd).trim();
+                            const data = JSON.parse(jsonText);
                             feedbackData.push(data);
                         }
                     } catch (e) {
