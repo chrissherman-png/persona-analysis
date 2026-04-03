@@ -531,8 +531,12 @@
             updateStats();
             attachEditListeners();
 
-            // Auto-refresh votes from GitHub on page load
-            refreshVotesFromGitHub();
+            // Auto-refresh votes from GitHub on page load (non-blocking)
+            setTimeout(() => {
+                refreshVotesFromGitHub().catch(err => {
+                    console.log('Auto-refresh skipped:', err);
+                });
+            }, 100);
         }
 
         function attachEditListeners() {
