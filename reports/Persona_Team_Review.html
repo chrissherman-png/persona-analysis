@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona Changes - Team Review</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .reviewer-info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .reviewer-info input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .summary-card h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .added { color: #10b981; }
+        .modified { color: #3b82f6; }
+        .deleted { color: #ef4444; }
+
+        .change-section {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 2px solid #e9ecef;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .change-item {
+            padding: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .change-item:last-child {
+            border-bottom: none;
+        }
+
+        .change-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .change-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-added {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .badge-modified {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-deleted {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .change-location {
+            font-size: 13px;
+            color: #666;
+            font-family: 'Courier New', monospace;
+        }
+
+        .change-content {
+            margin: 15px 0;
+        }
+
+        .value-box {
+            padding: 12px;
+            border-radius: 6px;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .value-box.old {
+            background: #fef2f2;
+            border-left: 3px solid #ef4444;
+        }
+
+        .value-box.new {
+            background: #f0fdf4;
+            border-left: 3px solid #10b981;
+        }
+
+        .value-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .feedback-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .feedback-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .feedback-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 2px solid #e9ecef;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .feedback-btn:hover {
+            border-color: #d1d5db;
+            transform: translateY(-1px);
+        }
+
+        .feedback-btn.active-agree {
+            background: #d1fae5;
+            border-color: #10b981;
+            color: #065f46;
+        }
+
+        .feedback-btn.active-disagree {
+            background: #fee2e2;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+
+        .feedback-btn .emoji {
+            font-size: 20px;
+        }
+
+        .comment-box {
+            margin-top: 10px;
+            display: none;
+        }
+
+        .comment-box.show {
+            display: block;
+        }
+
+        .comment-box textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            min-height: 60px;
+            resize: vertical;
+        }
+
+        .feedback-stats {
+            font-size: 13px;
+            color: #666;
+            margin-left: auto;
+        }
+
+        .action-bar {
+            position: sticky;
+            bottom: 0;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .progress {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .progress-label {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s;
+        }
+
+        .submit-btn {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+
+        .thank-you.show {
+            display: block;
+        }
+
+        .thank-you .emoji {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .thank-you h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .thank-you p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .download-btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .feedback-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 Persona Changes - Team Review</h1>
+        <p>Review the proposed changes and share your feedback</p>
+    </div>
+
+    <div class="container">
+        <div class="reviewer-info">
+            <label for="reviewerName">
+                <strong>Your Name (Optional)</strong>
+                <input type="text" id="reviewerName" placeholder="e.g., Alex Smith">
+            </label>
+        </div>
+
+        <div id="summaryCard" class="summary-card">
+            <!-- Summary will be injected here -->
+        </div>
+
+        <div id="changesContainer">
+            <!-- Changes will be injected here -->
+        </div>
+
+        <div class="thank-you" id="thankYou">
+            <div class="emoji">🎉</div>
+            <h2>Thank You!</h2>
+            <p>Your feedback has been recorded.</p>
+            <button class="download-btn" onclick="downloadFeedback()">📥 Download Feedback</button>
+        </div>
+    </div>
+
+    <div class="action-bar" id="actionBar">
+        <div class="progress">
+            <div class="progress-label">
+                <span id="reviewedCount">0</span> of <span id="totalCount">0</span> changes reviewed
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+        <button class="submit-btn" id="submitBtn" onclick="submitFeedback()" disabled>
+            Submit Feedback
+        </button>
+    </div>
+
+    <script>
+        // This will be replaced with actual data when generating the report
+        const CHANGES_DATA = [
+  {
+    "path": "SMB.CX Champion",
+    "field": "goals",
+    "type": "added",
+    "old": null,
+    "new": "Implement self-service to deflect simple tickets"
+  },
+  {
+    "path": "SMB.CX Champion",
+    "field": "goals",
+    "type": "deleted",
+    "old": "Implement AI-powered self-service to deflect 40-50% of simple tickets",
+    "new": null
+  }
+];
+
+        let feedback = {};
+        let reviewerName = '';
+
+        function init() {
+            // Load from localStorage if available
+            const saved = localStorage.getItem('persona_feedback');
+            if (saved) {
+                const savedData = JSON.parse(saved);
+                feedback = savedData.feedback || {};
+                reviewerName = savedData.reviewerName || '';
+                document.getElementById('reviewerName').value = reviewerName;
+            }
+
+            renderSummary();
+            renderChanges();
+            updateProgress();
+
+            // Auto-save reviewer name
+            document.getElementById('reviewerName').addEventListener('input', (e) => {
+                reviewerName = e.target.value;
+                saveFeedback();
+            });
+        }
+
+        function renderSummary() {
+            const totalAdded = CHANGES_DATA.filter(c => c.type === 'added').length;
+            const totalModified = CHANGES_DATA.filter(c => c.type === 'modified').length;
+            const totalDeleted = CHANGES_DATA.filter(c => c.type === 'deleted').length;
+
+            document.getElementById('summaryCard').innerHTML = `
+                <h2>📊 Change Summary</h2>
+                <p style="color: #666; margin-top: 10px;">
+                    Review each change and indicate if you agree or disagree. Your feedback helps us make better decisions.
+                </p>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-value added">${totalAdded}</div>
+                        <div class="stat-label">Added</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value modified">${totalModified}</div>
+                        <div class="stat-label">Modified</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value deleted">${totalDeleted}</div>
+                        <div class="stat-label">Deleted</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderChanges() {
+            // Group by segment and persona
+            const grouped = {};
+            CHANGES_DATA.forEach((change, index) => {
+                const [segment, persona] = change.path.split('.');
+                const key = `${segment} - ${persona}`;
+                if (!grouped[key]) grouped[key] = [];
+                grouped[key].push({...change, index});
+            });
+
+            const container = document.getElementById('changesContainer');
+            container.innerHTML = '';
+
+            Object.keys(grouped).forEach(section => {
+                const sectionDiv = document.createElement('div');
+                sectionDiv.className = 'change-section';
+
+                let sectionHTML = `<div class="section-header">${section}</div>`;
+
+                grouped[section].forEach(change => {
+                    const changeId = `change-${change.index}`;
+                    const userFeedback = feedback[changeId];
+                    const agreeActive = userFeedback?.vote === 'agree' ? 'active-agree' : '';
+                    const disagreeActive = userFeedback?.vote === 'disagree' ? 'active-disagree' : '';
+                    const showComment = userFeedback?.vote ? 'show' : '';
+
+                    let badgeClass = 'badge-modified';
+                    let badgeText = 'Modified';
+                    if (change.type === 'added') {
+                        badgeClass = 'badge-added';
+                        badgeText = 'Added';
+                    } else if (change.type === 'deleted') {
+                        badgeClass = 'badge-deleted';
+                        badgeText = 'Deleted';
+                    }
+
+                    sectionHTML += `
+                        <div class="change-item">
+                            <div class="change-header">
+                                <span class="change-badge ${badgeClass}">${badgeText}</span>
+                                <span class="change-location">${change.field}</span>
+                            </div>
+                            <div class="change-content">
+                                ${change.type === 'deleted' ? `
+                                    <div class="value-box old">
+                                        <div class="value-label">Removed</div>
+                                        <div>${escapeHtml(change.old)}</div>
+                                    </div>
+                                ` : change.type === 'added' ? `
+                                    <div class="value-box new">
+                                        <div class="value-label">New</div>
+                                        <div>${escapeHtml(change.new)}</div>
+                                    </div>
+                                ` : `
+                                    <div class="value-box old">
+                                        <div class="value-label">Current</div>
+                                        <div>${escapeHtml(change.old)}</div>
+                                    </div>
+                                    <div class="value-box new">
+                                        <div class="value-label">Proposed</div>
+                                        <div>${escapeHtml(change.new)}</div>
+                                    </div>
+                                `}
+                            </div>
+                            <div class="feedback-section">
+                                <div class="feedback-buttons">
+                                    <button class="feedback-btn ${agreeActive}" onclick="vote('${changeId}', 'agree')">
+                                        <span class="emoji">👍</span>
+                                        <span>Agree</span>
+                                    </button>
+                                    <button class="feedback-btn ${disagreeActive}" onclick="vote('${changeId}', 'disagree')">
+                                        <span class="emoji">👎</span>
+                                        <span>Disagree</span>
+                                    </button>
+                                </div>
+                                <div class="comment-box ${showComment}" id="comment-${changeId}">
+                                    <textarea
+                                        placeholder="Add a comment (optional)..."
+                                        onchange="addComment('${changeId}', this.value)"
+                                    >${userFeedback?.comment || ''}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                sectionDiv.innerHTML = sectionHTML;
+                container.appendChild(sectionDiv);
+            });
+
+            document.getElementById('totalCount').textContent = CHANGES_DATA.length;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = String(text);
+            return div.innerHTML;
+        }
+
+        function vote(changeId, vote) {
+            if (!feedback[changeId]) {
+                feedback[changeId] = {};
+            }
+
+            // Toggle vote
+            if (feedback[changeId].vote === vote) {
+                delete feedback[changeId].vote;
+                document.getElementById(`comment-${changeId}`).classList.remove('show');
+            } else {
+                feedback[changeId].vote = vote;
+                document.getElementById(`comment-${changeId}`).classList.add('show');
+            }
+
+            saveFeedback();
+            updateProgress();
+            renderChanges();
+        }
+
+        function addComment(changeId, comment) {
+            if (!feedback[changeId]) {
+                feedback[changeId] = {};
+            }
+            feedback[changeId].comment = comment;
+            saveFeedback();
+        }
+
+        function updateProgress() {
+            const reviewed = Object.keys(feedback).filter(k => feedback[k].vote).length;
+            const total = CHANGES_DATA.length;
+            const percentage = total > 0 ? (reviewed / total * 100) : 0;
+
+            document.getElementById('reviewedCount').textContent = reviewed;
+            document.getElementById('progressFill').style.width = percentage + '%';
+
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = reviewed === 0;
+        }
+
+        function saveFeedback() {
+            localStorage.setItem('persona_feedback', JSON.stringify({
+                feedback,
+                reviewerName,
+                timestamp: new Date().toISOString()
+            }));
+        }
+
+        function submitFeedback() {
+            if (Object.keys(feedback).filter(k => feedback[k].vote).length === 0) {
+                alert('Please provide feedback on at least one change.');
+                return;
+            }
+
+            // Hide changes and action bar, show thank you
+            document.getElementById('changesContainer').style.display = 'none';
+            document.getElementById('actionBar').style.display = 'none';
+            document.getElementById('thankYou').classList.add('show');
+
+            // Scroll to top
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function downloadFeedback() {
+            const result = {
+                reviewer: reviewerName || 'Anonymous',
+                timestamp: new Date().toISOString(),
+                feedback: Object.keys(feedback).map(changeId => {
+                    const index = parseInt(changeId.replace('change-', ''));
+                    const change = CHANGES_DATA[index];
+                    return {
+                        change_path: change.path,
+                        change_field: change.field,
+                        change_type: change.type,
+                        vote: feedback[changeId].vote,
+                        comment: feedback[changeId].comment || ''
+                    };
+                }).filter(f => f.vote)
+            };
+
+            const blob = new Blob([JSON.stringify(result, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `persona_feedback_${reviewerName || 'anonymous'}_${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            // Clear localStorage
+            localStorage.removeItem('persona_feedback');
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', init);
+
+        // Auto-save on page unload
+        window.addEventListener('beforeunload', saveFeedback);
+    </script>
+</body>
+</html>
