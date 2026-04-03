@@ -686,7 +686,11 @@
         }
 
         function renderProfiles() {
+            console.log('renderProfiles called');
             const container = document.getElementById('profilesContainer');
+            console.log('container:', container);
+            console.log('PERSONAS_DATA:', Object.keys(PERSONAS_DATA));
+            console.log('CHANGES_WITH_VOTES:', CHANGES_WITH_VOTES.length);
             const changesMap = {};
 
             CHANGES_WITH_VOTES.forEach(change => {
@@ -1156,44 +1160,51 @@
             if (parts.length < 3) return;
 
             let segment = parts[0];
-            let personaName = parts.slice(1, -1).join(' '); // Handle multi-word persona names
-            let fieldOrIndex = parts[parts.length - 1];
 
-            // Check if last part is an index (number)
-            const isListItem = !isNaN(fieldOrIndex);
+            // Simple approach: find persona by trying to match from personas data
+            let foundPersona = null;
+            let foundPersonaName = null;
+
+            Object.keys(personas[segment] || {}).forEach(pName => {
+                const normalizedPersona = pName.replace(/\s+/g, '_');
+                if (editId.includes(normalizedPersona)) {
+                    foundPersona = personas[segment][pName];
+                    foundPersonaName = normalizedPersona;
+                }
+            });
+
+            if (!foundPersona) return;
+
+            // Extract field/index after segment and persona name
+            const afterPersona = editId.split(foundPersonaName + '_')[1];
+            if (!afterPersona) return;
+
+            const remainingParts = afterPersona.split('_');
+            const lastPart = remainingParts[remainingParts.length - 1];
+            const isListItem = !isNaN(lastPart);
 
             if (isListItem) {
                 // List item edit
-                const index = parseInt(fieldOrIndex);
-                const field = parts.slice(1, -2).join(' ').replace(new RegExp('^' + personaName.replace(/\s+/g, '_') + '_'), '');
+                const index = parseInt(lastPart);
+                const fieldName = remainingParts.slice(0, -1).join('_');
 
-                // Find the persona
-                Object.keys(personas[segment]).forEach(pName => {
-                    if (pName.replace(/\s+/g, '_') === personaName.replace(/\s+/g, '_')) {
-                        const persona = personas[segment][pName];
-                        if (persona[field] && Array.isArray(persona[field]) && persona[field][index] !== undefined) {
-                            persona[field][index] = newValue;
-                        }
-                    }
-                });
+                if (foundPersona[fieldName] && Array.isArray(foundPersona[fieldName]) && foundPersona[fieldName][index] !== undefined) {
+                    foundPersona[fieldName][index] = newValue;
+                }
             } else {
                 // Field edit
-                const field = parts.slice(1).join('.').replace(new RegExp('^' + personaName.replace(/\s+/g, '_') + '_'), '').replace(/_/g, '.');
+                const fieldName = remainingParts.join('_');
 
-                // Find the persona
-                Object.keys(personas[segment]).forEach(pName => {
-                    if (pName.replace(/\s+/g, '_') === personaName.replace(/\s+/g, '_')) {
-                        const persona = personas[segment][pName];
-                        const fieldParts = field.split('.');
-
-                        if (fieldParts.length === 1) {
-                            persona[field] = newValue;
-                        } else if (fieldParts.length === 2) {
-                            if (!persona[fieldParts[0]]) persona[fieldParts[0]] = {};
-                            persona[fieldParts[0]][fieldParts[1]] = newValue;
-                        }
+                if (fieldName.includes('_')) {
+                    // Nested field like buying_behavior_decision_speed
+                    const fieldParts = fieldName.split('_');
+                    if (fieldParts.length === 2) {
+                        if (!foundPersona[fieldParts[0]]) foundPersona[fieldParts[0]] = {};
+                        foundPersona[fieldParts[0]][fieldParts[1]] = newValue;
                     }
-                });
+                } else {
+                    foundPersona[fieldName] = newValue;
+                }
             }
         }
 
