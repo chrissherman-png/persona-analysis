@@ -308,8 +308,11 @@
         <div class="thank-you" id="thankYou">
             <div style="font-size: 64px; margin-bottom: 20px;">🎉</div>
             <h2>Thank You!</h2>
-            <p>Your feedback has been recorded.</p>
-            <button class="submit-btn" onclick="downloadFeedback()">Download Feedback</button>
+            <p id="thankYouMessage">Your feedback has been recorded.</p>
+            <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <button class="submit-btn" onclick="downloadFeedback()">Submit Feedback</button>
+                <button class="submit-btn" onclick="backToReview()" style="background: white; color: #667eea; border: 2px solid #667eea;">Back to Review</button>
+            </div>
         </div>
     </div>
 
@@ -552,9 +555,20 @@
                 return;
             }
 
+            // Count feedback
+            const reviewCount = Object.keys(feedback).filter(id => feedback[id].vote).length;
+
             document.getElementById('profilesContainer').style.display = 'none';
             document.getElementById('actionBar').style.display = 'none';
             document.getElementById('thankYou').classList.add('show');
+            document.getElementById('thankYouMessage').innerHTML = `You've reviewed <strong>${reviewCount}</strong> change${reviewCount !== 1 ? 's' : ''}.<br>Click "Submit Feedback" to send your feedback, or "Back to Review" to make changes.`;
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function backToReview() {
+            document.getElementById('profilesContainer').style.display = 'block';
+            document.getElementById('actionBar').style.display = 'flex';
+            document.getElementById('thankYou').classList.remove('show');
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
@@ -591,8 +605,8 @@
                 });
 
                 if (response.ok) {
-                    localStorage.removeItem('persona_team_feedback');
-                    alert('✓ Feedback submitted successfully!\n\nYour feedback has been automatically sent. Thank you!');
+                    alert('✓ Feedback submitted successfully!\n\nYour feedback has been automatically sent. Thank you!\n\nYou can return to this page anytime to view or update your submission.');
+                    // Keep localStorage so they can come back and edit
                 } else {
                     throw new Error('Submission failed');
                 }
@@ -610,8 +624,6 @@
                 a.click();
                 document.body.removeChild(a);
                 URL.revokeObjectURL(url);
-
-                localStorage.removeItem('persona_team_feedback');
             }
         }
 
