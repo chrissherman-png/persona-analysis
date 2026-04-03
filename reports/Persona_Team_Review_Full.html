@@ -54,23 +54,48 @@
             border-left: 6px solid #FEEB7E;
         }
 
+        .segment-header {
+            margin: -20px -20px 20px -20px;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .segment-section.smb .segment-header {
+            background: #A1D78F;
+        }
+
+        .segment-section.commercial .segment-header {
+            background: #FEEB7E;
+        }
+
         .segment-title {
             font-size: 22px;
             font-weight: bold;
-            margin-bottom: 8px;
-            padding-bottom: 8px;
-            padding: 12px 16px;
-            border-radius: 6px;
-            display: inline-block;
+            margin: 0;
         }
 
         .segment-section.smb .segment-title {
-            background: #A1D78F;
             color: #2D4C33;
         }
 
         .segment-section.commercial .segment-title {
-            background: #FEEB7E;
+            color: #11110D;
+        }
+
+        .segment-subtitle {
+            font-size: 14px;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .segment-section.smb .segment-subtitle {
+            color: #2D4C33;
+        }
+
+        .segment-section.commercial .segment-subtitle {
             color: #11110D;
         }
 
@@ -339,8 +364,10 @@
 
             ['SMB', 'Commercial'].forEach(segment => {
                 html += `<div class="segment-section ${segment.toLowerCase()}">`;
+                html += `<div class="segment-header">`;
                 html += `<div class="segment-title">${segment} SEGMENT PERSONAS</div>`;
-                html += `<div style="color: #666; margin-top: 10px; margin-left: 16px;">Company Size: ${segment === 'SMB' ? '50-249' : '250-1,499'} employees</div>`;
+                html += `<div class="segment-subtitle">Company Size: ${segment === 'SMB' ? '50-249' : '250-1,499'} employees</div>`;
+                html += `</div>`;
 
                 Object.keys(PERSONAS_DATA[segment]).forEach(personaName => {
                     const persona = PERSONAS_DATA[segment][personaName];
