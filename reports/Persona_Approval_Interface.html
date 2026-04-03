@@ -19,7 +19,7 @@
             text-align: center;
         }
         .header h1 { font-size: 32px; margin-bottom: 10px; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 15px; }
 
         .stats-bar {
             background: white;
@@ -38,66 +38,68 @@
         .segment-section {
             background: white;
             border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 20px;
+            margin-bottom: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .segment-title {
-            font-size: 28px;
+            font-size: 22px;
             font-weight: bold;
             color: #10b981;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #10b981;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #10b981;
         }
 
         .persona-card {
-            margin-top: 30px;
-            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-bottom: 15px;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
             border: 1px solid #e5e7eb;
             overflow: hidden;
             transition: box-shadow 0.3s ease;
         }
 
         .persona-card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
         }
 
         .persona-title {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             color: white;
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            padding: 20px 25px;
+            padding: 14px 18px;
             margin: 0;
-            margin-bottom: 0;
         }
 
         .persona-content {
-            padding: 25px;
+            padding: 18px;
         }
 
         .section-header {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 600;
-            color: #495057;
-            margin: 20px 0 10px 0;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #dee2e6;
+            color: #10b981;
+            margin: 14px 0 6px 0;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #e5e7eb;
         }
 
         .field-item {
-            margin: 10px 0;
-            padding: 8px 0;
+            margin: 6px 0;
+            padding: 4px 0;
+            font-size: 14px;
+            line-height: 1.5;
         }
 
         .field-label {
             font-weight: 600;
             color: #495057;
+            font-size: 14px;
         }
 
         .change-indicator {
@@ -494,24 +496,24 @@
             const key = `${segment}.${persona}.${field}`;
             const changes = changesMap[key] || [];
 
-            let html = '<ul style="margin-left: 20px; margin-top: 10px;">';
+            let html = '<ul style="margin-left: 18px; margin-top: 6px; font-size: 14px; line-height: 1.5;">';
 
             items.forEach(item => {
                 const addedChange = changes.find(c => c.type === 'added' && c.item_value === item);
 
                 if (addedChange) {
-                    html += `<li style="margin: 8px 0;">${item} <span class="change-indicator badge-added">New</span>`;
+                    html += `<li style="margin: 5px 0;">${item} <span class="change-indicator badge-added">New</span>`;
                     html += renderVoteCounts(addedChange);
                     html += renderApprovalBox(addedChange);
                     html += `</li>`;
                 } else {
-                    html += `<li style="margin: 8px 0;">${item}</li>`;
+                    html += `<li style="margin: 5px 0;">${item}</li>`;
                 }
             });
 
             const removedChanges = changes.filter(c => c.type === 'deleted');
             removedChanges.forEach(change => {
-                html += `<li style="margin: 8px 0; color: #dc2626; text-decoration: line-through;">${change.item_value} <span class="change-indicator badge-deleted">Removed</span>`;
+                html += `<li style="margin: 5px 0; color: #dc2626; text-decoration: line-through;">${change.item_value} <span class="change-indicator badge-deleted">Removed</span>`;
                 html += renderVoteCounts(change);
                 html += renderApprovalBox(change);
                 html += `</li>`;
