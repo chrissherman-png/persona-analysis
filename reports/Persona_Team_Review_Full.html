@@ -81,15 +81,30 @@
 
         .persona-content {
             padding: 18px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .persona-column {
+            min-width: 0;
         }
 
         .section-header {
             font-size: 15px;
             font-weight: 600;
             color: #667eea;
-            margin: 14px 0 6px 0;
+            margin: 12px 0 6px 0;
             padding-bottom: 3px;
             border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section-header:first-child {
+            margin-top: 0;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
         }
 
         .field-item {
@@ -300,7 +315,8 @@
                     html += `<div class="persona-title">${personaName}</div>`;
                     html += `<div class="persona-content">`;
 
-                    // Profile Overview
+                    // LEFT COLUMN: Profile & Challenges
+                    html += `<div class="persona-column">`;
                     html += `<div class="section-header">Profile Overview</div>`;
                     html += renderField('Job Titles', persona.job_titles.join(', '), segment, personaName, 'job_titles', changesMap);
                     html += renderField('Reports To', persona.reports_to, segment, personaName, 'reports_to', changesMap);
@@ -308,7 +324,6 @@
                     html += renderField('Prevalence in Deals', persona.prevalence, segment, personaName, 'prevalence', changesMap);
                     html += renderField('Role in Buying Process', persona.role_in_deal, segment, personaName, 'role_in_deal', changesMap);
 
-                    // Lists
                     html += `<div class="section-header">Goals & Priorities</div>`;
                     html += renderList(persona.goals, segment, personaName, 'goals', changesMap);
 
@@ -317,7 +332,10 @@
 
                     html += `<div class="section-header">Customer Service Challenges</div>`;
                     html += renderList(persona.challenges_from_gong, segment, personaName, 'challenges_from_gong', changesMap);
+                    html += `</div>`; // left column
 
+                    // RIGHT COLUMN: Evaluation & Messaging
+                    html += `<div class="persona-column">`;
                     html += `<div class="section-header">Evaluation Criteria</div>`;
                     html += renderList(persona.evaluation_criteria, segment, personaName, 'evaluation_criteria', changesMap);
 
@@ -333,13 +351,13 @@
                     html += `<div class="section-header">Success Metrics</div>`;
                     html += renderList(persona.success_metrics, segment, personaName, 'success_metrics', changesMap);
 
-                    // Buying Behavior
                     html += `<div class="section-header">Buying Behavior</div>`;
                     const bb = persona.buying_behavior;
                     html += renderField('Decision Speed', bb.decision_speed, segment, personaName, 'buying_behavior.decision_speed', changesMap);
                     html += renderField('Committee Size', bb.committee_size, segment, personaName, 'buying_behavior.committee_size', changesMap);
                     html += renderField('Authority Level', bb.authority_level, segment, personaName, 'buying_behavior.authority_level', changesMap);
                     html += renderField('Prefers', bb.prefers, segment, personaName, 'buying_behavior.prefers', changesMap);
+                    html += `</div>`; // right column
 
                     html += `</div>`; // persona-content
                     html += `</div>`; // persona-card
