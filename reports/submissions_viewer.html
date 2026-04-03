@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Submissions Viewer</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 { font-size: 32px; margin-bottom: 10px; }
+        .container { max-width: 1000px; margin: 20px auto; padding: 20px; }
+
+        .submission-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .submission-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 20px;
+        }
+
+        .reviewer-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .timestamp {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .feedback-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .change-path {
+            font-size: 12px;
+            color: #666;
+            font-family: monospace;
+            margin-bottom: 8px;
+        }
+
+        .change-details {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .change-label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .old-value {
+            color: #dc2626;
+            text-decoration: line-through;
+        }
+
+        .new-value {
+            color: #059669;
+            font-weight: 500;
+        }
+
+        .vote-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .vote-agree {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .vote-disagree {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .comment {
+            margin-top: 10px;
+            padding: 10px;
+            background: #fffbeb;
+            border-radius: 4px;
+            font-style: italic;
+            border-left: 3px solid #f59e0b;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 2px solid #667eea;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            background: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>👥 Team Submissions</h1>
+        <p>Individual feedback from team members</p>
+    </div>
+
+    <div class="container">
+        <a href="Persona_Approval_Interface.html" class="back-link">← Back to Approval</a>
+
+        <div id="submissionsContainer">
+            <!-- Will be rendered by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const SUBMISSIONS = [{"reviewer": "Chris Sherman", "timestamp": "2026-04-03T04:23:00.980Z", "feedback": [{"change_id": "SMB.CX Champion.prevalence", "change_path": "SMB.CX Champion", "change_field": "prevalence", "change_type": "modified", "vote": "agree", "comment": "Great change!"}, {"change_id": "SMB.CX Champion.goals.removed.2", "change_path": "SMB.CX Champion", "change_field": "goals", "change_type": "deleted", "vote": "agree", "comment": "This felt too specific"}, {"change_id": "SMB.CX Champion.goals.added.1", "change_path": "SMB.CX Champion", "change_field": "goals", "change_type": "added", "vote": "agree", "comment": "Great!"}]}];
+        const CHANGES_MAP = {"SMB.CX Champion.prevalence": {"id": "SMB.CX Champion.prevalence", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "prevalence", "type": "modified", "old": "97% of SMB deals", "new": "95% of SMB deals"}, "SMB.CX Champion.goals.added.1": {"id": "SMB.CX Champion.goals.added.1", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "goals", "type": "added", "old": null, "new": "Implement self-service to deflect simple tickets", "item_value": "Implement self-service to deflect simple tickets"}, "SMB.CX Champion.goals.removed.2": {"id": "SMB.CX Champion.goals.removed.2", "path": "SMB.CX Champion", "persona": "CX Champion", "segment": "SMB", "field": "goals", "type": "deleted", "old": "Implement AI-powered self-service to deflect 40-50% of simple tickets", "new": null, "item_value": "Implement AI-powered self-service to deflect 40-50% of simple tickets"}};
+
+        function init() {
+            const container = document.getElementById('submissionsContainer');
+
+            if (SUBMISSIONS.length === 0) {
+                container.innerHTML = `
+                    <div class="submission-card">
+                        <p style="text-align: center; color: #666;">No submissions yet.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+
+            SUBMISSIONS.forEach(submission => {
+                html += `
+                    <div class="submission-card">
+                        <div class="submission-header">
+                            <div class="reviewer-name">${submission.reviewer}</div>
+                            <div class="timestamp">${new Date(submission.timestamp).toLocaleString()}</div>
+                        </div>
+                `;
+
+                submission.feedback.forEach(item => {
+                    const change = CHANGES_MAP[item.change_id];
+                    const voteClass = item.vote === 'agree' ? 'vote-agree' : 'vote-disagree';
+                    const voteIcon = item.vote === 'agree' ? '👍' : '👎';
+
+                    html += `
+                        <div class="feedback-item">
+                            <div class="change-path">${item.change_path} > ${item.change_field}</div>
+                            <div>
+                                <span class="vote-badge ${voteClass}">${voteIcon} ${item.vote.toUpperCase()}</span>
+                                <span style="color: #666; font-size: 12px; text-transform: uppercase;">${item.change_type}</span>
+                            </div>
+                    `;
+
+                    // Show what changed
+                    if (change) {
+                        if (change.type === 'added') {
+                            html += `
+                                <div class="change-details">
+                                    <div class="change-label">Added</div>
+                                    <div class="new-value">${escapeHtml(change.new || change.item_value || '')}</div>
+                                </div>
+                            `;
+                        } else if (change.type === 'deleted') {
+                            html += `
+                                <div class="change-details">
+                                    <div class="change-label">Removed</div>
+                                    <div class="old-value">${escapeHtml(change.old || change.item_value || '')}</div>
+                                </div>
+                            `;
+                        } else if (change.type === 'modified') {
+                            html += `
+                                <div class="change-details">
+                                    <div class="change-label">Changed From</div>
+                                    <div class="old-value">${escapeHtml(String(change.old || ''))}</div>
+                                    <div class="change-label" style="margin-top: 8px;">Changed To</div>
+                                    <div class="new-value">${escapeHtml(String(change.new || ''))}</div>
+                                </div>
+                            `;
+                        }
+                    }
+
+                    if (item.comment) {
+                        html += `<div class="comment">💬 "${escapeHtml(item.comment)}"</div>`;
+                    }
+
+                    html += `</div>`;
+                });
+
+                html += `</div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
