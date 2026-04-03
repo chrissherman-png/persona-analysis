@@ -860,11 +860,13 @@
 
         async function saveVote(changeId, voteType) {
             try {
-                const response = await fetch(GOOGLE_SHEETS_API_URL + '?action=saveVote', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({changeId, reviewer: reviewerName, voteType})
+                const params = new URLSearchParams({
+                    action: 'saveVote',
+                    changeId: changeId,
+                    reviewer: reviewerName,
+                    voteType: voteType || ''
                 });
+                const response = await fetch(GOOGLE_SHEETS_API_URL + '?' + params.toString());
                 const result = await response.json();
                 if (result.success) {
                     // Reload data to get latest state
@@ -878,11 +880,13 @@
 
         async function saveCommentToSheets(changeId, text) {
             try {
-                const response = await fetch(GOOGLE_SHEETS_API_URL + '?action=saveComment', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({changeId, author: reviewerName, text})
+                const params = new URLSearchParams({
+                    action: 'saveComment',
+                    changeId: changeId,
+                    author: reviewerName,
+                    text: text
                 });
+                const response = await fetch(GOOGLE_SHEETS_API_URL + '?' + params.toString());
                 const result = await response.json();
                 if (result.success) {
                     // Reload data to get latest state
