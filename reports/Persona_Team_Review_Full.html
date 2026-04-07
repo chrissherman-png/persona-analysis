@@ -815,9 +815,16 @@
         let currentCommentId = null;
         let currentActiveTab = 'Digital'; // Track active tab
         let autoRefreshInterval = null;
+        let pendingSaves = 0; // Track saves in progress
 
         // Load data from Google Sheets
-        async function loadDataFromSheets() {
+        async function loadDataFromSheets(forceUpdate = false) {
+            // Don't overwrite local data if we have saves in progress
+            if (pendingSaves > 0 && !forceUpdate) {
+                console.log('Skipping refresh - saves in progress');
+                return;
+            }
+
             try {
                 const response = await fetch(GOOGLE_SHEETS_API_URL + '?action=getData');
                 const data = await response.json();
@@ -859,6 +866,7 @@
         }
 
         async function saveVote(changeId, voteType) {
+            pendingSaves++;
             try {
                 const params = new URLSearchParams({
                     action: 'saveVote',
@@ -869,16 +877,18 @@
                 const response = await fetch(GOOGLE_SHEETS_API_URL + '?' + params.toString());
                 const result = await response.json();
                 if (result.success) {
-                    // Reload data to get latest state
-                    await loadDataFromSheets();
+                    // Save complete - force reload to get latest state
+                    await loadDataFromSheets(true);
                 }
             } catch (error) {
                 console.error('Error saving vote:', error);
-                alert('Failed to save vote. Please check your connection.');
+            } finally {
+                pendingSaves--;
             }
         }
 
         async function saveCommentToSheets(changeId, text) {
+            pendingSaves++;
             try {
                 const params = new URLSearchParams({
                     action: 'saveComment',
@@ -889,12 +899,13 @@
                 const response = await fetch(GOOGLE_SHEETS_API_URL + '?' + params.toString());
                 const result = await response.json();
                 if (result.success) {
-                    // Reload data to get latest state
-                    await loadDataFromSheets();
+                    // Save complete - force reload to get latest state
+                    await loadDataFromSheets(true);
                 }
             } catch (error) {
                 console.error('Error saving comment:', error);
-                alert('Failed to save comment. Please check your connection.');
+            } finally {
+                pendingSaves--;
             }
         }
 
