@@ -1284,6 +1284,14 @@
             `;
         }
 
+        function updateVoteButtons(changeId) {
+            // Update just the vote buttons for this specific change (fast!)
+            const voteElement = document.getElementById('vote-' + changeId);
+            if (voteElement) {
+                voteElement.outerHTML = renderVoteControls(changeId);
+            }
+        }
+
         function renderCommentIndicator(id) {
             const comments = allData.comments[id] || [];
             const hasComments = comments.length > 0;
@@ -1335,8 +1343,8 @@
                 }
             }
 
-            // Update UI immediately
-            renderProfiles();
+            // Update UI immediately (just this vote button - fast!)
+            updateVoteButtons(changeId);
 
             // Save to Google Sheets in background (don't await)
             saveVote(changeId, newVoteType).catch(err => {
@@ -1402,9 +1410,8 @@
 
             allData.comments[currentCommentId].push(newComment);
 
-            // Update UI immediately
-            renderProfiles();
-            openCommentPopup(currentCommentId); // Refresh popup
+            // Update popup immediately (just the popup - fast!)
+            openCommentPopup(currentCommentId); // Refresh popup with new comment
 
             // Save to Google Sheets in background (don't await)
             saveCommentToSheets(currentCommentId, text).catch(err => {
