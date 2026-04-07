@@ -1304,21 +1304,45 @@
                 return;
             }
 
-            const currentVotes = allData.votes[changeId] || {agree: [], disagree: []};
-
-            // Determine if we're removing or adding the vote
-            let newVoteType = voteType;
-
-            if (voteType === 'agree' && currentVotes.agree.includes(reviewerName)) {
-                // Remove agree vote
-                newVoteType = null;
-            } else if (voteType === 'disagree' && currentVotes.disagree.includes(reviewerName)) {
-                // Remove disagree vote
-                newVoteType = null;
+            // Initialize votes if needed
+            if (!allData.votes[changeId]) {
+                allData.votes[changeId] = {agree: [], disagree: []};
             }
 
-            // Save to Google Sheets
-            await saveVote(changeId, newVoteType);
+            const votes = allData.votes[changeId];
+            let newVoteType = voteType;
+
+            // Optimistic update - update UI immediately
+            if (voteType === 'agree') {
+                if (votes.agree.includes(reviewerName)) {
+                    // Remove agree vote
+                    votes.agree = votes.agree.filter(n => n !== reviewerName);
+                    newVoteType = null;
+                } else {
+                    // Add agree vote, remove disagree if present
+                    votes.agree.push(reviewerName);
+                    votes.disagree = votes.disagree.filter(n => n !== reviewerName);
+                }
+            } else {
+                if (votes.disagree.includes(reviewerName)) {
+                    // Remove disagree vote
+                    votes.disagree = votes.disagree.filter(n => n !== reviewerName);
+                    newVoteType = null;
+                } else {
+                    // Add disagree vote, remove agree if present
+                    votes.disagree.push(reviewerName);
+                    votes.agree = votes.agree.filter(n => n !== reviewerName);
+                }
+            }
+
+            // Update UI immediately
+            renderProfiles();
+
+            // Save to Google Sheets in background (don't await)
+            saveVote(changeId, newVoteType).catch(err => {
+                console.error('Failed to save vote:', err);
+                // Don't revert - auto-refresh will sync in 5 seconds
+            });
         }
 
         function openCommentPopup(id) {
@@ -1365,11 +1389,28 @@
                 return;
             }
 
-            // Save to Google Sheets
-            await saveCommentToSheets(currentCommentId, text);
+            // Optimistic update - add comment immediately
+            if (!allData.comments[currentCommentId]) {
+                allData.comments[currentCommentId] = [];
+            }
 
-            // Refresh popup to show new comment
-            openCommentPopup(currentCommentId);
+            const newComment = {
+                author: reviewerName,
+                text: text,
+                timestamp: new Date().toISOString()
+            };
+
+            allData.comments[currentCommentId].push(newComment);
+
+            // Update UI immediately
+            renderProfiles();
+            openCommentPopup(currentCommentId); // Refresh popup
+
+            // Save to Google Sheets in background (don't await)
+            saveCommentToSheets(currentCommentId, text).catch(err => {
+                console.error('Failed to save comment:', err);
+                // Don't revert - auto-refresh will sync in 5 seconds
+            });
         }
 
         window.addEventListener('DOMContentLoaded', init);
