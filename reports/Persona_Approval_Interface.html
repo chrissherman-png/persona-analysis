@@ -468,10 +468,11 @@
 
         /* Product Cards */
         .recommended-products {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
             margin-top: 10px;
+            width: 100%;
         }
 
         .product-card {
@@ -793,9 +794,12 @@
                     html += renderField('Authority Level', bb.authority_level, segment, personaName, 'buying_behavior.authority_level', changesMap);
                     html += renderField('Prefers', bb.prefers, segment, personaName, 'buying_behavior.prefers', changesMap);
 
-                    // Recommended Products Section
+                    html += `</div>`; // right column
+
+                    // Recommended Products Section - spans full width below columns
                     if (persona.recommended_products && persona.recommended_products.length > 0) {
-                        html += `<div class="section-header" style="margin-top: 20px;">🎯 Recommended Zendesk Products</div>`;
+                        html += `<div style="width: 100%; margin-top: 20px;">`;
+                        html += `<div class="section-header">🎯 Recommended Zendesk Products</div>`;
                         html += `<div class="recommended-products">`;
                         persona.recommended_products.forEach((product, idx) => {
                             const fieldKey = segment + '.' + personaName + '.recommended_products';
@@ -825,9 +829,8 @@
                             html += '</div>';
                         });
                         html += `</div>`; // recommended-products
+                        html += `</div>`; // full-width container
                     }
-
-                    html += `</div>`; // right column
 
                     html += `</div>`; // persona-content
                     html += `</div>`; // persona-card
