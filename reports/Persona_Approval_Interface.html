@@ -711,6 +711,80 @@
             return div.innerHTML;
         }
 
+        function getMessagingGuide(segment) {
+            const guides = {
+                'Digital': {
+                    dos: [
+                        '<strong>"Set up in 15 minutes"</strong> - Emphasize speed and simplicity',
+                        '<strong>"No IT team needed"</strong> - Highlight self-service capability',
+                        '<strong>"Automation"</strong> - Use instead of "AI" (less intimidating)',
+                        '<strong>"$X per month"</strong> - Show concrete, affordable pricing',
+                        '<strong>"Self-service"</strong> - Focus on independence and control'
+                    ],
+                    donts: [
+                        '<strong>"Enterprise-grade"</strong> - Sounds expensive and complex',
+                        '<strong>"Implementation timeline"</strong> - Use "setup time" instead',
+                        '<strong>"Dedicated CSM"</strong> - They don\'t expect this level of service',
+                        '<strong>"AI/Machine Learning"</strong> - Technical jargon that feels out of reach',
+                        '<strong>"ROI analysis"</strong> - Too formal; use "save money" or "save time"'
+                    ],
+                    keyInsight: 'Digital buyers (44% facing cost pressure) want simple language that emphasizes immediate value and ease of use. They\'re buying tools, not transformations.'
+                },
+                'SMB': {
+                    dos: [
+                        '<strong>"Automation"</strong> - More tangible than "AI" (your example!)',
+                        '<strong>"30% productivity gain"</strong> - Concrete, measurable outcomes',
+                        '<strong>"Scale without hiring"</strong> - Addresses growth constraints',
+                        '<strong>"Deflect 35% of tickets"</strong> - Specific efficiency metrics',
+                        '<strong>"Live in 2-4 weeks"</strong> - Fast enough, but realistic'
+                    ],
+                    donts: [
+                        '<strong>"AI-powered intelligence"</strong> - Too buzzwordy; say "smart automation"',
+                        '<strong>"Digital transformation"</strong> - Too big and scary',
+                        '<strong>"Strategic roadmap"</strong> - Use "plan" or "timeline"',
+                        '<strong>"Best-in-class"</strong> - Vague superlatives; use proof points',
+                        '<strong>"Ecosystem"</strong> - Say "integrations" or "connects to your tools"'
+                    ],
+                    keyInsight: 'SMB buyers (47% cost-pressured) respond to ROI-focused language. They want practical outcomes, not strategic visions. "Automation" resonates because it\'s concrete; "AI" feels abstract.'
+                },
+                'Commercial': {
+                    dos: [
+                        '<strong>"AI"</strong> - They\'re comfortable with technical terms',
+                        '<strong>"Enterprise-grade"</strong> - Signals capability and scale',
+                        '<strong>"40-60% automation rate"</strong> - Scaled impact metrics',
+                        '<strong>"Multi-tier SLAs"</strong> - Shows sophistication',
+                        '<strong>"Proven at 500+ agent deployments"</strong> - Scale validation'
+                    ],
+                    donts: [
+                        '<strong>"Quick setup"</strong> - Sounds too simple for their complexity',
+                        '<strong>"Easy to use"</strong> - They expect sophistication',
+                        '<strong>"Small business"</strong> - They\'re beyond this stage',
+                        '<strong>"Basic features"</strong> - Emphasize advanced capabilities',
+                        '<strong>"DIY"</strong> - They want professional implementation'
+                    ],
+                    keyInsight: 'Commercial buyers (62% cite integration needs) expect operational language. They\'re solving process problems at scale, not just adding tools.'
+                },
+                'Enterprise': {
+                    dos: [
+                        '<strong>"Strategic transformation"</strong> - Board-level language',
+                        '<strong>"SOC 2, ISO 27001, FedRAMP"</strong> - Compliance is critical',
+                        '<strong>"18-24 month ROI"</strong> - Realistic enterprise timelines',
+                        '<strong>"Fortune 500 scale"</strong> - Peer validation matters',
+                        '<strong>"Board-ready analytics"</strong> - Executive stakeholder language'
+                    ],
+                    donts: [
+                        '<strong>"Quick wins"</strong> - Too tactical; focus on strategic value',
+                        '<strong>"Easy setup"</strong> - Enterprise deployments are complex',
+                        '<strong>"Affordable"</strong> - Price isn\'t the primary concern; value is',
+                        '<strong>"Automation"</strong> - Say "AI" (they expect cutting-edge)',
+                        '<strong>"Support team"</strong> - Say "global CX organization" or "service delivery"'
+                    ],
+                    keyInsight: 'Enterprise buyers (40% cite integration complexity, 38% cost pressure) speak in strategic terms. They\'re justifying to boards and need governance, compliance, and transformation language.'
+                }
+            };
+            return guides[segment];
+        }
+
         function renderProfiles() {
             console.log('renderProfiles called');
             const container = document.getElementById('profilesContainer');
@@ -744,6 +818,45 @@
                 html += `<div class="segment-title">${segment} Segment Personas</div>`;
                 html += `<div class="segment-subtitle">Company Size: ${info.size}</div>`;
                 html += `</div>`;
+
+                // Add Messaging Guide
+                const messagingGuide = getMessagingGuide(segment);
+                if (messagingGuide) {
+                    html += `<div class="messaging-guide-card">`;
+                    html += `<div class="messaging-guide-title">💬 Messaging Dos & Don'ts for ${segment}</div>`;
+                    html += `<div class="messaging-guide-subtitle">Language that resonates (and doesn't) with ${segment} buyers</div>`;
+                    html += `<div class="messaging-guide-content">`;
+
+                    // DOs column
+                    html += `<div class="messaging-guide-column dos">`;
+                    html += `<div class="messaging-guide-column-title">✅ DO Use This Language</div>`;
+                    html += `<ul class="messaging-guide-list">`;
+                    messagingGuide.dos.forEach(item => {
+                        html += `<li>${item}</li>`;
+                    });
+                    html += `</ul>`;
+                    html += `</div>`;
+
+                    // DON'Ts column
+                    html += `<div class="messaging-guide-column donts">`;
+                    html += `<div class="messaging-guide-column-title">❌ DON'T Use This Language</div>`;
+                    html += `<ul class="messaging-guide-list">`;
+                    messagingGuide.donts.forEach(item => {
+                        html += `<li>${item}</li>`;
+                    });
+                    html += `</ul>`;
+                    html += `</div>`;
+
+                    html += `</div>`; // close messaging-guide-content
+
+                    // Key Insight
+                    html += `<div class="messaging-guide-insight">`;
+                    html += `<div class="messaging-guide-insight-title">💡 Key Insight</div>`;
+                    html += `<div class="messaging-guide-insight-text">${messagingGuide.keyInsight}</div>`;
+                    html += `</div>`;
+
+                    html += `</div>`; // close messaging-guide-card
+                }
 
                 Object.keys(PERSONAS_DATA[segment]).forEach(personaName => {
                     const persona = PERSONAS_DATA[segment][personaName];
