@@ -999,10 +999,11 @@
                     html += renderField('Prefers', bb.prefers, segment, personaName, 'buying_behavior.prefers', changesMap);
 
                     html += `</div>`; // right column
+                    html += `</div>`; // persona-content
 
-                    // Recommended Products Section - spans full width below columns
+                    // Recommended Products Section - spans full width below the 2-column layout
                     if (persona.recommended_products && persona.recommended_products.length > 0) {
-                        html += `<div style="width: 100%; margin-top: 20px;">`;
+                        html += `<div style="padding: 0 18px 18px 18px;">`;
                         html += `<div class="section-header">🎯 Recommended Zendesk Products</div>`;
                         html += `<div class="recommended-products">`;
                         persona.recommended_products.forEach((product, idx) => {
@@ -1033,10 +1034,9 @@
                             html += '</div>';
                         });
                         html += `</div>`; // recommended-products
-                        html += `</div>`; // full-width container
+                        html += `</div>`; // padding container
                     }
 
-                    html += `</div>`; // persona-content
                     html += `</div>`; // persona-card
                 });
 
