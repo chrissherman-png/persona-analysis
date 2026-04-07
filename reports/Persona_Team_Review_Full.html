@@ -1007,17 +1007,7 @@
                         html += `<div class="section-header">🎯 Recommended Zendesk Products</div>`;
                         html += `<div class="recommended-products">`;
                         persona.recommended_products.forEach((product, idx) => {
-                            const fieldKey = segment + '.' + personaName + '.recommended_products';
-                            const changes = changesMap[fieldKey] || [];
-                            const changeInfo = changes.length > 0 ? changes[0] : null;
-                            const changeClass = changeInfo ? ('change-indicator ' + changeInfo.type) : '';
-
-                            html += '<div class="product-card ' + changeClass + '" data-change-id="' + fieldKey + '">';
-                            if (changeInfo && idx === 0) {
-                                const icon = changeInfo.type === 'added' ? '🟢' :
-                                           changeInfo.type === 'modified' ? '🔵' : '🔴';
-                                html += '<span class="change-icon" title="' + changeInfo.type + '">' + icon + '</span>';
-                            }
+                            html += '<div class="product-card">';
                             html += '<div class="product-header">' +
                                 '<span class="product-name">' + escapeHtml(product.zendesk_name) + '</span>' +
                                 '<span class="relevance-badge relevance-' + product.relevance.toLowerCase() + '">' + escapeHtml(product.relevance) + '</span>' +
