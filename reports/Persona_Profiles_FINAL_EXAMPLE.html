@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Approved Buyer Personas - Zendesk</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 60px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 3px solid #03363d;
+            padding-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #03363d;
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .header .meta {
+            color: #5c7080;
+            font-size: 1.1em;
+            margin: 8px 0;
+        }
+
+        .header .badge {
+            display: inline-block;
+            background: #03a696;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .segment-header {
+            background: linear-gradient(135deg, #03363d 0%, #03a696 100%);
+            color: white;
+            padding: 25px 40px;
+            margin: 50px -60px 40px -60px;
+            border-radius: 0;
+        }
+
+        .segment-header h2 {
+            font-size: 2em;
+            margin-bottom: 8px;
+        }
+
+        .segment-header .size {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .persona-card {
+            margin-bottom: 60px;
+            border: 2px solid #e8ecf1;
+            border-radius: 12px;
+            padding: 40px;
+            background: #fafbfc;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .persona-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .persona-card h3 {
+            color: #03363d;
+            font-size: 2em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #03a696;
+        }
+
+        .section {
+            margin: 30px 0;
+        }
+
+        .section h4 {
+            color: #03363d;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h4:before {
+            content: "▸";
+            color: #03a696;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #03a696;
+        }
+
+        .profile-item {
+            padding: 10px;
+        }
+
+        .profile-item strong {
+            color: #03363d;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-item span {
+            color: #5c7080;
+            font-size: 1.05em;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 12px 20px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 6px;
+            border-left: 4px solid #03a696;
+            transition: all 0.2s;
+        }
+
+        li:hover {
+            background: #f0fffe;
+            border-left-color: #03363d;
+            transform: translateX(5px);
+        }
+
+        .buying-behavior {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid #e8ecf1;
+        }
+
+        .buying-behavior p {
+            margin: 12px 0;
+            padding: 10px;
+            background: #fafbfc;
+            border-radius: 4px;
+        }
+
+        .buying-behavior strong {
+            color: #03363d;
+            margin-right: 10px;
+        }
+
+        .divider {
+            margin: 50px 0;
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #e8ecf1, transparent);
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e8ecf1;
+            text-align: center;
+            color: #5c7080;
+            font-size: 0.9em;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .persona-card:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Buyer Persona Profiles</h1>
+            <div class="meta"><strong>Based on 78,333 Gong calls</strong></div>
+            <div class="meta">58,214 unique conversations analyzed</div>
+            <div class="meta">Last Updated: April 10, 2026</div>
+            <span class="badge">FINAL APPROVED VERSION</span>
+        </div>
+
+        <div class="segment-header">
+            <h2>DIGITAL SEGMENT</h2>
+            <div class="size">Company Size: 1-49 employees</div>
+        </div>
+
+        <div class="persona-card">
+            <h3>Customer Service Generalist</h3>
+
+            <div class="section">
+                <h4>Profile Overview</h4>
+                <div class="profile-grid">
+                    <div class="profile-item">
+                        <strong>Job Titles</strong>
+                        <span>Customer Success Manager, Office Manager, Operations Coordinator</span>
+                    </div>
+                    <div class="profile-item">
+                        <strong>Reports To</strong>
+                        <span>Founder/Owner</span>
+                    </div>
+                    <div class="profile-item">
+                        <strong>Team Size</strong>
+                        <span>Solo or with 1-2 others</span>
+                    </div>
+                    <div class="profile-item">
+                        <strong>Prevalence in Deals</strong>
+                        <span>45% of Digital deals</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h4>Goals & Priorities</h4>
+                <ul>
+                    <li>Reduce the amount of time on ticket that an agent has</li>
+                    <li>Inform the agent of what customers are reaching out about</li>
+                    <li>Communicate with customers from their phone, not just email</li>
+                    <li>Each agent needs their own account with proper permissions</li>
+                    <li>Able to tag tickets appropriately for routing and reporting</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Customer Service Challenges</h4>
+                <ul>
+                    <li>Lack of real reporting or metrics management to understand customer pain points</li>
+                    <li>Change management is overwhelmingly large to land in multiple places</li>
+                    <li>Resolution time improves when customers send videos showing issues firsthand</li>
+                    <li>Response time expectations for live chat are difficult to meet</li>
+                    <li>Biggest pain point is the volume of customer service messages coming in</li>
+                    <li>System issues are causing delays for customers</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>How They Evaluate Solutions</h4>
+                <ul>
+                    <li>Easy to use daily - not intimidating</li>
+                    <li>Handles email, chat, and social in one place</li>
+                    <li>Can create simple help articles</li>
+                    <li>Affordable on tight budget</li>
+                    <li>Quick to learn - ideally no training needed</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Common Objections</h4>
+                <ul>
+                    <li>Budget constraint - may need to stick with what we already have</li>
+                    <li>Skeptical about the budget and total cost</li>
+                    <li>Pricing concerns when it needs to be for all agents</li>
+                    <li>Uncertainty about change management burden</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Key Messages That Resonate</h4>
+                <ul>
+                    <li>All customer conversations in one inbox</li>
+                    <li>Built for small teams - dead simple to use</li>
+                    <li>Free help center builder included</li>
+                    <li>Get started in minutes, not hours</li>
+                    <li>AI capabilities as default, not premium feature</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Content Preferences</h4>
+                <ul>
+                    <li>Video walkthroughs</li>
+                    <li>Getting started checklist</li>
+                    <li>Templates for common responses</li>
+                    <li>Small business case studies</li>
+                    <li>Live onboarding help</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Success Metrics They Care About</h4>
+                <ul>
+                    <li>Response time</li>
+                    <li>Number of conversations handled</li>
+                    <li>Customer satisfaction ratings</li>
+                    <li>Time saved with canned responses</li>
+                    <li>Help center article views</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Buying Behavior</h4>
+                <div class="buying-behavior">
+                    <p><strong>Decision Speed:</strong> Recommends to founder (adds 1-2 weeks)</p>
+                    <p><strong>Committee Size:</strong> Needs founder approval</p>
+                    <p><strong>Authority Level:</strong> Low - influencer only</p>
+                    <p><strong>Prefers:</strong> Trial before pitching to founder</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="persona-card">
+            <h3>Founder/Owner</h3>
+
+            <div class="section">
+                <h4>Profile Overview</h4>
+                <div class="profile-grid">
+                    <div class="profile-item">
+                        <strong>Job Titles</strong>
+                        <span>Founder, CEO, Owner, Managing Director</span>
+                    </div>
+                    <div class="profile-item">
+                        <strong>Reports To</strong>
+                        <span>Self</span>
+                    </div>
+                    <div class="profile-item">
+                        <strong>Team Size</strong>
+                        <span>1-10 employees total</span>
+                    </div>
+                    <div class="profile-item">
+                        <strong>Prevalence in Deals</strong>
+                        <span>88% of Digital deals</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h4>Goals & Priorities</h4>
+                <ul>
+                    <li>Reduce the amount of time agents spend on each ticket</li>
+                    <li>Better inform agents about what customers are reaching out about</li>
+                    <li>Enable team to communicate with customers from their phones</li>
+                    <li>Streamline ticket creation and updates</li>
+                    <li>Support both direct deals and lead generation efficiently</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Customer Service Challenges</h4>
+                <ul>
+                    <li>Lack of real reporting to understand customer pain points</li>
+                    <li>Change management burden across multiple touchpoints</li>
+                    <li>Resolution time improvements needed</li>
+                    <li>System delays are causing customer friction</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>How They Evaluate Solutions</h4>
+                <ul>
+                    <li>All-in-one solution - no tool sprawl</li>
+                    <li>Transparent pricing with no surprises</li>
+                    <li>Can run the business while using it</li>
+                    <li>ROI visible within 30 days</li>
+                    <li>Doesn't require dedicated admin</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Common Objections</h4>
+                <ul>
+                    <li>Budget constraints - need to work with existing tools</li>
+                    <li>Skepticism about total cost and budget impact</li>
+                    <li>Concerns about pricing for entire team</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Key Messages That Resonate</h4>
+                <ul>
+                    <li>One tool for all customer conversations</li>
+                    <li>Fixed monthly cost - no per-agent surprises</li>
+                    <li>Free help center and knowledge base</li>
+                    <li>Set it and forget it - runs itself</li>
+                    <li>Join 10,000+ growing businesses</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Buying Behavior</h4>
+                <div class="buying-behavior">
+                    <p><strong>Decision Speed:</strong> Quick decision (1-2 weeks if sees value)</p>
+                    <p><strong>Committee Size:</strong> Solo decision</p>
+                    <p><strong>Authority Level:</strong> Ultimate - signs contract</p>
+                    <p><strong>Prefers:</strong> Trial with fast onboarding</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Generated by:</strong> Automated Persona Pipeline v2.0</p>
+            <p><strong>Data Sources:</strong> Gong Conversation Intelligence, Salesforce BCV</p>
+            <p><strong>Analysis Period:</strong> October 2025 - March 2026 (6 months)</p>
+        </div>
+    </div>
+</body>
+</html>
