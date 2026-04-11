@@ -28,28 +28,18 @@
 
 ### Goals & Priorities
 
-- They just want to be able to write a ticket, say or ticket update.
-- The goal is to reduce the amount of time on ticket that an agent has.
-- So so as the customer is reaching out, we want to be able to inform the agent of what they're reaching out about.
-- We want to be able to support the services on your direct deals, but also support the services on our lead deals coming into you guys.
-- I want to be able to communicate with our customers from their phone and not email.
-- They are of a type that is one or another and I want to be able to tag their tickets accordingly.
-- So the priority is each of our agents have their own account.
-- I think it would just be a case of identifying the features you want to achieve or the core inquiries.
+- Respond to customers quickly across email, chat, social
+- Keep founder happy by handling support independently
+- Track customer issues and spot patterns
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- There was also a lack of real reporting or metrics management, and true understanding of what our customer pain points were generally speaking.
-- The change management is just overwhelmingly large to try and land it in so many different places.
-- We find that the resolution time really improves when they send a video and we can see firsthand what the issue is.
-- I said that because I would not want them trying to live chat you that's a response time that is difficult to meet.
-- The problem is the efficiency gains.
-- So the biggest pain point is going to be the customer service level of messages coming in.
-- The big issue is that it's causing delays for customers.
-- Peoplelocks, would looking at peoplelocks you'd then be able to say maybe what the problem is and then pass that straight over to customer service.
+- Need omnichannel - customers reach out everywhere
+- Knowledge base gaps - no organized help content
+- No collaboration tools when teammates help
 
 ### How They Evaluate Solutions
 
@@ -65,12 +55,9 @@ Quick to learn - ideally no training needed
 
 ### Common Objections
 
-- Budget constraint, then we need to go with what we already have.
-- With them, yes, customer stories like public facing, I am not sure if they have a story.
-- You don't need to worry about the whole change management perspective there.
-- Yeah, it's got to be all agents, but the pricing I've seen like it when it's that we don't need it for everybody.
-- We are a little skeptical about the budget.
-- My only concern is strictly about like budget.
+- "Will the founder approve the cost?"
+- "Looks too complicated for our small team"
+- "We already use email, why change?"
 
 ### Key Messages That Resonate
 
@@ -78,8 +65,7 @@ Quick to learn - ideally no training needed
 - Built for small teams - dead simple to use
 - Free help center builder included
 - Get started in minutes, not hours
-- Buyers expect AI capabilities as default, not premium feature
-- Self-service setup and pre-built templates are critical
+- Live chat support to help you succeed
 
 ### Content Preferences
 
@@ -126,28 +112,18 @@ Quick to learn - ideally no training needed
 
 ### Goals & Priorities
 
-- They just want to be able to write a ticket, say or ticket update.
-- The goal is to reduce the amount of time on ticket that an agent has.
-- So so as the customer is reaching out, we want to be able to inform the agent of what they're reaching out about.
-- We want to be able to support the services on your direct deals, but also support the services on our lead deals coming into you guys.
-- I want to be able to communicate with our customers from their phone and not email.
-- They are of a type that is one or another and I want to be able to tag their tickets accordingly.
-- So the priority is each of our agents have their own account.
-- I think it would just be a case of identifying the features you want to achieve or the core inquiries.
+- Get support tools running quickly with zero IT help
+- Keep costs low - every dollar counts
+- Deliver professional customer service despite small team
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- There was also a lack of real reporting or metrics management, and true understanding of what our customer pain points were generally speaking.
-- The change management is just overwhelmingly large to try and land it in so many different places.
-- We find that the resolution time really improves when they send a video and we can see firsthand what the issue is.
-- I said that because I would not want them trying to live chat you that's a response time that is difficult to meet.
-- The problem is the efficiency gains.
-- So the biggest pain point is going to be the customer service level of messages coming in.
-- The big issue is that it's causing delays for customers.
-- Peoplelocks, would looking at peoplelocks you'd then be able to say maybe what the problem is and then pass that straight over to customer service.
+- Price sensitivity - need startup/small business pricing
+- Self-service implementation required - no IT department
+- Mobile-first needs - managing support on the go
 
 ### How They Evaluate Solutions
 
@@ -163,12 +139,9 @@ Free trial to test before buying
 
 ### Common Objections
 
-- Budget constraint, then we need to go with what we already have.
-- With them, yes, customer stories like public facing, I am not sure if they have a story.
-- You don't need to worry about the whole change management perspective there.
-- Yeah, it's got to be all agents, but the pricing I've seen like it when it's that we don't need it for everybody.
-- We are a little skeptical about the budget.
-- My only concern is strictly about like budget.
+- "This is too expensive for our size"
+- "Looks complicated - don't have time to learn"
+- "Do I really need this or can I just use email?"
 
 ### Key Messages That Resonate
 
@@ -176,8 +149,7 @@ Free trial to test before buying
 - Setup in 15 minutes - no technical skills required
 - Mobile app lets you support customers anywhere
 - Start free, pay as you grow
-- Buyers expect AI capabilities as default, not premium feature
-- Self-service setup and pre-built templates are critical
+- Thousands of solo founders trust us
 
 ### Content Preferences
 
@@ -231,28 +203,18 @@ Free trial to test before buying
 
 ### Goals & Priorities
 
-- They just want to be able to write a ticket, say or ticket update.
-- The second objective is to provide a customizable branded customer portal for your customers.
-- So if there's people who want to be able to just see this data on a regular basis.
-- I think there's something we do need to improve on is closing comments and how we've solved a ticket.
-- The whole goal is to make sure that we don't have to bring in any new agents to lean more heavily on.
-- Ideally, we'd want to be able to track everything through the one channel rather than have everybody being able, to log into the different platforms.
-- Ultimately, the goal is to replace both platforms.
-- Cause like they don't have anything at the moment and they want to be able to pull reports across multiple different organizations.
+- Enable company growth without proportional headcount increases
+- Improve customer satisfaction and retention
+- Operational efficiency - do more with less
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- There was also a lack of real reporting or metrics management, and true understanding of what our customer pain points were generally speaking.
-- Peoplelocks, would looking at peoplelocks you'd then be able to say maybe what the problem is and then pass that straight over to customer service.
-- They're looking to replace the challenge is that they have a contract running until June 27 with puzzle and that the business is like a hyper growth.
-- The big issue is that it's causing delays for customers.
-- We find that the resolution time really improves when they send a video and we can see firsthand what the issue is.
-- I think it's about understanding exactly what the pain points are and what's best suited.
-- It also for me, it becomes a little bit overwhelming because at the back of our mind there are also other features that we're thinking that.
-- The change management is just overwhelmingly large to try and land it in so many different places.
+- Scaling challenges - can't keep hiring agents to handle volume
+- Lack of automation - too much manual work
+- Poor customer experience hurting brand reputation
 
 ### How They Evaluate Solutions
 
@@ -268,12 +230,9 @@ Vendor stability - is this company going to be around?
 
 ### Common Objections
 
-- Not sure if we need it all, but we could at least support you on that.
-- A lot of organizations are hesitant to go that route to say like we don't have a chat function right now.
-- Not sure if it's working by now or we're still going through those issues.
-- I, already have this approved in the budget.
-- With them, yes, customer stories like public facing, I am not sure if they have a story.
-- Well, right now, we don't have a budget approved for that because it was too expensive.
+- "How do I know this will actually improve our metrics?"
+- "What if implementation goes wrong and our support grinds to a halt?"
+- "Can we really afford this in this economy?"
 
 ### Key Messages That Resonate
 
@@ -281,8 +240,7 @@ Vendor stability - is this company going to be around?
 - Predictable pricing - no surprise costs as you scale
 - Fast implementation = minimal business disruption
 - Proven ROI: customers see 30% productivity gains in 90 days
-- Buyers expect AI capabilities as default, not premium feature
-- Self-service setup and pre-built templates are critical
+- Modern platform - won't need to replace again in 3 years
 
 ### Content Preferences
 
@@ -329,28 +287,18 @@ Vendor stability - is this company going to be around?
 
 ### Goals & Priorities
 
-- They just want to be able to write a ticket, say or ticket update.
-- The second objective is to provide a customizable branded customer portal for your customers.
-- So if there's people who want to be able to just see this data on a regular basis.
-- I think there's something we do need to improve on is closing comments and how we've solved a ticket.
-- The whole goal is to make sure that we don't have to bring in any new agents to lean more heavily on.
-- Ideally, we'd want to be able to track everything through the one channel rather than have everybody being able, to log into the different platforms.
-- Ultimately, the goal is to replace both platforms.
-- Cause like they don't have anything at the moment and they want to be able to pull reports across multiple different organizations.
+- Reduce agent handle time and improve productivity
+- Meet or exceed SLA targets (1-4 hour first response)
+- Improve CSAT/NPS scores
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- There was also a lack of real reporting or metrics management, and true understanding of what our customer pain points were generally speaking.
-- Peoplelocks, would looking at peoplelocks you'd then be able to say maybe what the problem is and then pass that straight over to customer service.
-- They're looking to replace the challenge is that they have a contract running until June 27 with puzzle and that the business is like a hyper growth.
-- The big issue is that it's causing delays for customers.
-- We find that the resolution time really improves when they send a video and we can see firsthand what the issue is.
-- I think it's about understanding exactly what the pain points are and what's best suited.
-- It also for me, it becomes a little bit overwhelming because at the back of our mind there are also other features that we're thinking that.
-- The change management is just overwhelmingly large to try and land it in so many different places.
+- Integration gaps - switching between Zendesk, CRM, and 3+ other tools
+- Incomplete help center - lacking self-service articles
+- No AI/automation - manually routing and responding to every ticket
 
 ### How They Evaluate Solutions
 
@@ -366,12 +314,9 @@ Responsive support during onboarding
 
 ### Common Objections
 
-- Not sure if we need it all, but we could at least support you on that.
-- A lot of organizations are hesitant to go that route to say like we don't have a chat function right now.
-- Not sure if it's working by now or we're still going through those issues.
-- I, already have this approved in the budget.
-- With them, yes, customer stories like public facing, I am not sure if they have a story.
-- Well, right now, we don't have a budget approved for that because it was too expensive.
+- "We don't have time for a long implementation"
+- "Our agents are already learning too many new tools"
+- "We tried AI before and it gave wrong answers to customers"
 
 ### Key Messages That Resonate
 
@@ -379,8 +324,8 @@ Responsive support during onboarding
 - Agents love it - 4.5★ ease of use rating
 - Agent productivity up 30% in first 90 days (via automation)
 - Self-service deflects 30-40% of tickets automatically
-- Buyers expect AI capabilities as default, not premium feature
-- Self-service setup and pre-built templates are critical
+- Real-time dashboards replace Excel reporting
+- 95% AI accuracy rate with built-in safeguards and human oversight
 
 ### Content Preferences
 
@@ -427,28 +372,18 @@ Responsive support during onboarding
 
 ### Goals & Priorities
 
-- They just want to be able to write a ticket, say or ticket update.
-- The second objective is to provide a customizable branded customer portal for your customers.
-- So if there's people who want to be able to just see this data on a regular basis.
-- I think there's something we do need to improve on is closing comments and how we've solved a ticket.
-- The whole goal is to make sure that we don't have to bring in any new agents to lean more heavily on.
-- Ideally, we'd want to be able to track everything through the one channel rather than have everybody being able, to log into the different platforms.
-- Ultimately, the goal is to replace both platforms.
-- Cause like they don't have anything at the moment and they want to be able to pull reports across multiple different organizations.
+- Control costs and maintain budget discipline
+- Ensure ROI on technology investments
+- Predictable, manageable cash flow
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- There was also a lack of real reporting or metrics management, and true understanding of what our customer pain points were generally speaking.
-- Peoplelocks, would looking at peoplelocks you'd then be able to say maybe what the problem is and then pass that straight over to customer service.
-- They're looking to replace the challenge is that they have a contract running until June 27 with puzzle and that the business is like a hyper growth.
-- The big issue is that it's causing delays for customers.
-- We find that the resolution time really improves when they send a video and we can see firsthand what the issue is.
-- I think it's about understanding exactly what the pain points are and what's best suited.
-- It also for me, it becomes a little bit overwhelming because at the back of our mind there are also other features that we're thinking that.
-- The change management is just overwhelmingly large to try and land it in so many different places.
+- Economic sensitivity - longer approval cycles, more scrutiny
+- Preference for monthly/quarterly payment terms (cash flow)
+- ROI justification requirements increasing
 
 ### How They Evaluate Solutions
 
@@ -464,12 +399,9 @@ Price predictability as we scale
 
 ### Common Objections
 
-- Not sure if we need it all, but we could at least support you on that.
-- A lot of organizations are hesitant to go that route to say like we don't have a chat function right now.
-- Not sure if it's working by now or we're still going through those issues.
-- I, already have this approved in the budget.
-- With them, yes, customer stories like public facing, I am not sure if they have a story.
-- Well, right now, we don't have a budget approved for that because it was too expensive.
+- "Can we really afford this right now?"
+- "What's the payback period?"
+- "Why is this better than just hiring another agent?"
 
 ### Key Messages That Resonate
 
@@ -477,8 +409,7 @@ Price predictability as we scale
 - Flexible payment terms available
 - Predictable per-agent pricing - no surprise fees
 - Cheaper than hiring: one agent salary = 10+ licenses
-- Buyers expect AI capabilities as default, not premium feature
-- Self-service setup and pre-built templates are critical
+- Vendor consolidation - replace 3 tools with one
 
 ### Content Preferences
 
@@ -525,28 +456,18 @@ Price predictability as we scale
 
 ### Goals & Priorities
 
-- They just want to be able to write a ticket, say or ticket update.
-- The second objective is to provide a customizable branded customer portal for your customers.
-- So if there's people who want to be able to just see this data on a regular basis.
-- I think there's something we do need to improve on is closing comments and how we've solved a ticket.
-- The whole goal is to make sure that we don't have to bring in any new agents to lean more heavily on.
-- Ideally, we'd want to be able to track everything through the one channel rather than have everybody being able, to log into the different platforms.
-- Ultimately, the goal is to replace both platforms.
-- Cause like they don't have anything at the moment and they want to be able to pull reports across multiple different organizations.
+- Ensure security and compliance (SOC 2, data encryption)
+- Minimize IT support burden - want tools that "just work"
+- Protect existing infrastructure investments
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- There was also a lack of real reporting or metrics management, and true understanding of what our customer pain points were generally speaking.
-- Peoplelocks, would looking at peoplelocks you'd then be able to say maybe what the problem is and then pass that straight over to customer service.
-- They're looking to replace the challenge is that they have a contract running until June 27 with puzzle and that the business is like a hyper growth.
-- The big issue is that it's causing delays for customers.
-- We find that the resolution time really improves when they send a video and we can see firsthand what the issue is.
-- I think it's about understanding exactly what the pain points are and what's best suited.
-- It also for me, it becomes a little bit overwhelming because at the back of our mind there are also other features that we're thinking that.
-- The change management is just overwhelmingly large to try and land it in so many different places.
+- Security concerns even in SMB (SOC 2, encryption, SSO)
+- Integration requirements - need to connect to existing stack
+- Limited IT resources - can't support complex implementations
 
 ### How They Evaluate Solutions
 
@@ -562,12 +483,9 @@ IT support load - how much will this require from our team?
 
 ### Common Objections
 
-- Not sure if we need it all, but we could at least support you on that.
-- A lot of organizations are hesitant to go that route to say like we don't have a chat function right now.
-- Not sure if it's working by now or we're still going through those issues.
-- I, already have this approved in the budget.
-- With them, yes, customer stories like public facing, I am not sure if they have a story.
-- Well, right now, we don't have a budget approved for that because it was too expensive.
+- "Does this meet our security requirements?"
+- "How much custom development will we need?"
+- "What happens if the integration breaks?"
 
 ### Key Messages That Resonate
 
@@ -575,8 +493,7 @@ IT support load - how much will this require from our team?
 - Zero IT burden - cloud-hosted, auto-updates, 99.9% uptime
 - Pre-built integrations with 1000+ tools
 - Robust APIs for custom workflows
-- Buyers expect AI capabilities as default, not premium feature
-- Self-service setup and pre-built templates are critical
+- Dedicated security documentation for audits
 
 ### Content Preferences
 
@@ -623,28 +540,18 @@ IT support load - how much will this require from our team?
 
 ### Goals & Priorities
 
-- They just want to be able to write a ticket, say or ticket update.
-- The second objective is to provide a customizable branded customer portal for your customers.
-- So if there's people who want to be able to just see this data on a regular basis.
-- I think there's something we do need to improve on is closing comments and how we've solved a ticket.
-- The whole goal is to make sure that we don't have to bring in any new agents to lean more heavily on.
-- Ideally, we'd want to be able to track everything through the one channel rather than have everybody being able, to log into the different platforms.
-- Ultimately, the goal is to replace both platforms.
-- Cause like they don't have anything at the moment and they want to be able to pull reports across multiple different organizations.
+- Optimize agent scheduling and capacity planning
+- Improve quality assurance and coaching
+- Reduce operational costs
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- There was also a lack of real reporting or metrics management, and true understanding of what our customer pain points were generally speaking.
-- Peoplelocks, would looking at peoplelocks you'd then be able to say maybe what the problem is and then pass that straight over to customer service.
-- They're looking to replace the challenge is that they have a contract running until June 27 with puzzle and that the business is like a hyper growth.
-- The big issue is that it's causing delays for customers.
-- We find that the resolution time really improves when they send a video and we can see firsthand what the issue is.
-- I think it's about understanding exactly what the pain points are and what's best suited.
-- It also for me, it becomes a little bit overwhelming because at the back of our mind there are also other features that we're thinking that.
-- The change management is just overwhelmingly large to try and land it in so many different places.
+- Workforce management gaps - scheduling, forecasting
+- Quality assurance limitations - can't review at scale
+- Reporting fragmented across multiple tools
 
 ### How They Evaluate Solutions
 
@@ -660,12 +567,9 @@ Process automation capabilities
 
 ### Common Objections
 
-- Not sure if we need it all, but we could at least support you on that.
-- A lot of organizations are hesitant to go that route to say like we don't have a chat function right now.
-- Not sure if it's working by now or we're still going through those issues.
-- I, already have this approved in the budget.
-- With them, yes, customer stories like public facing, I am not sure if they have a story.
-- Well, right now, we don't have a budget approved for that because it was too expensive.
+- "We already have WFM tools - will this integrate?"
+- "Can this handle our QA workflows?"
+- "Is the reporting customizable enough?"
 
 ### Key Messages That Resonate
 
@@ -673,8 +577,7 @@ Process automation capabilities
 - Integrates with WFM platforms (Calabrio, Verint, etc.)
 - Real-time operational dashboards
 - Agent performance analytics and coaching tools
-- Buyers expect AI capabilities as default, not premium feature
-- Self-service setup and pre-built templates are critical
+- Workflow automation to eliminate manual processes
 
 ### Content Preferences
 
@@ -727,28 +630,18 @@ Process automation capabilities
 
 ### Goals & Priorities
 
-- We want to be able to have a fully succinct database.
-- Redk has a tag a, either business rules then kick in to say if ticket has tag a, then a priority is urgent and SLA is 30 minutes for example.
-- So what we want to be able to do is we want to be able to say show a couple of these journeys plus those integrations where possible.
-- We do through a quality system called insure, but we also want to be able to track that from like a voice of the customer.
-- It's more intuitive when everybody's goal or the standard goal is like 80 percent of interactions could be done with that with the advanced AI agent.
-- We would want to be able to pull some logic into the ticket.
-- Its goal is to get to resolution.
-- So of course, if it's something you would permit, we can sit and meet the customer to know what their goals are, what they want to achieve.
+- Platform consolidation - reduce vendor count
+- Improve customer retention and LTV
+- Enable profitable growth
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- I think it's about understanding exactly what the pain points are and what's best suited.
-- We like an overwhelming amount of what we, of what we deal with from customers is warranty claims on their product.
-- I understand how frustrating delays can be to help streamline the process.
-- The only problem is he hasn't had his growth spurt yet.
-- So this will show you that this time is currently untracked, which means they're not working on any tickets.
-- I was grabbing a beer and there was this couple that were like, they kept, the problem is they just kept getting delays and delays.
-- I mean, before you're dealing with tons of unnecessary fields and a lot of performance issues and lack of visibility into what was truly urgent.
-- Like if I want to create a new SLA, I can, if I just want to get insight into what's working, what's not working with the business.
+- Platform vs. point solution debate - prefer vendor consolidation
+- Strategic investment - need 3-5 year vision
+- Risk mitigation - big migrations are high stakes
 
 ### How They Evaluate Solutions
 
@@ -764,12 +657,9 @@ Executive sponsorship and support from vendor
 
 ### Common Objections
 
-- We are hesitant to rely on launch dates when we've been waiting on side conversation reporting for four or five years.
-- It's not like we already have an equivalent sales force or intercom, or an existing cost base that's allocated there in our budgets.
-- So the thing is not on the budget Bharat, the thing is our own internal systems are not ready.
-- Not sure if that's of interest, but obviously you have that feature as well.
-- So, like for an agent, like they don't need to worry about any of the administrator side.
-- I know my boss is hesitant to sign on to any of the AI tools we've been talking about until stripe is further along to be honest with you.
+- "Why not just keep what we have?"
+- "What's the business case for this level of investment?"
+- "What if this impacts customer experience during transition?"
 
 ### Key Messages That Resonate
 
@@ -777,8 +667,7 @@ Executive sponsorship and support from vendor
 - Proven at your scale - 1000+ mid-market customers
 - AI-first roadmap - built for next 5 years
 - Risk mitigation - phased rollout, rollback plans
-- Buyers expect AI capabilities as default, not premium feature
-- Need ROI justification and vendor risk docs upfront
+- Executive sponsorship - dedicated CSM and EBC support
 
 ### Content Preferences
 
@@ -825,28 +714,18 @@ Executive sponsorship and support from vendor
 
 ### Goals & Priorities
 
-- We want to be able to have a fully succinct database.
-- Redk has a tag a, either business rules then kick in to say if ticket has tag a, then a priority is urgent and SLA is 30 minutes for example.
-- So what we want to be able to do is we want to be able to say show a couple of these journeys plus those integrations where possible.
-- We do through a quality system called insure, but we also want to be able to track that from like a voice of the customer.
-- It's more intuitive when everybody's goal or the standard goal is like 80 percent of interactions could be done with that with the advanced AI agent.
-- We would want to be able to pull some logic into the ticket.
-- Its goal is to get to resolution.
-- So of course, if it's something you would permit, we can sit and meet the customer to know what their goals are, what they want to achieve.
+- Scale support operations across regions/brands
+- Drive 55-60% ticket deflection through self-service + AI
+- Improve CSAT while reducing cost-per-ticket
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- I think it's about understanding exactly what the pain points are and what's best suited.
-- We like an overwhelming amount of what we, of what we deal with from customers is warranty claims on their product.
-- I understand how frustrating delays can be to help streamline the process.
-- The only problem is he hasn't had his growth spurt yet.
-- So this will show you that this time is currently untracked, which means they're not working on any tickets.
-- I was grabbing a beer and there was this couple that were like, they kept, the problem is they just kept getting delays and delays.
-- I mean, before you're dealing with tons of unnecessary fields and a lot of performance issues and lack of visibility into what was truly urgent.
-- Like if I want to create a new SLA, I can, if I just want to get insight into what's working, what's not working with the business.
+- Integration complexity - custom dispatch systems, multi-client data
+- Self-service culture shift - not just tools, behavioral change
+- Reporting gaps - need custom dashboards for executives
 
 ### How They Evaluate Solutions
 
@@ -862,12 +741,9 @@ Change management support during rollout
 
 ### Common Objections
 
-- We are hesitant to rely on launch dates when we've been waiting on side conversation reporting for four or five years.
-- It's not like we already have an equivalent sales force or intercom, or an existing cost base that's allocated there in our budgets.
-- So the thing is not on the budget Bharat, the thing is our own internal systems are not ready.
-- Not sure if that's of interest, but obviously you have that feature as well.
-- So, like for an agent, like they don't need to worry about any of the administrator side.
-- I know my boss is hesitant to sign on to any of the AI tools we've been talking about until stripe is further along to be honest with you.
+- "We have too many custom requirements"
+- "Our team is already overwhelmed - can't handle a big migration"
+- "How long will implementation really take?"
 
 ### Key Messages That Resonate
 
@@ -875,8 +751,7 @@ Change management support during rollout
 - Change management included - dedicated team to ensure adoption
 - Phased rollout - start with one team, expand when ready
 - Agent-loved - 4.6★ rating, faster than legacy tools
-- Buyers expect AI capabilities as default, not premium feature
-- Need ROI justification and vendor risk docs upfront
+- Proven at scale - customers with 500+ agents
 
 ### Content Preferences
 
@@ -923,28 +798,18 @@ Change management support during rollout
 
 ### Goals & Priorities
 
-- We want to be able to have a fully succinct database.
-- Redk has a tag a, either business rules then kick in to say if ticket has tag a, then a priority is urgent and SLA is 30 minutes for example.
-- So what we want to be able to do is we want to be able to say show a couple of these journeys plus those integrations where possible.
-- We do through a quality system called insure, but we also want to be able to track that from like a voice of the customer.
-- It's more intuitive when everybody's goal or the standard goal is like 80 percent of interactions could be done with that with the advanced AI agent.
-- We would want to be able to pull some logic into the ticket.
-- Its goal is to get to resolution.
-- So of course, if it's something you would permit, we can sit and meet the customer to know what their goals are, what they want to achieve.
+- Negotiate favorable contract terms
+- Ensure compliance with procurement policies
+- Vendor risk management and due diligence
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- I think it's about understanding exactly what the pain points are and what's best suited.
-- We like an overwhelming amount of what we, of what we deal with from customers is warranty claims on their product.
-- I understand how frustrating delays can be to help streamline the process.
-- The only problem is he hasn't had his growth spurt yet.
-- So this will show you that this time is currently untracked, which means they're not working on any tickets.
-- I was grabbing a beer and there was this couple that were like, they kept, the problem is they just kept getting delays and delays.
-- I mean, before you're dealing with tons of unnecessary fields and a lot of performance issues and lack of visibility into what was truly urgent.
-- Like if I want to create a new SLA, I can, if I just want to get insight into what's working, what's not working with the business.
+- Procurement appearing 40% earlier - at demo stage, not just negotiation
+- Formal RFP/RFI processes - need structured responses
+- Vendor risk assessment requirements
 
 ### How They Evaluate Solutions
 
@@ -960,12 +825,9 @@ Reference checks from procurement peers
 
 ### Common Objections
 
-- We are hesitant to rely on launch dates when we've been waiting on side conversation reporting for four or five years.
-- It's not like we already have an equivalent sales force or intercom, or an existing cost base that's allocated there in our budgets.
-- So the thing is not on the budget Bharat, the thing is our own internal systems are not ready.
-- Not sure if that's of interest, but obviously you have that feature as well.
-- So, like for an agent, like they don't need to worry about any of the administrator side.
-- I know my boss is hesitant to sign on to any of the AI tools we've been talking about until stripe is further along to be honest with you.
+- "Your pricing doesn't fit our budget model"
+- "We need more favorable contract terms"
+- "How do we know you'll be around in 5 years?"
 
 ### Key Messages That Resonate
 
@@ -973,8 +835,7 @@ Reference checks from procurement peers
 - Flexible contract terms available for enterprises
 - Financially stable - [funding status, customer count]
 - TCO advantage - replace 3 tools, reduce implementation costs
-- Buyers expect AI capabilities as default, not premium feature
-- Need ROI justification and vendor risk docs upfront
+- Procurement-ready - RFP templates, vendor risk docs, references
 
 ### Content Preferences
 
@@ -1021,28 +882,18 @@ Reference checks from procurement peers
 
 ### Goals & Priorities
 
-- We want to be able to have a fully succinct database.
-- Redk has a tag a, either business rules then kick in to say if ticket has tag a, then a priority is urgent and SLA is 30 minutes for example.
-- So what we want to be able to do is we want to be able to say show a couple of these journeys plus those integrations where possible.
-- We do through a quality system called insure, but we also want to be able to track that from like a voice of the customer.
-- It's more intuitive when everybody's goal or the standard goal is like 80 percent of interactions could be done with that with the advanced AI agent.
-- We would want to be able to pull some logic into the ticket.
-- Its goal is to get to resolution.
-- So of course, if it's something you would permit, we can sit and meet the customer to know what their goals are, what they want to achieve.
+- Ensure enterprise-grade security and compliance
+- Manage integrations and API strategy
+- Minimize technical debt and shadow IT
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- I think it's about understanding exactly what the pain points are and what's best suited.
-- We like an overwhelming amount of what we, of what we deal with from customers is warranty claims on their product.
-- I understand how frustrating delays can be to help streamline the process.
-- The only problem is he hasn't had his growth spurt yet.
-- So this will show you that this time is currently untracked, which means they're not working on any tickets.
-- I was grabbing a beer and there was this couple that were like, they kept, the problem is they just kept getting delays and delays.
-- I mean, before you're dealing with tons of unnecessary fields and a lot of performance issues and lack of visibility into what was truly urgent.
-- Like if I want to create a new SLA, I can, if I just want to get insight into what's working, what's not working with the business.
+- AI governance scrutiny - how is AI trained? Where is data stored?
+- Data residency requirements (EU, APAC)
+- Enterprise integration complexity
 
 ### How They Evaluate Solutions
 
@@ -1058,12 +909,9 @@ AI transparency - how models work, what data they use
 
 ### Common Objections
 
-- We are hesitant to rely on launch dates when we've been waiting on side conversation reporting for four or five years.
-- It's not like we already have an equivalent sales force or intercom, or an existing cost base that's allocated there in our budgets.
-- So the thing is not on the budget Bharat, the thing is our own internal systems are not ready.
-- Not sure if that's of interest, but obviously you have that feature as well.
-- So, like for an agent, like they don't need to worry about any of the administrator side.
-- I know my boss is hesitant to sign on to any of the AI tools we've been talking about until stripe is further along to be honest with you.
+- "How do you ensure AI doesn't expose sensitive customer data?"
+- "Can you meet our data residency requirements?"
+- "What happens if your API changes and breaks our integrations?"
 
 ### Key Messages That Resonate
 
@@ -1071,8 +919,7 @@ AI transparency - how models work, what data they use
 - AI governance - transparent models, customer data isolation, audit trails
 - Enterprise APIs - RESTful, 99.9% uptime SLA, versioned
 - Data residency options - EU, APAC, US regions
-- Buyers expect AI capabilities as default, not premium feature
-- Need ROI justification and vendor risk docs upfront
+- Dedicated security documentation for your audit
 
 ### Content Preferences
 
@@ -1119,28 +966,18 @@ AI transparency - how models work, what data they use
 
 ### Goals & Priorities
 
-- We want to be able to have a fully succinct database.
-- Redk has a tag a, either business rules then kick in to say if ticket has tag a, then a priority is urgent and SLA is 30 minutes for example.
-- So what we want to be able to do is we want to be able to say show a couple of these journeys plus those integrations where possible.
-- We do through a quality system called insure, but we also want to be able to track that from like a voice of the customer.
-- It's more intuitive when everybody's goal or the standard goal is like 80 percent of interactions could be done with that with the advanced AI agent.
-- We would want to be able to pull some logic into the ticket.
-- Its goal is to get to resolution.
-- So of course, if it's something you would permit, we can sit and meet the customer to know what their goals are, what they want to achieve.
+- Optimize workforce management and capacity planning
+- Scale QA from <1% to 100% of interactions (AI-powered)
+- Improve operational efficiency and reduce waste
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- I think it's about understanding exactly what the pain points are and what's best suited.
-- We like an overwhelming amount of what we, of what we deal with from customers is warranty claims on their product.
-- I understand how frustrating delays can be to help streamline the process.
-- The only problem is he hasn't had his growth spurt yet.
-- So this will show you that this time is currently untracked, which means they're not working on any tickets.
-- I was grabbing a beer and there was this couple that were like, they kept, the problem is they just kept getting delays and delays.
-- I mean, before you're dealing with tons of unnecessary fields and a lot of performance issues and lack of visibility into what was truly urgent.
-- Like if I want to create a new SLA, I can, if I just want to get insight into what's working, what's not working with the business.
+- WFM integration requirements - need to connect to existing tools
+- Quality assurance at scale - AI needed
+- Real-time operational dashboards
 
 ### How They Evaluate Solutions
 
@@ -1156,12 +993,9 @@ Customizable reporting for different stakeholders
 
 ### Common Objections
 
-- We are hesitant to rely on launch dates when we've been waiting on side conversation reporting for four or five years.
-- It's not like we already have an equivalent sales force or intercom, or an existing cost base that's allocated there in our budgets.
-- So the thing is not on the budget Bharat, the thing is our own internal systems are not ready.
-- Not sure if that's of interest, but obviously you have that feature as well.
-- So, like for an agent, like they don't need to worry about any of the administrator side.
-- I know my boss is hesitant to sign on to any of the AI tools we've been talking about until stripe is further along to be honest with you.
+- "Will this integrate with our WFM platform?"
+- "Can your AI QA handle our complex quality rubrics?"
+- "Is reporting flexible enough for our needs?"
 
 ### Key Messages That Resonate
 
@@ -1169,8 +1003,7 @@ Customizable reporting for different stakeholders
 - WFM integrations - Verint, Calabrio, NICE, custom APIs
 - Real-time ops center - visibility into all teams
 - Agent coaching tools - turn QA insights into performance gains
-- Buyers expect AI capabilities as default, not premium feature
-- Need ROI justification and vendor risk docs upfront
+- Proven ROI - 15-20% efficiency gains from better WFM
 
 ### Content Preferences
 
@@ -1223,28 +1056,18 @@ Customizable reporting for different stakeholders
 
 ### Goals & Priorities
 
-- The goal is to ensure that when you get a ticket, you're the expert in each of the products that you are supporting.
-- Now, our goal is not to become an orchestration solution that will power a ServiceNow ticketing system.
-- It's like my goal is automation as much automation as we can create like that's the end goal as well.
-- My goal is to have the AI agents fully set up before Wednesday morning so that we can run through some tests on those.
-- As I mentioned to the broader team and the ae, we are aiming to go big on avis.
-- We're happy either way guys, the goal is to support you Patryk and Ewa.
-- We want to hear all of this stuff because we want to be able to help you solve the problem.
-- Our priority is to deliver an AI driven customer interface and back end.
+- Transform customer experience into competitive advantage
+- Reduce cost-to-serve while improving NPS by 15+ points
+- Consolidate fragmented CX tech stack (8-15 tools)
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- Main problem is tracking of this, you know, problems.
-- Every other customer service team is either automated press this, it's a, I tell me what your problem is.
-- The change management is just overwhelmingly large to try and land it in so many different places.
-- I said that because I would not want them trying to live chat you that's a response time that is difficult to meet.
-- The problem with basecamp is it's incredibly overwhelming.
-- The problem is largely, how do we solve for the scale of operations without hampering the customer experience exactly.
-- I think there is a lack of particularly on the customer service side first call resolution.
-- Generally, we get a bug report from administrators and it's because they can't see something or they're facing an issue with a student.
+- Multi-year digital transformation roadmaps
+- Global rollout complexity - 5+ regions, compliance requirements
+- Change management at scale - 100s of agents to train
 
 ### How They Evaluate Solutions
 
@@ -1260,12 +1083,9 @@ Change management & consulting services included
 
 ### Common Objections
 
-- Certainly I would budget probably two weeks for development testing and then some change management if you already have chat agents… questions there.
-- We don't need to worry about the auto based resolution resolutions for now… and we'll pull together some of the evidence sounds.
-- However as you may already know rich, you already have in the suite, a certain amount of automated resolutions per agent per month.
-- So the thing is not on the budget Bharat, the thing is our own internal systems are not ready.
-- Team, not sure if you have any other topics aside from the ones that we covered yesterday.
-- You don't need to worry about support user fields, support email organizations… we may or may not deal with ticket fields.
+- "We've already invested millions in our current platform"
+- "Too risky to migrate 500+ agents"
+- "Our business is too complex for out-of-box solutions"
 
 ### Key Messages That Resonate
 
@@ -1273,8 +1093,7 @@ Change management & consulting services included
 - Migration de-risked - dedicated team, proven methodology
 - 18-24 month ROI with 25-30% efficiency gains
 - White-glove change management included
-- Buyers expect AI capabilities as default, not premium feature
-- Need ROI justification and vendor risk docs upfront
+- Reference customers: [major enterprise names]
 
 ### Content Preferences
 
@@ -1321,28 +1140,18 @@ Change management & consulting services included
 
 ### Goals & Priorities
 
-- The goal is to ensure that when you get a ticket, you're the expert in each of the products that you are supporting.
-- Now, our goal is not to become an orchestration solution that will power a ServiceNow ticketing system.
-- It's like my goal is automation as much automation as we can create like that's the end goal as well.
-- My goal is to have the AI agents fully set up before Wednesday morning so that we can run through some tests on those.
-- As I mentioned to the broader team and the ae, we are aiming to go big on avis.
-- We're happy either way guys, the goal is to support you Patryk and Ewa.
-- We want to hear all of this stuff because we want to be able to help you solve the problem.
-- Our priority is to deliver an AI driven customer interface and back end.
+- Ensure enterprise architecture alignment and standards
+- Reduce technical debt and platform sprawl
+- Maintain security, compliance, and governance
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- Main problem is tracking of this, you know, problems.
-- Every other customer service team is either automated press this, it's a, I tell me what your problem is.
-- The change management is just overwhelmingly large to try and land it in so many different places.
-- I said that because I would not want them trying to live chat you that's a response time that is difficult to meet.
-- The problem with basecamp is it's incredibly overwhelming.
-- The problem is largely, how do we solve for the scale of operations without hampering the customer experience exactly.
-- I think there is a lack of particularly on the customer service side first call resolution.
-- Generally, we get a bug report from administrators and it's because they can't see something or they're facing an issue with a student.
+- Enterprise integration requirements - SSO, SCIM, APIs, webhooks
+- Security and compliance - SOC 2, ISO, HIPAA, GDPR, FedRAMP
+- Disaster recovery and business continuity planning
 
 ### How They Evaluate Solutions
 
@@ -1358,12 +1167,9 @@ Professional services team for complex implementations
 
 ### Common Objections
 
-- Certainly I would budget probably two weeks for development testing and then some change management if you already have chat agents… questions there.
-- We don't need to worry about the auto based resolution resolutions for now… and we'll pull together some of the evidence sounds.
-- However as you may already know rich, you already have in the suite, a certain amount of automated resolutions per agent per month.
-- So the thing is not on the budget Bharat, the thing is our own internal systems are not ready.
-- Team, not sure if you have any other topics aside from the ones that we covered yesterday.
-- You don't need to worry about support user fields, support email organizations… we may or may not deal with ticket fields.
+- "Does this meet our enterprise security standards?"
+- "How will this integrate with our SAP/Oracle/ServiceNow environment?"
+- "What's the total cost of implementation and maintenance?"
 
 ### Key Messages That Resonate
 
@@ -1371,8 +1177,7 @@ Professional services team for complex implementations
 - Pre-built enterprise integrations - SAP, Oracle, ServiceNow
 - 99.99% uptime SLA with enterprise support
 - Global data residency options (US, EU, APAC)
-- Buyers expect AI capabilities as default, not premium feature
-- Need ROI justification and vendor risk docs upfront
+- Dedicated solutions architect for implementation
 
 ### Content Preferences
 
@@ -1419,28 +1224,18 @@ Professional services team for complex implementations
 
 ### Goals & Priorities
 
-- The goal is to ensure that when you get a ticket, you're the expert in each of the products that you are supporting.
-- Now, our goal is not to become an orchestration solution that will power a ServiceNow ticketing system.
-- It's like my goal is automation as much automation as we can create like that's the end goal as well.
-- My goal is to have the AI agents fully set up before Wednesday morning so that we can run through some tests on those.
-- As I mentioned to the broader team and the ae, we are aiming to go big on avis.
-- We're happy either way guys, the goal is to support you Patryk and Ewa.
-- We want to hear all of this stuff because we want to be able to help you solve the problem.
-- Our priority is to deliver an AI driven customer interface and back end.
+- Optimize global workforce across time zones and regions
+- Drive operational excellence - 95%+ SLA compliance
+- Reduce operational costs by 20-30%
 
 ### Pain Points
 
 
 ### Customer Service Challenges (from Gong data)
 
-- Main problem is tracking of this, you know, problems.
-- Every other customer service team is either automated press this, it's a, I tell me what your problem is.
-- The change management is just overwhelmingly large to try and land it in so many different places.
-- I said that because I would not want them trying to live chat you that's a response time that is difficult to meet.
-- The problem with basecamp is it's incredibly overwhelming.
-- The problem is largely, how do we solve for the scale of operations without hampering the customer experience exactly.
-- I think there is a lack of particularly on the customer service side first call resolution.
-- Generally, we get a bug report from administrators and it's because they can't see something or they're facing an issue with a student.
+- Advanced workforce management - AI forecasting, skills-based routing
+- Quality management at scale - automated QA, coaching workflows
+- Global process standardization across regions
 
 ### How They Evaluate Solutions
 
@@ -1456,12 +1251,9 @@ Proven ROI from similar-sized deployments
 
 ### Common Objections
 
-- Certainly I would budget probably two weeks for development testing and then some change management if you already have chat agents… questions there.
-- We don't need to worry about the auto based resolution resolutions for now… and we'll pull together some of the evidence sounds.
-- However as you may already know rich, you already have in the suite, a certain amount of automated resolutions per agent per month.
-- So the thing is not on the budget Bharat, the thing is our own internal systems are not ready.
-- Team, not sure if you have any other topics aside from the ones that we covered yesterday.
-- You don't need to worry about support user fields, support email organizations… we may or may not deal with ticket fields.
+- "Our operations are too complex for standard solutions"
+- "Will this work across our 12 global sites?"
+- "How long until we see efficiency gains?"
 
 ### Key Messages That Resonate
 
@@ -1469,8 +1261,7 @@ Proven ROI from similar-sized deployments
 - AI-powered quality management - review 100% of interactions
 - Global deployment proven - 20+ languages, all time zones
 - 25-30% efficiency gains within 12 months
-- Buyers expect AI capabilities as default, not premium feature
-- Need ROI justification and vendor risk docs upfront
+- Phased rollout to minimize disruption
 
 ### Content Preferences
 

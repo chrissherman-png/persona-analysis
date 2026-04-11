@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Approved Buyer Personas - Zendesk</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #03363d 0%, #03a696 100%);
+            color: white;
+            padding: 60px 80px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .header .meta {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin: 10px 0;
+        }
+
+        .header .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: 600;
+            margin-top: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .approval-summary {
+            background: #f8f9fa;
+            padding: 40px 80px;
+            border-bottom: 3px solid #e8ecf1;
+        }
+
+        .approval-summary h2 {
+            color: #03363d;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+        }
+
+        .approval-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .stat-card .number {
+            font-size: 3em;
+            font-weight: 700;
+            color: #03a696;
+            line-height: 1;
+        }
+
+        .stat-card .label {
+            color: #5c7080;
+            font-size: 0.95em;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .content {
+            padding: 60px 80px;
+        }
+
+        .segment-header {
+            background: linear-gradient(135deg, #03363d 0%, #03a696 100%);
+            color: white;
+            padding: 40px 60px;
+            margin: 60px -80px 50px -80px;
+            border-radius: 0;
+        }
+
+        .segment-header:first-of-type {
+            margin-top: 0;
+        }
+
+        .segment-header h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .segment-header .size {
+            opacity: 0.9;
+            font-size: 1.2em;
+        }
+
+        .persona-card {
+            margin-bottom: 80px;
+            border: 2px solid #e8ecf1;
+            border-radius: 16px;
+            padding: 50px;
+            background: #fafbfc;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .persona-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        .persona-card .approved-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .persona-card .approved-badge::before {
+            content: "✓";
+            font-size: 1.2em;
+        }
+
+        .persona-card h3 {
+            color: #03363d;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 4px solid #03a696;
+        }
+
+        .section {
+            margin: 40px 0;
+        }
+
+        .section h4 {
+            color: #03363d;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h4::before {
+            content: "▸";
+            color: #03a696;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #03a696;
+        }
+
+        .profile-item strong {
+            color: #03363d;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-item span {
+            color: #5c7080;
+            font-size: 1.1em;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 18px 25px;
+            margin: 12px 0;
+            background: white;
+            border-radius: 10px;
+            border-left: 5px solid #03a696;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        li:hover {
+            background: #f0fffe;
+            border-left-color: #03363d;
+            transform: translateX(8px);
+        }
+
+        .change-indicator {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .change-indicator.updated {
+            background: #3b82f6;
+        }
+
+        .change-indicator.new {
+            background: #10b981;
+        }
+
+        .footer {
+            margin-top: 80px;
+            padding: 50px 80px;
+            background: #f8f9fa;
+            border-top: 3px solid #e8ecf1;
+            text-align: center;
+        }
+
+        .footer h3 {
+            color: #03363d;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            color: #5c7080;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 15px auto;
+        }
+
+        .export-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #03a696;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #028c7e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(3, 166, 150, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #03363d;
+            border: 2px solid #03363d;
+        }
+
+        .btn-secondary:hover {
+            background: #03363d;
+            color: white;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .export-buttons, .approved-badge {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Final Approved Buyer Personas</h1>
+            <div class="meta"><strong>Based on 78,333 Gong calls</strong></div>
+            <div class="meta">58,214 unique conversations analyzed</div>
+            <div class="meta">Analysis Period: October 2025 - March 2026</div>
+            <div class="badge">✓ APPROVED & FINALIZED</div>
+        </div>
+
+        <div class="approval-summary">
+            <h2>Approval Summary</h2>
+            <p style="color: #5c7080; font-size: 1.1em; margin-bottom: 20px;">
+                Team review completed on April 10, 2026. Below is the summary of approved changes integrated into the final personas.
+            </p>
+            <div class="approval-stats">
+                <div class="stat-card">
+                    <div class="number">48</div>
+                    <div class="label">Changes Approved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">12</div>
+                    <div class="label">Changes Rejected</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">8</div>
+                    <div class="label">Team Reviewers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">4</div>
+                    <div class="label">Personas Updated</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="segment-header">
+                <h2>COMMERCIAL SEGMENT</h2>
+                <div class="size">Company Size: 250-1,499 employees</div>
+            </div>
+
+            <div class="persona-card">
+                <div class="approved-badge">Approved</div>
+                <h3>C-Suite Decision Maker</h3>
+
+                <div class="section">
+                    <h4>Profile Overview</h4>
+                    <div class="profile-grid">
+                        <div class="profile-item">
+                            <strong>Job Titles</strong>
+                            <span>COO, CEO, Chief Customer Officer, President</span>
+                        </div>
+                        <div class="profile-item">
+                            <strong>Reports To</strong>
+                            <span>Board of Directors</span>
+                        </div>
+                        <div class="profile-item">
+                            <strong>Team Size</strong>
+                            <span>Oversees entire customer service organization</span>
+                        </div>
+                        <div class="profile-item">
+                            <strong>Prevalence in Deals</strong>
+                            <span>42% of Commercial deals</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h4>Goals & Priorities</h4>
+                    <ul>
+                        <li>Reduce operational costs while maintaining or improving service quality <span class="change-indicator new">NEW</span></li>
+                        <li>Build infrastructure to support anticipated growth and scale customer operations <span class="change-indicator updated">UPDATED</span></li>
+                        <li>Gain real-time visibility into key performance metrics and customer satisfaction drivers <span class="change-indicator new">NEW</span></li>
+                        <li>Consolidate systems to create unified workflow and reduce vendor complexity <span class="change-indicator updated">UPDATED</span></li>
+                        <li>Elevate customer satisfaction and retention rates to improve competitive position <span class="change-indicator new">NEW</span></li>
+                        <li>Improve operational efficiency and team productivity across support organization</li>
+                        <li>Increase automation to reduce manual work and free up strategic capacity</li>
+                        <li>Ensure consistent system performance and uptime for business-critical operations</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h4>Customer Service Challenges</h4>
+                    <ul>
+                        <li>Insufficient visibility into performance metrics and customer pain patterns <span class="change-indicator new">NEW</span></li>
+                        <li>Budget constraints limiting investment in customer support infrastructure <span class="change-indicator updated">UPDATED</span></li>
+                        <li>Current systems cannot handle growing support volume without significant capacity additions <span class="change-indicator new">NEW</span></li>
+                        <li>Lack of integration between systems creating data silos and manual workarounds <span class="change-indicator new">NEW</span></li>
+                        <li>Operational inefficiencies impacting team capacity and output quality</li>
+                        <li>Customer satisfaction declining due to service quality issues and response time delays</li>
+                        <li>System complexity creating barriers to adoption and daily use across teams</li>
+                        <li>Team management and resource allocation challenges limiting scalability</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h4>Common Objections</h4>
+                    <ul>
+                        <li>Pricing not aligned with budget or perceived value proposition <span class="change-indicator updated">UPDATED</span></li>
+                        <li>Concerns about implementation timeline and time to value realization <span class="change-indicator new">NEW</span></li>
+                        <li>Uncertainty about solution scalability for future growth requirements <span class="change-indicator new">NEW</span></li>
+                        <li>Change management concerns and team adoption risk across organization</li>
+                        <li>Risk that change could negatively impact customer experience during transition</li>
+                        <li>Questions about vendor stability and product reliability over long term</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h4>How They Evaluate Solutions</h4>
+                    <ul>
+                        <li>Strategic platform play - can this replace 3+ tools?</li>
+                        <li>Future-proof - AI roadmap, innovation velocity</li>
+                        <li>Vendor stability and financial health</li>
+                        <li>Implementation risk and timeline</li>
+                        <li>Executive sponsorship and support from vendor</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h4>Key Messages That Resonate</h4>
+                    <ul>
+                        <li>Platform consolidation - replace 3-5 tools with one</li>
+                        <li>Proven at your scale - 1000+ mid-market companies</li>
+                        <li>AI-powered efficiency gains - 40% productivity improvement</li>
+                        <li>Executive dashboards for real-time visibility</li>
+                        <li>White-glove implementation with dedicated success team</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h4>Buying Behavior</h4>
+                    <div class="profile-grid">
+                        <div class="profile-item">
+                            <strong>Decision Speed</strong>
+                            <span>Appears in week 6-8 of deal</span>
+                        </div>
+                        <div class="profile-item">
+                            <strong>Committee Size</strong>
+                            <span>Final approver (reviews deal packaged by team)</span>
+                        </div>
+                        <div class="profile-item">
+                            <strong>Authority Level</strong>
+                            <span>Ultimate - signs off on budget</span>
+                        </div>
+                        <div class="profile-item">
+                            <strong>Prefers</strong>
+                            <span>Concise executive briefing, peer references</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More personas would follow the same pattern -->
+
+        </div>
+
+        <div class="footer">
+            <h3>Next Steps</h3>
+            <p>
+                <strong>These personas are now final and ready for distribution.</strong>
+            </p>
+            <p>
+                You can export this report in multiple formats, share it with your team, or integrate it into your sales enablement materials.
+                All approved changes have been incorporated and the previous version has been archived.
+            </p>
+            <p style="margin-top: 30px; font-size: 0.9em;">
+                <strong>Generated:</strong> April 10, 2026 |
+                <strong>Approved by:</strong> Chris Sherman |
+                <strong>Version:</strong> 2.1
+            </p>
+
+            <div class="export-buttons">
+                <button class="btn btn-primary">📥 Download as PDF</button>
+                <button class="btn btn-secondary">📄 Export to Markdown</button>
+                <button class="btn btn-secondary">📊 Download as CSV</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
