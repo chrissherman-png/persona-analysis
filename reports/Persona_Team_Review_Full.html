@@ -1384,6 +1384,13 @@
 
         function renderProfiles() {
             const container = document.getElementById('profilesContainer');
+
+            // Safety check: ensure PERSONAS_DATA has the correct structure
+            if (!PERSONAS_DATA || !PERSONAS_DATA.segments) {
+                container.innerHTML = '<div style="padding: 40px; text-align: center; color: #999;">No persona data available</div>';
+                return;
+            }
+
             const changesMap = {};
 
             // Create changes lookup
@@ -1477,7 +1484,12 @@
                     html += `</div>`; // close competitive-intel-card
                 }
 
-                Object.keys(PERSONAS_DATA.segments[segment].personas || {}).forEach(personaName => {
+                // Skip if segment doesn't exist or has no personas
+                if (!PERSONAS_DATA.segments[segment] || !PERSONAS_DATA.segments[segment].personas) {
+                    return;
+                }
+
+                Object.keys(PERSONAS_DATA.segments[segment].personas).forEach(personaName => {
                     const persona = PERSONAS_DATA.segments[segment].personas[personaName];
                     html += `<div class="persona-card">`;
                     html += `<div class="persona-title">${personaName}</div>`;
@@ -1750,7 +1762,10 @@
             });
 
             // Show selected tab
-            document.getElementById(`tab-${segment}`).classList.add('active');
+            const tabElement = document.getElementById(`tab-${segment}`);
+            if (tabElement) {
+                tabElement.classList.add('active');
+            }
             event.currentTarget.classList.add('active');
 
             // Scroll to top
