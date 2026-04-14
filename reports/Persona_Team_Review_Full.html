@@ -1503,41 +1503,27 @@
                     // SECTION 2: Pain Points (max 5)
                     html += `<div class="section-header">😓 Pain Points</div>`;
                     const painThemes = persona.pain_themes || [];
-                    const painPoints = painThemes.slice(0, 5).map(t => typeof t === 'string' ? t : t.text);
+                    const painPoints = painThemes.slice(0, 5).map(t => typeof t === 'string' ? t : t.theme);
                     html += renderList(painPoints, segment, personaName, 'pain_themes', changesMap);
 
                     // SECTION 3: Goals (max 5)
                     html += `<div class="section-header">🎯 Goals</div>`;
                     const goalThemes = persona.goal_themes || [];
-                    const goals = goalThemes.slice(0, 5).map(t => typeof t === 'string' ? t : t.text);
+                    const goals = goalThemes.slice(0, 5).map(t => typeof t === 'string' ? t : t.theme);
                     html += renderList(goals, segment, personaName, 'goal_themes', changesMap);
 
                     // SECTION 4: Objections (max 5)
                     html += `<div class="section-header">⚠️ Objections</div>`;
                     const objectionThemes = persona.objection_themes || [];
-                    const objections = objectionThemes.slice(0, 5).map(t => typeof t === 'string' ? t : t.text);
+                    const objections = objectionThemes.slice(0, 5).map(t => typeof t === 'string' ? t : t.theme);
                     html += renderList(objections, segment, personaName, 'objection_themes', changesMap);
 
                     // SECTION 5: Trigger Events - REMOVED (insufficient quality signal)
 
-                    // SECTION 5.5: Key Messages to Land (NEW)
-                    const keyMessages = persona.key_messages || [];
-                    if (keyMessages.length > 0) {
-                        html += `<div class="section-header">✉️ Key Messages to Land</div>`;
-                        html += `<div style="font-size: 0.9em; color: #666; font-style: italic; margin-bottom: 15px;">
-                            Positioning angles validated against what this persona responds to in market conversations.
-                        </div>`;
-                        html += `<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">`;
-                        keyMessages.forEach(msg => {
-                            html += `<li style="margin-bottom: 15px;">${msg}</li>`;
-                        });
-                        html += `</ul>`;
-                    }
-
-                    // SECTION 6: Success Metrics (max 5) - extract text from enhanced format
+                    // SECTION 6: Success Metrics (max 5) - extract theme from theme objects
                     html += `<div class="section-header">📊 Success Metrics</div>`;
                     const successMetricThemes = persona.success_metric_themes || [];
-                    const successMetrics = successMetricThemes.slice(0, 5).map(item => typeof item === 'string' ? item : item.text);
+                    const successMetrics = successMetricThemes.slice(0, 5).map(item => typeof item === 'string' ? item : item.theme);
                     html += renderList(successMetrics, segment, personaName, 'success_metric_themes', changesMap);
 
                     html += `</div>`; // close left persona-column
@@ -1545,17 +1531,17 @@
                     // Right Column
                     html += `<div class="persona-column">`;
 
-                    // SECTION 7: Product Requirements (max 5) - extract text from enhanced format
+                    // SECTION 7: Product Requirements (max 5) - extract theme from theme objects
                     const productRequirementThemes = persona.product_requirement_themes || [];
                     if (productRequirementThemes.length > 0) {
                         html += `<div class="section-header">✅ Product Requirements</div>`;
-                        const productRequirements = productRequirementThemes.slice(0, 5).map(item => typeof item === 'string' ? item : item.text);
+                        const productRequirements = productRequirementThemes.slice(0, 5).map(item => typeof item === 'string' ? item : item.theme);
                         html += renderList(productRequirements, segment, personaName, 'product_requirement_themes', changesMap);
                     }
 
                     // SECTION 8: Information Sources - RETIRED (insufficient signal in Gong data)
                     html += `<div class="section-header">📚 Information Sources</div>`;
-                    html += `<div class="static-placeholder" style="padding: 15px; margin: 10px 0; background-color: #fff3cd; border-left: 4px solid #ffc107; color: #856404;">
+                    html += `<div class="static-placeholder" style="padding: 15px; margin: 10px 0; background-color: #fff3cd; border-left: 4px solid #ffc107; color: #856404; font-size: 14px;">
                         <strong>⚠️ Insufficient signal in Gong call data.</strong><br><br>
                         Customers rarely volunteer information about their research process during discovery or demo calls.
                         To understand where this persona researches solutions, consider:<br>
@@ -1568,20 +1554,37 @@
 
                     // SECTION 9: Messaging Preferences - RETIRED (insufficient signal in Gong data)
                     html += `<div class="section-header">💬 Messaging Preferences</div>`;
-                    html += `<div class="static-placeholder" style="padding: 15px; margin: 10px 0; background-color: #fff3cd; border-left: 4px solid #ffc107; color: #856404;">
+                    html += `<div class="static-placeholder" style="padding: 15px; margin: 10px 0; background-color: #fff3cd; border-left: 4px solid #ffc107; color: #856404; font-size: 14px;">
                         <strong>⚠️ Insufficient signal in Gong call data.</strong><br><br>
                         Customers rarely express communication preferences unprompted. To understand how this persona
                         prefers to receive information, consider:<br>
                         <ul style="margin: 10px 0; padding-left: 20px;">
                             <li>Asking directly in discovery: "What's the most useful thing I could send you after this call?"</li>
                             <li>Sales team surveys on what content resonates</li>
-                            <li>A/B testing different follow-up formats</li>
+                            <li>A/B testing different follow-up format</li>
                         </ul>
                     </div>`;
 
                     // SECTION 10: Verbatim Quotes - REMOVED (minimal yield, 0.01 per call)
 
                     html += `</div>`; // close right persona-column
+
+                    // SECTION 11: Key Messages to Land (NEW) - Full width at bottom
+                    const keyMessages = persona.key_messages || [];
+                    if (keyMessages.length > 0) {
+                        html += `<div style="grid-column: 1 / -1; margin-top: 20px;">`;
+                        html += `<div class="section-header">✉️ Key Messages to Land</div>`;
+                        html += `<div style="font-size: 14px; color: #666; font-style: italic; margin-bottom: 15px;">
+                            Positioning angles validated against what this persona responds to in market conversations.
+                        </div>`;
+                        html += `<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.6; font-size: 14px;">`;
+                        keyMessages.forEach(msg => {
+                            html += `<li style="margin-bottom: 12px;">${msg}</li>`;
+                        });
+                        html += `</ul>`;
+                        html += `</div>`;
+                    }
+
                     html += `</div>`; // persona-content
                     html += `</div>`; // persona-card
                 });
