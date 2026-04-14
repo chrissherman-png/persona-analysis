@@ -1513,20 +1513,6 @@
 
                     // SECTION 5: Trigger Events - REMOVED (insufficient quality signal)
 
-                    // SECTION 5.5: Key Messages to Land (NEW)
-                    const keyMessages = persona.key_messages || [];
-                    if (keyMessages.length > 0) {
-                        html += `<div class="section-header">✉️ Key Messages to Land</div>`;
-                        html += `<div style="font-size: 0.9em; color: #666; font-style: italic; margin-bottom: 15px;">
-                            Positioning angles validated against what this persona responds to in market conversations.
-                        </div>`;
-                        html += `<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">`;
-                        keyMessages.forEach(msg => {
-                            html += `<li style="margin-bottom: 15px;">${msg}</li>`;
-                        });
-                        html += `</ul>`;
-                    }
-
                     // SECTION 6: Success Metrics (max 5) - extract text from enhanced format
                     html += `<div class="section-header">📊 Success Metrics</div>`;
                     const successMetricsRaw = (persona.success_metrics_enhanced || persona.success_metrics || []).slice(0, 5);
@@ -1575,6 +1561,23 @@
                     // SECTION 10: Verbatim Quotes - REMOVED (minimal yield, 0.01 per call)
 
                     html += `</div>`; // close right persona-column
+
+                    // SECTION 11: Key Messages to Land (bottom, spanning both columns)
+                    const keyMessages = persona.key_messages || [];
+                    if (keyMessages.length > 0) {
+                        html += `<div style="grid-column: 1 / -1; margin-top: 20px;">`;
+                        html += `<div class="section-header">✉️ Key Messages to Land</div>`;
+                        html += `<div style="font-size: 14px; color: #666; font-style: italic; margin-bottom: 15px;">
+                            Positioning angles validated against what this persona responds to in market conversations.
+                        </div>`;
+                        html += `<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8; font-size: 14px;">`;
+                        keyMessages.forEach(msg => {
+                            html += `<li style="margin-bottom: 15px;">${msg}</li>`;
+                        });
+                        html += `</ul>`;
+                        html += `</div>`; // close full-width wrapper
+                    }
+
                     html += `</div>`; // persona-content
                     html += `</div>`; // persona-card
                 });
