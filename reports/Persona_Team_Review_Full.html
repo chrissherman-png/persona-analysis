@@ -1477,8 +1477,8 @@
                     html += `</div>`; // close competitive-intel-card
                 }
 
-                Object.keys(PERSONAS_DATA[segment]).forEach(personaName => {
-                    const persona = PERSONAS_DATA[segment][personaName];
+                Object.keys(PERSONAS_DATA.segments[segment].personas || {}).forEach(personaName => {
+                    const persona = PERSONAS_DATA.segments[segment].personas[personaName];
                     html += `<div class="persona-card">`;
                     html += `<div class="persona-title">${personaName}</div>`;
                     html += `<div class="persona-content">`;
@@ -2081,7 +2081,9 @@
             // If itemIndex is provided but itemContent is not, look it up from PERSONAS_DATA
             if (itemIndex !== null && itemContent === null) {
                 try {
-                    const personaData = PERSONAS_DATA[segment][persona];
+                    const personaData = PERSONAS_DATA.segments && PERSONAS_DATA.segments[segment] && PERSONAS_DATA.segments[segment].personas
+                        ? PERSONAS_DATA.segments[segment].personas[persona]
+                        : null;
                     if (personaData && personaData[field] && Array.isArray(personaData[field])) {
                         itemContent = personaData[field][itemIndex];
                     }
