@@ -1,0 +1,194 @@
+{
+  "Digital": {
+    "Founder/Owner": {
+      "job_titles": [
+        "Founder",
+        "CEO",
+        "Owner",
+        "Managing Director"
+      ],
+      "reports_to": "Self",
+      "team_size": "1-10 employees total",
+      "prevalence": "88% of Digital deals",
+      "role_in_deal": "Sole Decision Maker"
+    },
+    "Customer Service Generalist": {
+      "job_titles": [
+        "Customer Success Manager",
+        "Office Manager",
+        "Operations Coordinator",
+        "Customer Service Rep"
+      ],
+      "reports_to": "Founder/Owner",
+      "team_size": "Handles support solo or with 1-2 others",
+      "prevalence": "45% of Digital deals",
+      "role_in_deal": "User/Influencer (recommends to founder)"
+    }
+  },
+  "SMB": {
+    "CX Champion": {
+      "job_titles": [
+        "VP Customer Service",
+        "Director of Customer Support",
+        "Head of Customer Experience",
+        "Customer Service Manager",
+        "Support Manager"
+      ],
+      "reports_to": "COO or CEO",
+      "team_size": "5-25 agents",
+      "prevalence": "98% of SMB deals",
+      "role_in_deal": "Primary Champion & Decision Driver"
+    },
+    "C-Suite Decision Maker": {
+      "job_titles": [
+        "CEO",
+        "COO",
+        "President",
+        "Founder"
+      ],
+      "reports_to": "Board or self (Owner)",
+      "team_size": "Entire company (50-249 employees)",
+      "prevalence": "68% of SMB deals",
+      "role_in_deal": "Budget Holder & Final Approver"
+    },
+    "IT Influencer": {
+      "job_titles": [
+        "IT Manager",
+        "Head of IT",
+        "Director of IT",
+        "Systems Administrator"
+      ],
+      "reports_to": "COO, CEO, or CTO",
+      "team_size": "1-5 IT staff",
+      "prevalence": "30% of SMB deals",
+      "role_in_deal": "Advisor & Validator (not blocker)"
+    },
+    "Finance/Procurement Gatekeeper": {
+      "job_titles": [
+        "CFO",
+        "Finance Director",
+        "Controller",
+        "VP Finance"
+      ],
+      "reports_to": "CEO or Board",
+      "team_size": "Finance team (2-10 people)",
+      "prevalence": "42% of SMB deals",
+      "role_in_deal": "Budget Approver"
+    },
+    "Operations Leader": {
+      "job_titles": [
+        "Operations Manager",
+        "Service Delivery Manager",
+        "Director of Operations"
+      ],
+      "reports_to": "COO or CX Champion",
+      "team_size": "Oversees support ops + WFM",
+      "prevalence": "22% of SMB deals",
+      "role_in_deal": "Influencer (when present)"
+    }
+  },
+  "Commercial": {
+    "CX Champion": {
+      "job_titles": [
+        "VP Customer Service",
+        "VP Customer Experience",
+        "Director of Customer Support",
+        "Head of Global Support",
+        "Senior Director CX"
+      ],
+      "reports_to": "COO, Chief Customer Officer, or CEO",
+      "team_size": "25-100 agents (often multi-region)",
+      "prevalence": "92% of Commercial deals",
+      "role_in_deal": "Primary Champion (but needs coalition)"
+    },
+    "C-Suite Decision Maker": {
+      "job_titles": [
+        "COO",
+        "CEO",
+        "Chief Customer Officer",
+        "President"
+      ],
+      "reports_to": "Board",
+      "team_size": "Entire company (250-1,499 employees)",
+      "prevalence": "54% of Commercial deals",
+      "role_in_deal": "Budget Holder (appears late in process)"
+    },
+    "IT Influencer": {
+      "job_titles": [
+        "VP IT",
+        "Director of IT",
+        "Head of Information Security",
+        "IT Manager",
+        "CISO"
+      ],
+      "reports_to": "CTO, COO, or CEO",
+      "team_size": "5-25 IT staff",
+      "prevalence": "85% of Commercial deals",
+      "role_in_deal": "Co-Champion & Validator (critical path)"
+    },
+    "Finance/Procurement Gatekeeper": {
+      "job_titles": [
+        "CFO",
+        "VP Finance",
+        "Procurement Director",
+        "Vendor Management",
+        "Director of Procurement"
+      ],
+      "reports_to": "CEO or Board",
+      "team_size": "Finance/procurement team",
+      "prevalence": "58% of Commercial deals",
+      "role_in_deal": "Gatekeeper (appears at demo stage, not just contracting)"
+    },
+    "Operations Leader": {
+      "job_titles": [
+        "Director of Service Operations",
+        "VP Operations",
+        "Workforce Management Manager",
+        "Quality Assurance Director",
+        "Service Delivery Manager"
+      ],
+      "reports_to": "COO or CX Champion",
+      "team_size": "Oversees ops, WFM, QA teams",
+      "prevalence": "45% of Commercial deals (EMERGING)",
+      "role_in_deal": "Key Influencer (growing importance)"
+    }
+  },
+  "Enterprise": {
+    "CX Executive": {
+      "job_titles": [
+        "SVP Customer Experience",
+        "Chief Customer Officer",
+        "VP Global Customer Support",
+        "Head of Customer Success & Support"
+      ],
+      "reports_to": "CEO or President",
+      "team_size": "100-500+ agents across multiple regions",
+      "prevalence": "95% of Enterprise deals",
+      "role_in_deal": "Executive Sponsor & Final Approver"
+    },
+    "Enterprise IT Architect": {
+      "job_titles": [
+        "Enterprise Architect",
+        "VP Technology",
+        "Chief Information Officer",
+        "Director Enterprise Applications"
+      ],
+      "reports_to": "CIO or CTO",
+      "team_size": "IT department of 50-200+",
+      "prevalence": "85% of Enterprise deals",
+      "role_in_deal": "Technical Approver & Gatekeeper"
+    },
+    "Global Operations Leader": {
+      "job_titles": [
+        "VP Global Operations",
+        "SVP Service Delivery",
+        "Head of Workforce Management",
+        "Director Global Support Operations"
+      ],
+      "reports_to": "CX Executive or COO",
+      "team_size": "Oversees 100-500+ agents globally",
+      "prevalence": "72% of Enterprise deals",
+      "role_in_deal": "Key Influencer - operational approval needed"
+    }
+  }
+}
