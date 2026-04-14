@@ -1503,27 +1503,27 @@
                     // SECTION 2: Pain Points (max 5)
                     html += `<div class="section-header">😓 Pain Points</div>`;
                     const painThemes = persona.pain_themes || [];
-                    const painPoints = painThemes.slice(0, 5).map(t => typeof t === 'string' ? t : t.theme);
+                    const painPoints = painThemes.slice(0, 5).map(t => typeof t === 'string' ? t : t.text);
                     html += renderList(painPoints, segment, personaName, 'pain_themes', changesMap);
 
                     // SECTION 3: Goals (max 5)
                     html += `<div class="section-header">🎯 Goals</div>`;
                     const goalThemes = persona.goal_themes || [];
-                    const goals = goalThemes.slice(0, 5).map(t => typeof t === 'string' ? t : t.theme);
+                    const goals = goalThemes.slice(0, 5).map(t => typeof t === 'string' ? t : t.text);
                     html += renderList(goals, segment, personaName, 'goal_themes', changesMap);
 
                     // SECTION 4: Objections (max 5)
                     html += `<div class="section-header">⚠️ Objections</div>`;
                     const objectionThemes = persona.objection_themes || [];
-                    const objections = objectionThemes.slice(0, 5).map(t => typeof t === 'string' ? t : t.theme);
+                    const objections = objectionThemes.slice(0, 5).map(t => typeof t === 'string' ? t : t.text);
                     html += renderList(objections, segment, personaName, 'objection_themes', changesMap);
 
                     // SECTION 5: Trigger Events - REMOVED (insufficient quality signal)
 
-                    // SECTION 6: Success Metrics (max 5) - extract theme from theme objects
+                    // SECTION 6: Success Metrics (max 5) - extract text from theme objects
                     html += `<div class="section-header">📊 Success Metrics</div>`;
                     const successMetricThemes = persona.success_metric_themes || [];
-                    const successMetrics = successMetricThemes.slice(0, 5).map(item => typeof item === 'string' ? item : item.theme);
+                    const successMetrics = successMetricThemes.slice(0, 5).map(item => typeof item === 'string' ? item : item.text);
                     html += renderList(successMetrics, segment, personaName, 'success_metric_themes', changesMap);
 
                     html += `</div>`; // close left persona-column
@@ -1531,11 +1531,11 @@
                     // Right Column
                     html += `<div class="persona-column">`;
 
-                    // SECTION 7: Product Requirements (max 5) - extract theme from theme objects
+                    // SECTION 7: Product Requirements (max 5) - extract text from theme objects
                     const productRequirementThemes = persona.product_requirement_themes || [];
                     if (productRequirementThemes.length > 0) {
                         html += `<div class="section-header">✅ Product Requirements</div>`;
-                        const productRequirements = productRequirementThemes.slice(0, 5).map(item => typeof item === 'string' ? item : item.theme);
+                        const productRequirements = productRequirementThemes.slice(0, 5).map(item => typeof item === 'string' ? item : item.text);
                         html += renderList(productRequirements, segment, personaName, 'product_requirement_themes', changesMap);
                     }
 
