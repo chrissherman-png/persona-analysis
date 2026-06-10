@@ -1,0 +1,119 @@
+# Persona Intelligence Agent Configuration
+# Date: 2026-03-25
+
+# Snowflake Connection Settings
+snowflake:
+  account: ZENDESK-GLOBAL
+  user: CHRIS.SHERMAN@ZENDESK.COM
+  authenticator: externalbrowser  # SSO authentication
+  warehouse: PUBLIC_ZENDESK_L
+  database: CLEANSED
+  schema: GONG  # Schema where Gong tables live
+  role: PUBLIC
+
+# Data Extraction Settings
+extraction:
+  # Time window for analysis (months)
+  lookback_months: 6
+
+  # Minimum conversation count per persona to proceed with analysis
+  min_conversations_per_persona: 5
+
+  # JSON field mappings (customize based on exploratory query results)
+  crm_fields:
+    account:
+      employee_count: "NumberOfEmployees"  # or "Employee_Count__c"
+      industry: "Industry"
+      name: "Name"
+
+    opportunity:
+      stage: "StageName"  # or "Stage__c"
+      type: "Type"  # or "Opportunity_Type__c"
+      amount: "Amount"
+      is_closed: "IsClosed"
+      is_won: "IsWon"
+      close_date: "CloseDate"
+
+    contact:
+      title: "Title"  # or "Job_Title__c"
+      department: "Department"
+
+# Analysis Settings
+analysis:
+  # Segments to analyze
+  segments:
+    - SMB  # 50-249 employees
+    - Commercial  # 250-1,499 employees
+
+  # Personas to validate
+  personas:
+    - C-Suite
+    - C-Suite (Tech)
+    - Finance
+    - CX Leader
+    - IT Leader
+    - Operations Leader
+    - Finance/Gatekeeper
+
+  # Confidence thresholds (from Section 4 of spec)
+  confidence_thresholds:
+    high_confidence:
+      min_gong_calls: 10
+      min_sf_contacts: 5
+      min_web_signals: 1
+
+    medium_confidence:
+      min_total_sources: 5
+
+    low_confidence:
+      min_total_sources: 1
+
+  # Validation thresholds
+  validation_thresholds:
+    validated_pct: 60  # >= 60% signals confirm = VALIDATED
+    updated_pct: 40    # >= 40% signals contradict = UPDATED
+    new_signal_min: 3  # >= 3 independent sources = NEW SIGNAL
+
+  # Recency weighting
+  recency:
+    current_months: 6  # < 6 months = CURRENT
+    current_weight: 1.5  # Weight CURRENT signals 1.5x more than DATED
+
+# Output Settings
+output:
+  # Output directory for reports
+  report_dir: ./reports
+
+  # Downstream agent input directory
+  downstream_dir: ./downstream_inputs
+
+  # Archive old reports
+  archive_previous: true
+
+# Scheduling Settings (for automated refresh)
+scheduling:
+  # Frequency: daily, weekly, monthly
+  frequency: weekly
+
+  # Day of week for weekly runs (0 = Monday, 6 = Sunday)
+  day_of_week: 1  # Tuesday
+
+  # Time of day (24-hour format)
+  time_of_day: "02:00"
+
+  # Email notifications
+  notifications:
+    enabled: true
+    recipients:
+      - product-marketing@zendesk.com
+    send_on:
+      - success
+      - failure
+      - data_quality_issues
+
+# Logging Settings
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR
+  file: ./logs/persona_agent.log
+  max_bytes: 10485760  # 10MB
+  backup_count: 5

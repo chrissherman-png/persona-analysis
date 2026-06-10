@@ -1,0 +1,87 @@
+# Persona Intelligence Agent - Crontab Examples
+# Date: 2026-03-25
+#
+# To install: crontab -e
+# Then paste one of the examples below
+
+# ==============================================================================
+# Weekly Run - Every Tuesday at 2:00 AM
+# ==============================================================================
+0 2 * * 2 /Users/chris.sherman/persona_analysis/cron_template.sh
+
+# ==============================================================================
+# Weekly Run - Every Monday at 3:00 AM (alternative)
+# ==============================================================================
+# 0 3 * * 1 /Users/chris.sherman/persona_analysis/cron_template.sh
+
+# ==============================================================================
+# Bi-Weekly Run - Every other Monday at 2:00 AM
+# ==============================================================================
+# 0 2 * * 1 [ $(expr $(date +\%W) \% 2) -eq 0 ] && /Users/chris.sherman/persona_analysis/cron_template.sh
+
+# ==============================================================================
+# Monthly Run - First Monday of every month at 2:00 AM
+# ==============================================================================
+# 0 2 1-7 * 1 /Users/chris.sherman/persona_analysis/cron_template.sh
+
+# ==============================================================================
+# Daily Run - Every day at 2:00 AM (for testing)
+# ==============================================================================
+# 0 2 * * * /Users/chris.sherman/persona_analysis/cron_template.sh
+
+# ==============================================================================
+# Cron Format Reference:
+# ==============================================================================
+# ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * * command to execute
+
+# ==============================================================================
+# Testing the Cron Job
+# ==============================================================================
+# Before adding to crontab, test the script manually:
+#   cd /Users/chris.sherman/persona_analysis
+#   ./cron_template.sh
+#
+# Check the log output:
+#   tail -f logs/cron_run_*.log
+#
+# Verify outputs were created:
+#   ls -l reports/
+#   ls -l downstream_inputs/
+
+# ==============================================================================
+# Monitoring Cron Jobs
+# ==============================================================================
+# View active cron jobs:
+#   crontab -l
+#
+# View cron logs (macOS):
+#   grep CRON /var/log/system.log
+#
+# View cron logs (Linux):
+#   grep CRON /var/log/syslog
+
+# ==============================================================================
+# Email Notifications
+# ==============================================================================
+# To receive email notifications when the job completes:
+# 1. Set SEND_NOTIFICATIONS=true in cron_template.sh
+# 2. Configure your system's mail command (e.g., postfix, sendmail)
+# 3. Or use a cloud notification service (Slack, PagerDuty, etc.)
+
+# ==============================================================================
+# Troubleshooting
+# ==============================================================================
+# If cron job fails:
+# 1. Check log files in logs/ directory
+# 2. Verify .env file has correct credentials
+# 3. Test script manually first
+# 4. Ensure absolute paths are used (cron has minimal environment)
+# 5. Check cron has permission to execute scripts
+# 6. Verify Snowflake credentials haven't expired
