@@ -182,6 +182,7 @@ def save_edit():
         field = data['field']
         action = data['action']
         edited_by = data.get('edited_by', 'Unknown')
+        subfield = data.get('subfield')  # For Profile Overview fields
 
         # Load current edits
         edits_data = load_edits(run_quarter)
@@ -213,8 +214,51 @@ def save_edit():
 
         section = edits_data['edits'][segment][persona][field]
 
-        # Apply the action
-        if action == 'edit':
+        # Handle Profile Overview subfield edits
+        if field == 'profile_overview' and subfield:
+            # For Profile Overview, we track changes differently
+            if 'subfield_changes' not in section:
+                section['subfield_changes'] = {}
+                # Load original values
+                with open(UPDATED_PERSONAS_FILE, 'r') as f:
+                    personas_data = json.load(f)
+                if (segment in personas_data and
+                    persona in personas_data[segment]):
+                    for sf in ['job_titles', 'reports_to', 'team_size', 'prevalence', 'role_in_deal']:
+                        section['subfield_changes'][sf] = {
+                            'original_value': personas_data[segment][persona].get(sf, ''),
+                            'current_value': personas_data[segment][persona].get(sf, ''),
+                            'edited': False
+                        }
+
+            if action == 'edit':
+                new_value = data['new_value']
+                original_value = data.get('original_value', '')
+
+                # Update subfield
+                if subfield not in section['subfield_changes']:
+                    section['subfield_changes'][subfield] = {
+                        'original_value': original_value,
+                        'current_value': original_value,
+                        'edited': False
+                    }
+
+                section['subfield_changes'][subfield]['current_value'] = new_value
+                section['subfield_changes'][subfield]['edited'] = True
+                section['has_changes'] = True
+
+                # Add to change log
+                section['change_log'].append({
+                    'action': 'edit',
+                    'subfield': subfield,
+                    'original_value': original_value,
+                    'new_value': new_value,
+                    'edited_by': edited_by,
+                    'timestamp': datetime.now().isoformat()
+                })
+
+        # Apply the action for list-based fields
+        elif action == 'edit':
             index = data['index']
             new_value = data['new_value']
             original_value = data.get('original_value', '')
@@ -381,9 +425,16 @@ def apply_edits():
 
                 for field, field_data in persona_data_edits.items():
                     if field_data.get('has_changes'):
-                        # Replace the field with edited items
-                        personas_data[segment][persona][field] = field_data['items']
-                        sections_modified += 1
+                        # Handle Profile Overview subfield changes
+                        if field == 'profile_overview' and 'subfield_changes' in field_data:
+                            for subfield, subfield_data in field_data['subfield_changes'].items():
+                                if subfield_data.get('edited'):
+                                    personas_data[segment][persona][subfield] = subfield_data['current_value']
+                            sections_modified += 1
+                        else:
+                            # Replace the field with edited items
+                            personas_data[segment][persona][field] = field_data['items']
+                            sections_modified += 1
 
         # Save updated personas (destructive step)
         with open(UPDATED_PERSONAS_FILE, 'w') as f:
