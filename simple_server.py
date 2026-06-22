@@ -592,6 +592,110 @@ def rollback_edits():
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/api/git_push', methods=['POST'])
+def git_push():
+    """Execute git commands to push changes to GitHub Pages"""
+    data = request.json
+    commit_message = data.get('commit_message')
+
+    if not commit_message:
+        return jsonify({
+            'success': False,
+            'error': 'commit_message is required'
+        })
+
+    # Repo root is persona_analysis directory (has .git)
+    repo_root = BASE_DIR
+
+    try:
+        # Step 1: git add .
+        result = subprocess.run(
+            ['git', 'add', '.'],
+            cwd=str(repo_root),
+            capture_output=True,
+            text=True,
+            timeout=10
+        )
+
+        if result.returncode != 0:
+            return jsonify({
+                'success': False,
+                'error': f'git add failed: {result.stderr}',
+                'command': 'git add .'
+            })
+
+        # Step 2: git commit
+        result = subprocess.run(
+            ['git', 'commit', '-m', commit_message],
+            cwd=str(repo_root),
+            capture_output=True,
+            text=True,
+            timeout=10
+        )
+
+        if result.returncode != 0:
+            # Check if it's a "nothing to commit" error
+            if 'nothing to commit' in result.stdout.lower():
+                return jsonify({
+                    'success': False,
+                    'error': 'No changes to commit',
+                    'command': 'git commit'
+                })
+            else:
+                return jsonify({
+                    'success': False,
+                    'error': f'git commit failed: {result.stderr}',
+                    'command': 'git commit'
+                })
+
+        # Step 3: git push
+        result = subprocess.run(
+            ['git', 'push', 'origin', 'main'],
+            cwd=str(repo_root),
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+
+        if result.returncode != 0:
+            # Check for auth errors
+            stderr_lower = result.stderr.lower()
+            if 'authentication' in stderr_lower or 'permission denied' in stderr_lower or 'could not read' in stderr_lower:
+                return jsonify({
+                    'success': False,
+                    'error': 'Git push failed — you may need to authenticate. Run git push origin main manually in your terminal.',
+                    'command': 'git push origin main'
+                })
+            else:
+                return jsonify({
+                    'success': False,
+                    'error': f'git push failed: {result.stderr}',
+                    'command': 'git push origin main'
+                })
+
+        # Success!
+        return jsonify({
+            'success': True,
+            'message': 'Changes pushed to main'
+        })
+
+    except subprocess.TimeoutExpired:
+        return jsonify({
+            'success': False,
+            'error': 'Git command timed out',
+            'command': 'git push (timeout)'
+        })
+    except Exception as e:
+        print(f"Error executing git push: {e}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'command': 'git push (exception)'
+        })
+
+
 # =============================================================================
 # SERVER STARTUP
 # =============================================================================
