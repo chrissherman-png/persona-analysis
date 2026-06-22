@@ -16,10 +16,11 @@ __pycache__/
 *.so
 .Python
 
-# Data files
-data/
-*.csv
-*.json
+# Data files - exclude large CSVs and cache but keep config JSONs
+data/gong_calls_*.csv
+data/*.csv
+data/*_backup*.json
+cache/
 *.parquet
 
 # Logs
