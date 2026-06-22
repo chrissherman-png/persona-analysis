@@ -25,13 +25,13 @@ import subprocess
 import shutil
 
 # Add parent directory to path for imports
-sys.path.insert(0, '/Users/chris.sherman')
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for local development
 
 # Configuration
-BASE_DIR = Path("/Users/chris.sherman/persona_analysis")
+BASE_DIR = Path(__file__).parent
 REPORTS_DIR = BASE_DIR / "reports"
 DATA_DIR = BASE_DIR / "data"
 PENDING_DIR = BASE_DIR / "pending_changes"
