@@ -1,0 +1,20 @@
+{
+  "run_quarter": "Q2 2026",
+  "last_edited": "2026-06-10T14:08:18.897590",
+  "edited_by": "Chris Sherman",
+  "edits": {
+    "SMB": {
+      "C-Suite Decision Maker": {
+        "goals": {
+          "items": [
+            "Enable company growth without proportional headcount increases",
+            "Improve customer satisfaction and retention",
+            "Operational efficiency - do more with less"
+          ],
+          "has_changes": false,
+          "change_log": []
+        }
+      }
+    }
+  }
+}

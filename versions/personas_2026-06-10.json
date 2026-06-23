@@ -1,0 +1,3553 @@
+{
+  "Commercial": {
+    "C-Suite Decision Maker": {
+      "buying_behavior": {
+        "authority_level": "Ultimate - signs off on budget",
+        "committee_size": "Final approver (reviews deal packaged by team)",
+        "decision_speed": "Appears in week 6-8 of deal",
+        "prefers": "Concise executive briefing, peer references"
+      },
+      "challenges": [
+        "Platform vs. point solution debate - prefer vendor consolidation",
+        "Strategic investment - need 3-5 year vision",
+        "Risk mitigation - big migrations are high stakes"
+      ],
+      "challenges_from_gong": [
+        "Platform vs. point solution debate - prefer vendor consolidation",
+        "Strategic investment - need 3-5 year vision",
+        "Risk mitigation - big migrations are high stakes"
+      ],
+      "content_preferences": [
+        "Board-ready business case",
+        "Strategic roadmap briefings",
+        "Industry analyst validation",
+        "Executive roundtables with peers",
+        "Financial analyst reports"
+      ],
+      "evaluation_criteria": [
+        "Strategic platform play - can this replace 3+ tools?",
+        "Future-proof - AI roadmap, innovation velocity",
+        "Vendor stability and financial health",
+        "Implementation risk and timeline",
+        "Executive sponsorship and support from vendor"
+      ],
+      "goals": [
+        "Platform consolidation - reduce vendor count",
+        "Improve customer retention and LTV",
+        "Enable profitable growth"
+      ],
+      "job_titles": [
+        "COO",
+        "CEO",
+        "Chief Customer Officer",
+        "President"
+      ],
+      "key_messages": [
+        "Platform consolidation - replace 3-5 tools with one",
+        "Proven at your scale - 1000+ mid-market customers",
+        "AI-first roadmap - built for next 5 years",
+        "Risk mitigation - phased rollout, rollback plans",
+        "Executive sponsorship - dedicated CSM and EBC support"
+      ],
+      "objections": [
+        "\"Why not just keep what we have?\"",
+        "\"What's the business case for this level of investment?\"",
+        "\"What if this impacts customer experience during transition?\""
+      ],
+      "pain_points": [],
+      "prevalence": "54% of Commercial deals",
+      "reports_to": "Board",
+      "role_in_deal": "Budget Holder (appears late in process)",
+      "success_metrics": [
+        "CSAT: Primary indicator of customer satisfaction and service quality, with organizations tracking trends and comparing against competitive benchmarks",
+        "Ticket Deflection Rate: Measures AI/bot effectiveness at resolving issues without agent intervention, critical for demonstrating automation ROI",
+        "First Reply Time: Key performance indicator for agent responsiveness and customer experience quality, though some are shifting focus to total resolution time",
+        "Resolution Time: Measures end-to-end efficiency in resolving customer issues, with organizations comparing against industry benchmarks",
+        "Ticket Deflection Rate: Organizations measure success by the percentage of tickets handled by AI/self-service rather than human agents, typically targeting 30-40% deflection to reduce workload and costs",
+        "Average Handle Time (AHT): Reducing time per ticket through AI assistance and automation is critical for improving agent productivity and demonstrating ROI, with targets of 45% reduction mentioned",
+        "First Contact Resolution: Customers track whether tickets are resolved on first interaction versus requiring escalation or investigation, as it impacts both efficiency and customer satisfaction",
+        "Cost Savings / ROI: Organizations need to quantify dollar savings from automation, deflection, and efficiency gains to justify Zendesk investments and renewals to leadership"
+      ],
+      "team_size": "Entire company (250-1,499 employees)",
+      "product_requirements": [
+        "Selective/flexible licensing for AI, QA, and WFM features",
+        "Granular reporting and data export for AI agent conversations",
+        "AI agents that can process APIs and actions for real-time data lookup",
+        "Native approval workflows without requiring middleware or custom development",
+        "Open REST API for integration with automation systems and third-party tools",
+        "Multi-brand capability with departmental security and access controls",
+        "Audit logs and access controls for HIPAA compliance",
+        "Audit logging for AI-generated automations and changes"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "Selective/flexible licensing for AI, QA, and WFM features",
+          "frequency": "low"
+        },
+        {
+          "text": "Granular reporting and data export for AI agent conversations",
+          "frequency": "low"
+        },
+        {
+          "text": "AI agents that can process APIs and actions for real-time data lookup",
+          "frequency": "low"
+        },
+        {
+          "text": "Native approval workflows without requiring middleware or custom development",
+          "frequency": "low"
+        },
+        {
+          "text": "Open REST API for integration with automation systems and third-party tools",
+          "frequency": "low"
+        },
+        {
+          "text": "Multi-brand capability with departmental security and access controls",
+          "frequency": "low"
+        },
+        {
+          "text": "Audit logs and access controls for HIPAA compliance",
+          "frequency": "low"
+        },
+        {
+          "text": "Audit logging for AI-generated automations and changes",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Zendesk Customer Success/Account Teams",
+        "Zendesk Help Center and Documentation",
+        "Sister companies and peer organizations",
+        "Direct vendor outreach and sales conversations",
+        "Product documentation and monthly feature rollouts",
+        "Direct engagement with account team and specialists",
+        "Sandbox testing and trials",
+        "Zendesk Expert Sessions/Professional Services"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Zendesk Customer Success/Account Teams",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Help Center and Documentation",
+          "frequency": "low"
+        },
+        {
+          "text": "Sister companies and peer organizations",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct vendor outreach and sales conversations",
+          "frequency": "low"
+        },
+        {
+          "text": "Product documentation and monthly feature rollouts",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct engagement with account team and specialists",
+          "frequency": "low"
+        },
+        {
+          "text": "Sandbox testing and trials",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Expert Sessions/Professional Services",
+          "frequency": "low"
+        }
+      ],
+      "messaging_preferences": [
+        "Concrete metrics and proof points over generic claims",
+        "Clear, simple pricing with transparent models",
+        "Proactive communication about changes with sufficient lead time",
+        "Dedicated, responsive support contacts who understand their business",
+        "Hands-on testing/trial before committing to new features",
+        "Direct, transparent communication about pricing and contract terms upfront",
+        "Quarterly or semi-annual check-ins rather than frequent monthly meetings",
+        "Technical demonstrations focused on specific workflows and use cases"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Concrete metrics and proof points over generic claims",
+          "frequency": "low"
+        },
+        {
+          "text": "Clear, simple pricing with transparent models",
+          "frequency": "low"
+        },
+        {
+          "text": "Proactive communication about changes with sufficient lead time",
+          "frequency": "low"
+        },
+        {
+          "text": "Dedicated, responsive support contacts who understand their business",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on testing/trial before committing to new features",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct, transparent communication about pricing and contract terms upfront",
+          "frequency": "low"
+        },
+        {
+          "text": "Quarterly or semi-annual check-ins rather than frequent monthly meetings",
+          "frequency": "low"
+        },
+        {
+          "text": "Technical demonstrations focused on specific workflows and use cases",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "CSAT: Primary indicator of customer satisfaction and service quality, with organizations tracking trends and comparing against competitive benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Deflection Rate: Measures AI/bot effectiveness at resolving issues without agent intervention, critical for demonstrating automation ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "First Reply Time: Key performance indicator for agent responsiveness and customer experience quality, though some are shifting focus to total resolution time",
+          "frequency": "low"
+        },
+        {
+          "text": "Resolution Time: Measures end-to-end efficiency in resolving customer issues, with organizations comparing against industry benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Deflection Rate: Organizations measure success by the percentage of tickets handled by AI/self-service rather than human agents, typically targeting 30-40% deflection to reduce workload and costs",
+          "frequency": "low"
+        },
+        {
+          "text": "Average Handle Time (AHT): Reducing time per ticket through AI assistance and automation is critical for improving agent productivity and demonstrating ROI, with targets of 45% reduction mentioned",
+          "frequency": "low"
+        },
+        {
+          "text": "First Contact Resolution: Customers track whether tickets are resolved on first interaction versus requiring escalation or investigation, as it impacts both efficiency and customer satisfaction",
+          "frequency": "low"
+        },
+        {
+          "text": "Cost Savings / ROI: Organizations need to quantify dollar savings from automation, deflection, and efficiency gains to justify Zendesk investments and renewals to leadership",
+          "frequency": "low"
+        }
+      ]
+    },
+    "CX Champion": {
+      "buying_behavior": {
+        "authority_level": "Medium - needs buy-in from IT, Finance, Ops",
+        "committee_size": "6-8 people (CX, IT, Ops, Finance, Procurement, C-Suite)",
+        "decision_speed": "75-100 days",
+        "prefers": "Structured evaluation, proof-of-concept, reference checks"
+      },
+      "challenges": [
+        "Integration complexity - custom dispatch systems, multi-client data",
+        "Self-service culture shift - not just tools, behavioral change",
+        "Reporting gaps - need custom dashboards for executives"
+      ],
+      "challenges_from_gong": [
+        "Integration complexity - custom dispatch systems, multi-client data",
+        "Self-service culture shift - not just tools, behavioral change",
+        "Reporting gaps - need custom dashboards for executives"
+      ],
+      "content_preferences": [
+        "Enterprise customer case studies",
+        "Executive briefings with VP-level champions",
+        "Analyst reports (Gartner Magic Quadrant)",
+        "ROI models for mid-market",
+        "Reference calls with similar companies"
+      ],
+      "evaluation_criteria": [
+        "Enterprise scalability - can this handle 100+ agents and grow to 500?",
+        "Advanced automation - intent-based routing, AI-powered triage",
+        "Multi-org/multi-brand support",
+        "Customization - workflows, fields, automations",
+        "Change management support during rollout"
+      ],
+      "goals": [
+        "Scale support operations across regions/brands",
+        "Drive 55-60% ticket deflection through self-service + AI",
+        "Improve CSAT while reducing cost-per-ticket"
+      ],
+      "job_titles": [
+        "VP Customer Service",
+        "VP Customer Experience",
+        "Director of Customer Support",
+        "Head of Global Support",
+        "Senior Director CX"
+      ],
+      "key_messages": [
+        "Built for enterprise complexity - multi-org, custom workflows, advanced routing",
+        "Change management included - dedicated team to ensure adoption",
+        "Phased rollout - start with one team, expand when ready",
+        "Agent-loved - 4.6\u2605 rating, faster than legacy tools",
+        "Proven at scale - customers with 500+ agents"
+      ],
+      "objections": [
+        "\"We have too many custom requirements\"",
+        "\"Our team is already overwhelmed - can't handle a big migration\"",
+        "\"How long will implementation really take?\""
+      ],
+      "pain_points": [],
+      "prevalence": "92% of Commercial deals",
+      "reports_to": "COO, Chief Customer Officer, or CEO",
+      "role_in_deal": "Primary Champion (but needs coalition)",
+      "success_metrics": [
+        "CSAT: Primary indicator of customer satisfaction and service quality, with organizations tracking trends and comparing against competitive benchmarks",
+        "Ticket Deflection Rate: Measures AI/bot effectiveness at resolving issues without agent intervention, critical for demonstrating automation ROI",
+        "First Reply Time: Key performance indicator for agent responsiveness and customer experience quality, though some are shifting focus to total resolution time",
+        "Resolution Time: Measures end-to-end efficiency in resolving customer issues, with organizations comparing against industry benchmarks",
+        "Ticket Deflection Rate: Organizations measure success by the percentage of tickets handled by AI/self-service rather than human agents, typically targeting 30-40% deflection to reduce workload and costs",
+        "Average Handle Time (AHT): Reducing time per ticket through AI assistance and automation is critical for improving agent productivity and demonstrating ROI, with targets of 45% reduction mentioned",
+        "First Contact Resolution: Customers track whether tickets are resolved on first interaction versus requiring escalation or investigation, as it impacts both efficiency and customer satisfaction",
+        "Cost Savings / ROI: Organizations need to quantify dollar savings from automation, deflection, and efficiency gains to justify Zendesk investments and renewals to leadership"
+      ],
+      "team_size": "25-100 agents (often multi-region)",
+      "product_requirements": [
+        "Selective/flexible licensing for AI, QA, and WFM features",
+        "Granular reporting and data export for AI agent conversations",
+        "AI agents that can process APIs and actions for real-time data lookup",
+        "Native approval workflows without requiring middleware or custom development",
+        "Open REST API for integration with automation systems and third-party tools",
+        "Multi-brand capability with departmental security and access controls",
+        "Audit logs and access controls for HIPAA compliance",
+        "Audit logging for AI-generated automations and changes"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "Selective/flexible licensing for AI, QA, and WFM features",
+          "frequency": "low"
+        },
+        {
+          "text": "Granular reporting and data export for AI agent conversations",
+          "frequency": "low"
+        },
+        {
+          "text": "AI agents that can process APIs and actions for real-time data lookup",
+          "frequency": "low"
+        },
+        {
+          "text": "Native approval workflows without requiring middleware or custom development",
+          "frequency": "low"
+        },
+        {
+          "text": "Open REST API for integration with automation systems and third-party tools",
+          "frequency": "low"
+        },
+        {
+          "text": "Multi-brand capability with departmental security and access controls",
+          "frequency": "low"
+        },
+        {
+          "text": "Audit logs and access controls for HIPAA compliance",
+          "frequency": "low"
+        },
+        {
+          "text": "Audit logging for AI-generated automations and changes",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Zendesk Customer Success/Account Teams",
+        "Zendesk Help Center and Documentation",
+        "Sister companies and peer organizations",
+        "Direct vendor outreach and sales conversations",
+        "Product documentation and monthly feature rollouts",
+        "Direct engagement with account team and specialists",
+        "Sandbox testing and trials",
+        "Zendesk Expert Sessions/Professional Services"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Zendesk Customer Success/Account Teams",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Help Center and Documentation",
+          "frequency": "low"
+        },
+        {
+          "text": "Sister companies and peer organizations",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct vendor outreach and sales conversations",
+          "frequency": "low"
+        },
+        {
+          "text": "Product documentation and monthly feature rollouts",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct engagement with account team and specialists",
+          "frequency": "low"
+        },
+        {
+          "text": "Sandbox testing and trials",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Expert Sessions/Professional Services",
+          "frequency": "low"
+        }
+      ],
+      "messaging_preferences": [
+        "Concrete metrics and proof points over generic claims",
+        "Clear, simple pricing with transparent models",
+        "Proactive communication about changes with sufficient lead time",
+        "Dedicated, responsive support contacts who understand their business",
+        "Hands-on testing/trial before committing to new features",
+        "Direct, transparent communication about pricing and contract terms upfront",
+        "Quarterly or semi-annual check-ins rather than frequent monthly meetings",
+        "Technical demonstrations focused on specific workflows and use cases"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Concrete metrics and proof points over generic claims",
+          "frequency": "low"
+        },
+        {
+          "text": "Clear, simple pricing with transparent models",
+          "frequency": "low"
+        },
+        {
+          "text": "Proactive communication about changes with sufficient lead time",
+          "frequency": "low"
+        },
+        {
+          "text": "Dedicated, responsive support contacts who understand their business",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on testing/trial before committing to new features",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct, transparent communication about pricing and contract terms upfront",
+          "frequency": "low"
+        },
+        {
+          "text": "Quarterly or semi-annual check-ins rather than frequent monthly meetings",
+          "frequency": "low"
+        },
+        {
+          "text": "Technical demonstrations focused on specific workflows and use cases",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "CSAT: Primary indicator of customer satisfaction and service quality, with organizations tracking trends and comparing against competitive benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Deflection Rate: Measures AI/bot effectiveness at resolving issues without agent intervention, critical for demonstrating automation ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "First Reply Time: Key performance indicator for agent responsiveness and customer experience quality, though some are shifting focus to total resolution time",
+          "frequency": "low"
+        },
+        {
+          "text": "Resolution Time: Measures end-to-end efficiency in resolving customer issues, with organizations comparing against industry benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Deflection Rate: Organizations measure success by the percentage of tickets handled by AI/self-service rather than human agents, typically targeting 30-40% deflection to reduce workload and costs",
+          "frequency": "low"
+        },
+        {
+          "text": "Average Handle Time (AHT): Reducing time per ticket through AI assistance and automation is critical for improving agent productivity and demonstrating ROI, with targets of 45% reduction mentioned",
+          "frequency": "low"
+        },
+        {
+          "text": "First Contact Resolution: Customers track whether tickets are resolved on first interaction versus requiring escalation or investigation, as it impacts both efficiency and customer satisfaction",
+          "frequency": "low"
+        },
+        {
+          "text": "Cost Savings / ROI: Organizations need to quantify dollar savings from automation, deflection, and efficiency gains to justify Zendesk investments and renewals to leadership",
+          "frequency": "low"
+        }
+      ]
+    },
+    "Finance/Procurement Gatekeeper": {
+      "buying_behavior": {
+        "authority_level": "High - can block deals",
+        "committee_size": "Works with legal and finance",
+        "decision_speed": "Gatekeeper (adds 2-4 weeks)",
+        "prefers": "Formal RFP process, detailed financial analysis"
+      },
+      "challenges": [
+        "Procurement appearing 40% earlier - at demo stage, not just negotiation",
+        "Formal RFP/RFI processes - need structured responses",
+        "Vendor risk assessment requirements"
+      ],
+      "challenges_from_gong": [
+        "Procurement appearing 40% earlier - at demo stage, not just negotiation",
+        "Formal RFP/RFI processes - need structured responses",
+        "Vendor risk assessment requirements"
+      ],
+      "content_preferences": [
+        "RFP response templates",
+        "Vendor risk assessment questionnaires",
+        "Financial statements and stability proof",
+        "Pricing comparison matrices",
+        "Procurement peer references"
+      ],
+      "evaluation_criteria": [
+        "Total cost of ownership (licensing, implementation, training, support)",
+        "Contract terms (auto-renewal, cancellation, SLAs, penalties)",
+        "Vendor financial stability (Dun & Bradstreet, funding)",
+        "Pricing scalability (what happens at 2x, 3x growth?)",
+        "Reference checks from procurement peers"
+      ],
+      "goals": [
+        "Negotiate favorable contract terms",
+        "Ensure compliance with procurement policies",
+        "Vendor risk management and due diligence"
+      ],
+      "job_titles": [
+        "CFO",
+        "VP Finance",
+        "Procurement Director",
+        "Vendor Management",
+        "Director of Procurement"
+      ],
+      "key_messages": [
+        "Transparent pricing - no hidden fees, predictable scaling",
+        "Flexible contract terms available for enterprises",
+        "Financially stable - [funding status, customer count]",
+        "TCO advantage - replace 3 tools, reduce implementation costs",
+        "Procurement-ready - RFP templates, vendor risk docs, references"
+      ],
+      "objections": [
+        "\"Your pricing doesn't fit our budget model\"",
+        "\"We need more favorable contract terms\"",
+        "\"How do we know you'll be around in 5 years?\""
+      ],
+      "pain_points": [],
+      "prevalence": "58% of Commercial deals",
+      "reports_to": "CEO or Board",
+      "role_in_deal": "Gatekeeper (appears at demo stage, not just contracting)",
+      "success_metrics": [
+        "CSAT: Primary indicator of customer satisfaction and service quality, with organizations tracking trends and comparing against competitive benchmarks",
+        "Ticket Deflection Rate: Measures AI/bot effectiveness at resolving issues without agent intervention, critical for demonstrating automation ROI",
+        "First Reply Time: Key performance indicator for agent responsiveness and customer experience quality, though some are shifting focus to total resolution time",
+        "Resolution Time: Measures end-to-end efficiency in resolving customer issues, with organizations comparing against industry benchmarks",
+        "Ticket Deflection Rate: Organizations measure success by the percentage of tickets handled by AI/self-service rather than human agents, typically targeting 30-40% deflection to reduce workload and costs",
+        "Average Handle Time (AHT): Reducing time per ticket through AI assistance and automation is critical for improving agent productivity and demonstrating ROI, with targets of 45% reduction mentioned",
+        "First Contact Resolution: Customers track whether tickets are resolved on first interaction versus requiring escalation or investigation, as it impacts both efficiency and customer satisfaction",
+        "Cost Savings / ROI: Organizations need to quantify dollar savings from automation, deflection, and efficiency gains to justify Zendesk investments and renewals to leadership"
+      ],
+      "team_size": "Finance/procurement team",
+      "product_requirements": [
+        "Selective/flexible licensing for AI, QA, and WFM features",
+        "Granular reporting and data export for AI agent conversations",
+        "AI agents that can process APIs and actions for real-time data lookup",
+        "Native approval workflows without requiring middleware or custom development",
+        "Open REST API for integration with automation systems and third-party tools",
+        "Multi-brand capability with departmental security and access controls",
+        "Audit logs and access controls for HIPAA compliance",
+        "Audit logging for AI-generated automations and changes"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "Selective/flexible licensing for AI, QA, and WFM features",
+          "frequency": "low"
+        },
+        {
+          "text": "Granular reporting and data export for AI agent conversations",
+          "frequency": "low"
+        },
+        {
+          "text": "AI agents that can process APIs and actions for real-time data lookup",
+          "frequency": "low"
+        },
+        {
+          "text": "Native approval workflows without requiring middleware or custom development",
+          "frequency": "low"
+        },
+        {
+          "text": "Open REST API for integration with automation systems and third-party tools",
+          "frequency": "low"
+        },
+        {
+          "text": "Multi-brand capability with departmental security and access controls",
+          "frequency": "low"
+        },
+        {
+          "text": "Audit logs and access controls for HIPAA compliance",
+          "frequency": "low"
+        },
+        {
+          "text": "Audit logging for AI-generated automations and changes",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Zendesk Customer Success/Account Teams",
+        "Zendesk Help Center and Documentation",
+        "Sister companies and peer organizations",
+        "Direct vendor outreach and sales conversations",
+        "Product documentation and monthly feature rollouts",
+        "Direct engagement with account team and specialists",
+        "Sandbox testing and trials",
+        "Zendesk Expert Sessions/Professional Services"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Zendesk Customer Success/Account Teams",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Help Center and Documentation",
+          "frequency": "low"
+        },
+        {
+          "text": "Sister companies and peer organizations",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct vendor outreach and sales conversations",
+          "frequency": "low"
+        },
+        {
+          "text": "Product documentation and monthly feature rollouts",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct engagement with account team and specialists",
+          "frequency": "low"
+        },
+        {
+          "text": "Sandbox testing and trials",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Expert Sessions/Professional Services",
+          "frequency": "low"
+        }
+      ],
+      "messaging_preferences": [
+        "Concrete metrics and proof points over generic claims",
+        "Clear, simple pricing with transparent models",
+        "Proactive communication about changes with sufficient lead time",
+        "Dedicated, responsive support contacts who understand their business",
+        "Hands-on testing/trial before committing to new features",
+        "Direct, transparent communication about pricing and contract terms upfront",
+        "Quarterly or semi-annual check-ins rather than frequent monthly meetings",
+        "Technical demonstrations focused on specific workflows and use cases"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Concrete metrics and proof points over generic claims",
+          "frequency": "low"
+        },
+        {
+          "text": "Clear, simple pricing with transparent models",
+          "frequency": "low"
+        },
+        {
+          "text": "Proactive communication about changes with sufficient lead time",
+          "frequency": "low"
+        },
+        {
+          "text": "Dedicated, responsive support contacts who understand their business",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on testing/trial before committing to new features",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct, transparent communication about pricing and contract terms upfront",
+          "frequency": "low"
+        },
+        {
+          "text": "Quarterly or semi-annual check-ins rather than frequent monthly meetings",
+          "frequency": "low"
+        },
+        {
+          "text": "Technical demonstrations focused on specific workflows and use cases",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "CSAT: Primary indicator of customer satisfaction and service quality, with organizations tracking trends and comparing against competitive benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Deflection Rate: Measures AI/bot effectiveness at resolving issues without agent intervention, critical for demonstrating automation ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "First Reply Time: Key performance indicator for agent responsiveness and customer experience quality, though some are shifting focus to total resolution time",
+          "frequency": "low"
+        },
+        {
+          "text": "Resolution Time: Measures end-to-end efficiency in resolving customer issues, with organizations comparing against industry benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Deflection Rate: Organizations measure success by the percentage of tickets handled by AI/self-service rather than human agents, typically targeting 30-40% deflection to reduce workload and costs",
+          "frequency": "low"
+        },
+        {
+          "text": "Average Handle Time (AHT): Reducing time per ticket through AI assistance and automation is critical for improving agent productivity and demonstrating ROI, with targets of 45% reduction mentioned",
+          "frequency": "low"
+        },
+        {
+          "text": "First Contact Resolution: Customers track whether tickets are resolved on first interaction versus requiring escalation or investigation, as it impacts both efficiency and customer satisfaction",
+          "frequency": "low"
+        },
+        {
+          "text": "Cost Savings / ROI: Organizations need to quantify dollar savings from automation, deflection, and efficiency gains to justify Zendesk investments and renewals to leadership",
+          "frequency": "low"
+        }
+      ]
+    },
+    "IT Influencer": {
+      "buying_behavior": {
+        "authority_level": "High - can veto deals",
+        "committee_size": "Works with security team",
+        "decision_speed": "Involved at demo stage (week 2-3)",
+        "prefers": "Technical deep dives, proof-of-concept"
+      },
+      "challenges": [
+        "AI governance scrutiny - how is AI trained? Where is data stored?",
+        "Data residency requirements (EU, APAC)",
+        "Enterprise integration complexity"
+      ],
+      "challenges_from_gong": [
+        "AI governance scrutiny - how is AI trained? Where is data stored?",
+        "Data residency requirements (EU, APAC)",
+        "Enterprise integration complexity"
+      ],
+      "content_preferences": [
+        "Security whitepapers",
+        "Compliance certifications",
+        "API documentation and sandbox",
+        "Architecture diagrams",
+        "Penetration test results (under NDA)"
+      ],
+      "evaluation_criteria": [
+        "**#1 Priority:** Security & compliance (SOC 2 Type 2, ISO 27001, GDPR, HIPAA)",
+        "API quality - RESTful, well-documented, versioned",
+        "SSO/SAML, SCIM provisioning",
+        "Data governance - encryption, residency, retention policies",
+        "AI transparency - how models work, what data they use"
+      ],
+      "goals": [
+        "Ensure enterprise-grade security and compliance",
+        "Manage integrations and API strategy",
+        "Minimize technical debt and shadow IT"
+      ],
+      "job_titles": [
+        "VP IT",
+        "Director of IT",
+        "Head of Information Security",
+        "IT Manager",
+        "CISO"
+      ],
+      "key_messages": [
+        "Enterprise security built-in - SOC 2 Type 2, ISO 27001, GDPR, HIPAA",
+        "AI governance - transparent models, customer data isolation, audit trails",
+        "Enterprise APIs - RESTful, 99.9% uptime SLA, versioned",
+        "Data residency options - EU, APAC, US regions",
+        "Dedicated security documentation for your audit"
+      ],
+      "objections": [
+        "\"How do you ensure AI doesn't expose sensitive customer data?\"",
+        "\"Can you meet our data residency requirements?\"",
+        "\"What happens if your API changes and breaks our integrations?\""
+      ],
+      "pain_points": [],
+      "prevalence": "85% of Commercial deals",
+      "reports_to": "CTO, COO, or CEO",
+      "role_in_deal": "Co-Champion & Validator (critical path)",
+      "success_metrics": [
+        "CSAT: Primary indicator of customer satisfaction and service quality, with organizations tracking trends and comparing against competitive benchmarks",
+        "Ticket Deflection Rate: Measures AI/bot effectiveness at resolving issues without agent intervention, critical for demonstrating automation ROI",
+        "First Reply Time: Key performance indicator for agent responsiveness and customer experience quality, though some are shifting focus to total resolution time",
+        "Resolution Time: Measures end-to-end efficiency in resolving customer issues, with organizations comparing against industry benchmarks",
+        "Ticket Deflection Rate: Organizations measure success by the percentage of tickets handled by AI/self-service rather than human agents, typically targeting 30-40% deflection to reduce workload and costs",
+        "Average Handle Time (AHT): Reducing time per ticket through AI assistance and automation is critical for improving agent productivity and demonstrating ROI, with targets of 45% reduction mentioned",
+        "First Contact Resolution: Customers track whether tickets are resolved on first interaction versus requiring escalation or investigation, as it impacts both efficiency and customer satisfaction",
+        "Cost Savings / ROI: Organizations need to quantify dollar savings from automation, deflection, and efficiency gains to justify Zendesk investments and renewals to leadership"
+      ],
+      "team_size": "5-25 IT staff",
+      "product_requirements": [
+        "Selective/flexible licensing for AI, QA, and WFM features",
+        "Granular reporting and data export for AI agent conversations",
+        "AI agents that can process APIs and actions for real-time data lookup",
+        "Native approval workflows without requiring middleware or custom development",
+        "Open REST API for integration with automation systems and third-party tools",
+        "Multi-brand capability with departmental security and access controls",
+        "Audit logs and access controls for HIPAA compliance",
+        "Audit logging for AI-generated automations and changes"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "Selective/flexible licensing for AI, QA, and WFM features",
+          "frequency": "low"
+        },
+        {
+          "text": "Granular reporting and data export for AI agent conversations",
+          "frequency": "low"
+        },
+        {
+          "text": "AI agents that can process APIs and actions for real-time data lookup",
+          "frequency": "low"
+        },
+        {
+          "text": "Native approval workflows without requiring middleware or custom development",
+          "frequency": "low"
+        },
+        {
+          "text": "Open REST API for integration with automation systems and third-party tools",
+          "frequency": "low"
+        },
+        {
+          "text": "Multi-brand capability with departmental security and access controls",
+          "frequency": "low"
+        },
+        {
+          "text": "Audit logs and access controls for HIPAA compliance",
+          "frequency": "low"
+        },
+        {
+          "text": "Audit logging for AI-generated automations and changes",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Zendesk Customer Success/Account Teams",
+        "Zendesk Help Center and Documentation",
+        "Sister companies and peer organizations",
+        "Direct vendor outreach and sales conversations",
+        "Product documentation and monthly feature rollouts",
+        "Direct engagement with account team and specialists",
+        "Sandbox testing and trials",
+        "Zendesk Expert Sessions/Professional Services"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Zendesk Customer Success/Account Teams",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Help Center and Documentation",
+          "frequency": "low"
+        },
+        {
+          "text": "Sister companies and peer organizations",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct vendor outreach and sales conversations",
+          "frequency": "low"
+        },
+        {
+          "text": "Product documentation and monthly feature rollouts",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct engagement with account team and specialists",
+          "frequency": "low"
+        },
+        {
+          "text": "Sandbox testing and trials",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Expert Sessions/Professional Services",
+          "frequency": "low"
+        }
+      ],
+      "messaging_preferences": [
+        "Concrete metrics and proof points over generic claims",
+        "Clear, simple pricing with transparent models",
+        "Proactive communication about changes with sufficient lead time",
+        "Dedicated, responsive support contacts who understand their business",
+        "Hands-on testing/trial before committing to new features",
+        "Direct, transparent communication about pricing and contract terms upfront",
+        "Quarterly or semi-annual check-ins rather than frequent monthly meetings",
+        "Technical demonstrations focused on specific workflows and use cases"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Concrete metrics and proof points over generic claims",
+          "frequency": "low"
+        },
+        {
+          "text": "Clear, simple pricing with transparent models",
+          "frequency": "low"
+        },
+        {
+          "text": "Proactive communication about changes with sufficient lead time",
+          "frequency": "low"
+        },
+        {
+          "text": "Dedicated, responsive support contacts who understand their business",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on testing/trial before committing to new features",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct, transparent communication about pricing and contract terms upfront",
+          "frequency": "low"
+        },
+        {
+          "text": "Quarterly or semi-annual check-ins rather than frequent monthly meetings",
+          "frequency": "low"
+        },
+        {
+          "text": "Technical demonstrations focused on specific workflows and use cases",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "CSAT: Primary indicator of customer satisfaction and service quality, with organizations tracking trends and comparing against competitive benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Deflection Rate: Measures AI/bot effectiveness at resolving issues without agent intervention, critical for demonstrating automation ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "First Reply Time: Key performance indicator for agent responsiveness and customer experience quality, though some are shifting focus to total resolution time",
+          "frequency": "low"
+        },
+        {
+          "text": "Resolution Time: Measures end-to-end efficiency in resolving customer issues, with organizations comparing against industry benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Deflection Rate: Organizations measure success by the percentage of tickets handled by AI/self-service rather than human agents, typically targeting 30-40% deflection to reduce workload and costs",
+          "frequency": "low"
+        },
+        {
+          "text": "Average Handle Time (AHT): Reducing time per ticket through AI assistance and automation is critical for improving agent productivity and demonstrating ROI, with targets of 45% reduction mentioned",
+          "frequency": "low"
+        },
+        {
+          "text": "First Contact Resolution: Customers track whether tickets are resolved on first interaction versus requiring escalation or investigation, as it impacts both efficiency and customer satisfaction",
+          "frequency": "low"
+        },
+        {
+          "text": "Cost Savings / ROI: Organizations need to quantify dollar savings from automation, deflection, and efficiency gains to justify Zendesk investments and renewals to leadership",
+          "frequency": "low"
+        }
+      ]
+    },
+    "Operations Leader": {
+      "buying_behavior": {
+        "authority_level": "Medium-High - can influence decision",
+        "committee_size": "Works closely with CX Champion",
+        "decision_speed": "Influential throughout process",
+        "prefers": "Operational deep dives, metrics-focused demos"
+      },
+      "challenges": [
+        "WFM integration requirements - need to connect to existing tools",
+        "Quality assurance at scale - AI needed",
+        "Real-time operational dashboards"
+      ],
+      "challenges_from_gong": [
+        "WFM integration requirements - need to connect to existing tools",
+        "Quality assurance at scale - AI needed",
+        "Real-time operational dashboards"
+      ],
+      "content_preferences": [
+        "WFM integration guides",
+        "QA automation case studies",
+        "Operational efficiency benchmarks",
+        "Workforce optimization ROI models"
+      ],
+      "evaluation_criteria": [
+        "WFM capabilities or integrations (Verint, Calabrio, NICE)",
+        "AI-powered QA to review 100% of interactions",
+        "Real-time operational dashboards",
+        "Agent performance management tools",
+        "Customizable reporting for different stakeholders"
+      ],
+      "goals": [
+        "Optimize workforce management and capacity planning",
+        "Scale QA from <1% to 100% of interactions (AI-powered)",
+        "Improve operational efficiency and reduce waste"
+      ],
+      "job_titles": [
+        "Director of Service Operations",
+        "VP Operations",
+        "Workforce Management Manager",
+        "Quality Assurance Director",
+        "Service Delivery Manager"
+      ],
+      "key_messages": [
+        "AI-powered QA - review 100% of interactions, not just 1%",
+        "WFM integrations - Verint, Calabrio, NICE, custom APIs",
+        "Real-time ops center - visibility into all teams",
+        "Agent coaching tools - turn QA insights into performance gains",
+        "Proven ROI - 15-20% efficiency gains from better WFM"
+      ],
+      "objections": [
+        "\"Will this integrate with our WFM platform?\"",
+        "\"Can your AI QA handle our complex quality rubrics?\"",
+        "\"Is reporting flexible enough for our needs?\""
+      ],
+      "pain_points": [],
+      "prevalence": "45% of Commercial deals (EMERGING)",
+      "reports_to": "COO or CX Champion",
+      "role_in_deal": "Key Influencer (growing importance)",
+      "success_metrics": [
+        "CSAT: Primary indicator of customer satisfaction and service quality, with organizations tracking trends and comparing against competitive benchmarks",
+        "Ticket Deflection Rate: Measures AI/bot effectiveness at resolving issues without agent intervention, critical for demonstrating automation ROI",
+        "First Reply Time: Key performance indicator for agent responsiveness and customer experience quality, though some are shifting focus to total resolution time",
+        "Resolution Time: Measures end-to-end efficiency in resolving customer issues, with organizations comparing against industry benchmarks",
+        "Ticket Deflection Rate: Organizations measure success by the percentage of tickets handled by AI/self-service rather than human agents, typically targeting 30-40% deflection to reduce workload and costs",
+        "Average Handle Time (AHT): Reducing time per ticket through AI assistance and automation is critical for improving agent productivity and demonstrating ROI, with targets of 45% reduction mentioned",
+        "First Contact Resolution: Customers track whether tickets are resolved on first interaction versus requiring escalation or investigation, as it impacts both efficiency and customer satisfaction",
+        "Cost Savings / ROI: Organizations need to quantify dollar savings from automation, deflection, and efficiency gains to justify Zendesk investments and renewals to leadership"
+      ],
+      "team_size": "Oversees ops, WFM, QA teams",
+      "product_requirements": [
+        "Selective/flexible licensing for AI, QA, and WFM features",
+        "Granular reporting and data export for AI agent conversations",
+        "AI agents that can process APIs and actions for real-time data lookup",
+        "Native approval workflows without requiring middleware or custom development",
+        "Open REST API for integration with automation systems and third-party tools",
+        "Multi-brand capability with departmental security and access controls",
+        "Audit logs and access controls for HIPAA compliance",
+        "Audit logging for AI-generated automations and changes"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "Selective/flexible licensing for AI, QA, and WFM features",
+          "frequency": "low"
+        },
+        {
+          "text": "Granular reporting and data export for AI agent conversations",
+          "frequency": "low"
+        },
+        {
+          "text": "AI agents that can process APIs and actions for real-time data lookup",
+          "frequency": "low"
+        },
+        {
+          "text": "Native approval workflows without requiring middleware or custom development",
+          "frequency": "low"
+        },
+        {
+          "text": "Open REST API for integration with automation systems and third-party tools",
+          "frequency": "low"
+        },
+        {
+          "text": "Multi-brand capability with departmental security and access controls",
+          "frequency": "low"
+        },
+        {
+          "text": "Audit logs and access controls for HIPAA compliance",
+          "frequency": "low"
+        },
+        {
+          "text": "Audit logging for AI-generated automations and changes",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Zendesk Customer Success/Account Teams",
+        "Zendesk Help Center and Documentation",
+        "Sister companies and peer organizations",
+        "Direct vendor outreach and sales conversations",
+        "Product documentation and monthly feature rollouts",
+        "Direct engagement with account team and specialists",
+        "Sandbox testing and trials",
+        "Zendesk Expert Sessions/Professional Services"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Zendesk Customer Success/Account Teams",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Help Center and Documentation",
+          "frequency": "low"
+        },
+        {
+          "text": "Sister companies and peer organizations",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct vendor outreach and sales conversations",
+          "frequency": "low"
+        },
+        {
+          "text": "Product documentation and monthly feature rollouts",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct engagement with account team and specialists",
+          "frequency": "low"
+        },
+        {
+          "text": "Sandbox testing and trials",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Expert Sessions/Professional Services",
+          "frequency": "low"
+        }
+      ],
+      "messaging_preferences": [
+        "Concrete metrics and proof points over generic claims",
+        "Clear, simple pricing with transparent models",
+        "Proactive communication about changes with sufficient lead time",
+        "Dedicated, responsive support contacts who understand their business",
+        "Hands-on testing/trial before committing to new features",
+        "Direct, transparent communication about pricing and contract terms upfront",
+        "Quarterly or semi-annual check-ins rather than frequent monthly meetings",
+        "Technical demonstrations focused on specific workflows and use cases"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Concrete metrics and proof points over generic claims",
+          "frequency": "low"
+        },
+        {
+          "text": "Clear, simple pricing with transparent models",
+          "frequency": "low"
+        },
+        {
+          "text": "Proactive communication about changes with sufficient lead time",
+          "frequency": "low"
+        },
+        {
+          "text": "Dedicated, responsive support contacts who understand their business",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on testing/trial before committing to new features",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct, transparent communication about pricing and contract terms upfront",
+          "frequency": "low"
+        },
+        {
+          "text": "Quarterly or semi-annual check-ins rather than frequent monthly meetings",
+          "frequency": "low"
+        },
+        {
+          "text": "Technical demonstrations focused on specific workflows and use cases",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "CSAT: Primary indicator of customer satisfaction and service quality, with organizations tracking trends and comparing against competitive benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Deflection Rate: Measures AI/bot effectiveness at resolving issues without agent intervention, critical for demonstrating automation ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "First Reply Time: Key performance indicator for agent responsiveness and customer experience quality, though some are shifting focus to total resolution time",
+          "frequency": "low"
+        },
+        {
+          "text": "Resolution Time: Measures end-to-end efficiency in resolving customer issues, with organizations comparing against industry benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Deflection Rate: Organizations measure success by the percentage of tickets handled by AI/self-service rather than human agents, typically targeting 30-40% deflection to reduce workload and costs",
+          "frequency": "low"
+        },
+        {
+          "text": "Average Handle Time (AHT): Reducing time per ticket through AI assistance and automation is critical for improving agent productivity and demonstrating ROI, with targets of 45% reduction mentioned",
+          "frequency": "low"
+        },
+        {
+          "text": "First Contact Resolution: Customers track whether tickets are resolved on first interaction versus requiring escalation or investigation, as it impacts both efficiency and customer satisfaction",
+          "frequency": "low"
+        },
+        {
+          "text": "Cost Savings / ROI: Organizations need to quantify dollar savings from automation, deflection, and efficiency gains to justify Zendesk investments and renewals to leadership",
+          "frequency": "low"
+        }
+      ]
+    }
+  },
+  "Digital": {
+    "Customer Service Generalist": {
+      "buying_behavior": {
+        "authority_level": "Low - influencer only",
+        "committee_size": "Needs founder approval",
+        "decision_speed": "Recommends to founder (adds 1-2 weeks)",
+        "prefers": "Trial before pitching to founder"
+      },
+      "challenges": [
+        "Need omnichannel - customers reach out everywhere",
+        "Knowledge base gaps - no organized help content",
+        "No collaboration tools when teammates help"
+      ],
+      "challenges_from_gong": [
+        "Need omnichannel - customers reach out everywhere",
+        "Knowledge base gaps - no organized help content",
+        "No collaboration tools when teammates help"
+      ],
+      "content_preferences": [
+        "Video walkthroughs",
+        "Getting started checklist",
+        "Templates for common responses",
+        "Small business case studies",
+        "Live onboarding help"
+      ],
+      "evaluation_criteria": [
+        "Easy to use daily - not intimidating",
+        "Handles email, chat, and social in one place",
+        "Can create simple help articles",
+        "Affordable on tight budget",
+        "Quick to learn - ideally no training needed"
+      ],
+      "goals": [
+        "Respond to customers quickly across email, chat, social",
+        "Keep founder happy by handling support independently",
+        "Track customer issues and spot patterns"
+      ],
+      "job_titles": [
+        "Customer Success Manager",
+        "Office Manager",
+        "Operations Coordinator",
+        "Customer Service Rep"
+      ],
+      "key_messages": [
+        "All customer conversations in one inbox",
+        "Built for small teams - dead simple to use",
+        "Free help center builder included",
+        "Get started in minutes, not hours",
+        "Live chat support to help you succeed"
+      ],
+      "objections": [
+        "\"Will the founder approve the cost?\"",
+        "\"Looks too complicated for our small team\"",
+        "\"We already use email, why change?\""
+      ],
+      "pain_points": [],
+      "prevalence": "45% of Digital deals",
+      "reports_to": "Founder/Owner",
+      "role_in_deal": "User/Influencer (recommends to founder)",
+      "success_metrics": [
+        "Ticket Volume Growth: Teams track volume increases to justify staffing, platform investments, and measure business growth impact on support operations",
+        "First Response Time: Key indicator of support efficiency and customer experience, with targets in the 4-6 hour range being monitored closely",
+        "Single-Touch Resolution Rate: Used to measure efficiency and quality, with benchmarks around 31% industry standard; low rates indicate need for improvement",
+        "Reopen Rate: Critical quality indicator; high rates (>10%) suggest incomplete resolutions, missing information, or poor answer quality requiring investigation",
+        "AI Resolution Rate: Measures true automation effectiveness and deflection, requiring custom tracking since native Zendesk AI reporting is insufficient",
+        "Manager Review Time Reduction: Reducing the time managers spend reviewing calls while maintaining quality oversight is a primary driver for QA adoption",
+        "Call Transcription Coverage: Moving from only voicemail transcripts to full live call transcription is the main reason for implementing QA",
+        "Average Handle Time (AHT): Critical for measuring agent efficiency and the impact of AI summaries on ticket resolution speed"
+      ],
+      "team_size": "Handles support solo or with 1-2 others",
+      "product_requirements": [
+        "AI that integrates with backend systems to execute actions (refunds, cancellations, account changes) not just provide information",
+        "Per-agent or role-based AI licensing instead of wall-to-wall requirements",
+        "Record and transcribe live phone calls, not just voicemails",
+        "Export transcripts for external AI analysis",
+        "Scope QA pricing to specific agents or teams, not org-wide",
+        "Review call activity without listening to every call",
+        "Multi-brand support with separate help centers and email addresses per brand",
+        "Integration with existing CRM systems (Salesforce, Hubspot)"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "AI that integrates with backend systems to execute actions (refunds, cancellations, account changes) not just provide information",
+          "frequency": "low"
+        },
+        {
+          "text": "Per-agent or role-based AI licensing instead of wall-to-wall requirements",
+          "frequency": "low"
+        },
+        {
+          "text": "Record and transcribe live phone calls, not just voicemails",
+          "frequency": "low"
+        },
+        {
+          "text": "Export transcripts for external AI analysis",
+          "frequency": "low"
+        },
+        {
+          "text": "Scope QA pricing to specific agents or teams, not org-wide",
+          "frequency": "low"
+        },
+        {
+          "text": "Review call activity without listening to every call",
+          "frequency": "low"
+        },
+        {
+          "text": "Multi-brand support with separate help centers and email addresses per brand",
+          "frequency": "low"
+        },
+        {
+          "text": "Integration with existing CRM systems (Salesforce, Hubspot)",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Zendesk Account Managers/CSMs",
+        "Product demos with solution consultants",
+        "Zendesk demos and product experts",
+        "Zendesk training.com platform",
+        "Zendesk Help Center",
+        "Competitor comparisons",
+        "Peer recommendations and existing Zendesk users",
+        "Competitor platforms (Hubspot, Intercom, Front, Drift)"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Zendesk Account Managers/CSMs",
+          "frequency": "medium"
+        },
+        {
+          "text": "Product demos with solution consultants",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk demos and product experts",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk training.com platform",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk Help Center",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitor comparisons",
+          "frequency": "medium"
+        },
+        {
+          "text": "Peer recommendations and existing Zendesk users",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitor platforms (Hubspot, Intercom, Front, Drift)",
+          "frequency": "medium"
+        }
+      ],
+      "messaging_preferences": [
+        "Want hands-on demos and trials before committing, not just feature descriptions",
+        "Prefer specific, actionable guidance over generic documentation links",
+        "Value proactive outreach about new features relevant to their use cases",
+        "Need concrete ROI data and efficiency metrics for internal stakeholder presentations",
+        "Detailed discovery of specific outcomes before solution demonstrations",
+        "Transparent discussion of pricing models and feature applicability to specific teams",
+        "Trial-based evaluation before full commitment",
+        "Prefer WhatsApp for quick, responsive communication"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Want hands-on demos and trials before committing, not just feature descriptions",
+          "frequency": "low"
+        },
+        {
+          "text": "Prefer specific, actionable guidance over generic documentation links",
+          "frequency": "low"
+        },
+        {
+          "text": "Value proactive outreach about new features relevant to their use cases",
+          "frequency": "low"
+        },
+        {
+          "text": "Need concrete ROI data and efficiency metrics for internal stakeholder presentations",
+          "frequency": "low"
+        },
+        {
+          "text": "Detailed discovery of specific outcomes before solution demonstrations",
+          "frequency": "low"
+        },
+        {
+          "text": "Transparent discussion of pricing models and feature applicability to specific teams",
+          "frequency": "low"
+        },
+        {
+          "text": "Trial-based evaluation before full commitment",
+          "frequency": "low"
+        },
+        {
+          "text": "Prefer WhatsApp for quick, responsive communication",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "Ticket Volume Growth: Teams track volume increases to justify staffing, platform investments, and measure business growth impact on support operations",
+          "frequency": "low"
+        },
+        {
+          "text": "First Response Time: Key indicator of support efficiency and customer experience, with targets in the 4-6 hour range being monitored closely",
+          "frequency": "low"
+        },
+        {
+          "text": "Single-Touch Resolution Rate: Used to measure efficiency and quality, with benchmarks around 31% industry standard; low rates indicate need for improvement",
+          "frequency": "low"
+        },
+        {
+          "text": "Reopen Rate: Critical quality indicator; high rates (>10%) suggest incomplete resolutions, missing information, or poor answer quality requiring investigation",
+          "frequency": "low"
+        },
+        {
+          "text": "AI Resolution Rate: Measures true automation effectiveness and deflection, requiring custom tracking since native Zendesk AI reporting is insufficient",
+          "frequency": "low"
+        },
+        {
+          "text": "Manager Review Time Reduction: Reducing the time managers spend reviewing calls while maintaining quality oversight is a primary driver for QA adoption",
+          "frequency": "low"
+        },
+        {
+          "text": "Call Transcription Coverage: Moving from only voicemail transcripts to full live call transcription is the main reason for implementing QA",
+          "frequency": "low"
+        },
+        {
+          "text": "Average Handle Time (AHT): Critical for measuring agent efficiency and the impact of AI summaries on ticket resolution speed",
+          "frequency": "low"
+        }
+      ]
+    },
+    "Founder/Owner": {
+      "buying_behavior": {
+        "authority_level": "Complete - no approvals needed",
+        "committee_size": "1 person (solo decision)",
+        "decision_speed": "7-14 days",
+        "prefers": "Self-service trial, no sales calls, transparent pricing"
+      },
+      "challenges": [
+        "Price sensitivity - need startup/small business pricing",
+        "Self-service implementation required - no IT department",
+        "Mobile-first needs - managing support on the go"
+      ],
+      "challenges_from_gong": [
+        "Price sensitivity - need startup/small business pricing",
+        "Self-service implementation required - no IT department",
+        "Mobile-first needs - managing support on the go"
+      ],
+      "content_preferences": [
+        "Short video tutorials (2-3 minutes)",
+        "Quick start guides",
+        "Founder testimonials from similar businesses",
+        "Pricing calculator",
+        "14-day free trial"
+      ],
+      "evaluation_criteria": [
+        "Price (must be under $50-100/month)",
+        "Setup time (must be live in hours, not weeks)",
+        "Mobile app quality",
+        "No learning curve - intuitive like consumer apps",
+        "Free trial to test before buying"
+      ],
+      "goals": [
+        "Get support tools running quickly with zero IT help",
+        "Keep costs low - every dollar counts",
+        "Deliver professional customer service despite small team"
+      ],
+      "job_titles": [
+        "Founder",
+        "CEO",
+        "Owner",
+        "Managing Director"
+      ],
+      "key_messages": [
+        "Special pricing for startups - as low as $19/month",
+        "Setup in 15 minutes - no technical skills required",
+        "Mobile app lets you support customers anywhere",
+        "Start free, pay as you grow",
+        "Thousands of solo founders trust us"
+      ],
+      "objections": [
+        "\"This is too expensive for our size\"",
+        "\"Looks complicated - don't have time to learn\"",
+        "\"Do I really need this or can I just use email?\""
+      ],
+      "pain_points": [],
+      "prevalence": "88% of Digital deals",
+      "reports_to": "Self",
+      "role_in_deal": "Sole Decision Maker",
+      "success_metrics": [
+        "Ticket Volume Growth: Teams track volume increases to justify staffing, platform investments, and measure business growth impact on support operations",
+        "First Response Time: Key indicator of support efficiency and customer experience, with targets in the 4-6 hour range being monitored closely",
+        "Single-Touch Resolution Rate: Used to measure efficiency and quality, with benchmarks around 31% industry standard; low rates indicate need for improvement",
+        "Reopen Rate: Critical quality indicator; high rates (>10%) suggest incomplete resolutions, missing information, or poor answer quality requiring investigation",
+        "AI Resolution Rate: Measures true automation effectiveness and deflection, requiring custom tracking since native Zendesk AI reporting is insufficient",
+        "Manager Review Time Reduction: Reducing the time managers spend reviewing calls while maintaining quality oversight is a primary driver for QA adoption",
+        "Call Transcription Coverage: Moving from only voicemail transcripts to full live call transcription is the main reason for implementing QA",
+        "Average Handle Time (AHT): Critical for measuring agent efficiency and the impact of AI summaries on ticket resolution speed"
+      ],
+      "team_size": "1-10 employees total",
+      "product_requirements": [
+        "AI that integrates with backend systems to execute actions (refunds, cancellations, account changes) not just provide information",
+        "Per-agent or role-based AI licensing instead of wall-to-wall requirements",
+        "Record and transcribe live phone calls, not just voicemails",
+        "Export transcripts for external AI analysis",
+        "Scope QA pricing to specific agents or teams, not org-wide",
+        "Review call activity without listening to every call",
+        "Multi-brand support with separate help centers and email addresses per brand",
+        "Integration with existing CRM systems (Salesforce, Hubspot)"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "AI that integrates with backend systems to execute actions (refunds, cancellations, account changes) not just provide information",
+          "frequency": "low"
+        },
+        {
+          "text": "Per-agent or role-based AI licensing instead of wall-to-wall requirements",
+          "frequency": "low"
+        },
+        {
+          "text": "Record and transcribe live phone calls, not just voicemails",
+          "frequency": "low"
+        },
+        {
+          "text": "Export transcripts for external AI analysis",
+          "frequency": "low"
+        },
+        {
+          "text": "Scope QA pricing to specific agents or teams, not org-wide",
+          "frequency": "low"
+        },
+        {
+          "text": "Review call activity without listening to every call",
+          "frequency": "low"
+        },
+        {
+          "text": "Multi-brand support with separate help centers and email addresses per brand",
+          "frequency": "low"
+        },
+        {
+          "text": "Integration with existing CRM systems (Salesforce, Hubspot)",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Zendesk Account Managers/CSMs",
+        "Product demos with solution consultants",
+        "Zendesk demos and product experts",
+        "Zendesk training.com platform",
+        "Zendesk Help Center",
+        "Competitor comparisons",
+        "Peer recommendations and existing Zendesk users",
+        "Competitor platforms (Hubspot, Intercom, Front, Drift)"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Zendesk Account Managers/CSMs",
+          "frequency": "medium"
+        },
+        {
+          "text": "Product demos with solution consultants",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk demos and product experts",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk training.com platform",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk Help Center",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitor comparisons",
+          "frequency": "medium"
+        },
+        {
+          "text": "Peer recommendations and existing Zendesk users",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitor platforms (Hubspot, Intercom, Front, Drift)",
+          "frequency": "medium"
+        }
+      ],
+      "messaging_preferences": [
+        "Want hands-on demos and trials before committing, not just feature descriptions",
+        "Prefer specific, actionable guidance over generic documentation links",
+        "Value proactive outreach about new features relevant to their use cases",
+        "Need concrete ROI data and efficiency metrics for internal stakeholder presentations",
+        "Detailed discovery of specific outcomes before solution demonstrations",
+        "Transparent discussion of pricing models and feature applicability to specific teams",
+        "Trial-based evaluation before full commitment",
+        "Prefer WhatsApp for quick, responsive communication"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Want hands-on demos and trials before committing, not just feature descriptions",
+          "frequency": "low"
+        },
+        {
+          "text": "Prefer specific, actionable guidance over generic documentation links",
+          "frequency": "low"
+        },
+        {
+          "text": "Value proactive outreach about new features relevant to their use cases",
+          "frequency": "low"
+        },
+        {
+          "text": "Need concrete ROI data and efficiency metrics for internal stakeholder presentations",
+          "frequency": "low"
+        },
+        {
+          "text": "Detailed discovery of specific outcomes before solution demonstrations",
+          "frequency": "low"
+        },
+        {
+          "text": "Transparent discussion of pricing models and feature applicability to specific teams",
+          "frequency": "low"
+        },
+        {
+          "text": "Trial-based evaluation before full commitment",
+          "frequency": "low"
+        },
+        {
+          "text": "Prefer WhatsApp for quick, responsive communication",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "Ticket Volume Growth: Teams track volume increases to justify staffing, platform investments, and measure business growth impact on support operations",
+          "frequency": "low"
+        },
+        {
+          "text": "First Response Time: Key indicator of support efficiency and customer experience, with targets in the 4-6 hour range being monitored closely",
+          "frequency": "low"
+        },
+        {
+          "text": "Single-Touch Resolution Rate: Used to measure efficiency and quality, with benchmarks around 31% industry standard; low rates indicate need for improvement",
+          "frequency": "low"
+        },
+        {
+          "text": "Reopen Rate: Critical quality indicator; high rates (>10%) suggest incomplete resolutions, missing information, or poor answer quality requiring investigation",
+          "frequency": "low"
+        },
+        {
+          "text": "AI Resolution Rate: Measures true automation effectiveness and deflection, requiring custom tracking since native Zendesk AI reporting is insufficient",
+          "frequency": "low"
+        },
+        {
+          "text": "Manager Review Time Reduction: Reducing the time managers spend reviewing calls while maintaining quality oversight is a primary driver for QA adoption",
+          "frequency": "low"
+        },
+        {
+          "text": "Call Transcription Coverage: Moving from only voicemail transcripts to full live call transcription is the main reason for implementing QA",
+          "frequency": "low"
+        },
+        {
+          "text": "Average Handle Time (AHT): Critical for measuring agent efficiency and the impact of AI summaries on ticket resolution speed",
+          "frequency": "low"
+        }
+      ]
+    }
+  },
+  "Enterprise": {
+    "CX Executive": {
+      "buying_behavior": {
+        "authority_level": "Executive Sponsor - drives but needs coalition",
+        "committee_size": "10-15 people (CX, IT, Finance, Procurement, Legal, Security, Operations)",
+        "decision_speed": "6-12 months",
+        "prefers": "Structured RFP, POC with 50+ agents, multi-phase rollout"
+      },
+      "challenges": [
+        "Multi-year digital transformation roadmaps",
+        "Global rollout complexity - 5+ regions, compliance requirements",
+        "Change management at scale - 100s of agents to train"
+      ],
+      "challenges_from_gong": [
+        "Multi-year digital transformation roadmaps",
+        "Global rollout complexity - 5+ regions, compliance requirements",
+        "Change management at scale - 100s of agents to train"
+      ],
+      "content_preferences": [
+        "Executive briefings with CCOs from similar companies",
+        "Analyst reports (Gartner, Forrester, Constellation)",
+        "Total Economic Impact study",
+        "Multi-year transformation roadmap",
+        "Board-ready business case"
+      ],
+      "evaluation_criteria": [
+        "Enterprise scalability - proven at 1000+ agent deployments",
+        "Strategic partnership - not just a vendor",
+        "Global support - 24/7 enterprise SLAs, multi-language",
+        "Gartner/Forrester positioning - top quadrant placement",
+        "Change management & consulting services included"
+      ],
+      "goals": [
+        "Transform customer experience into competitive advantage",
+        "Reduce cost-to-serve while improving NPS by 15+ points",
+        "Consolidate fragmented CX tech stack (8-15 tools)"
+      ],
+      "job_titles": [
+        "SVP Customer Experience",
+        "Chief Customer Officer",
+        "VP Global Customer Support",
+        "Head of Customer Success & Support"
+      ],
+      "key_messages": [
+        "Gartner Leader - proven at Fortune 500 scale",
+        "Migration de-risked - dedicated team, proven methodology",
+        "18-24 month ROI with 25-30% efficiency gains",
+        "White-glove change management included",
+        "Reference customers: [major enterprise names]"
+      ],
+      "objections": [
+        "\"We've already invested millions in our current platform\"",
+        "\"Too risky to migrate 500+ agents\"",
+        "\"Our business is too complex for out-of-box solutions\""
+      ],
+      "pain_points": [],
+      "prevalence": "95% of Enterprise deals",
+      "reports_to": "CEO or President",
+      "role_in_deal": "Executive Sponsor & Final Approver",
+      "success_metrics": [
+        "AI Automation Rate: Customers target 30-40% automation rates to reduce manual workload, with specific use cases achieving 18% call deflection. Success is measured by meaningful resolution percentages.",
+        "CSAT: Customer satisfaction remains a critical measure, with best-in-class targets of 95% CSAT. Customers track CSAT for both human and AI-resolved interactions.",
+        "Agent Capacity Recovery: Organizations aim to recover 15,000 hours of productive capacity (equivalent to 10 FTEs) and reduce offshore contracts by 30% through automation, reallocating staff to higher-value work.",
+        "Ticket Volume by Category: Tracking volume by service type, product category, and department helps identify bottlenecks, prioritize resources, and measure impact of process improvements.",
+        "ROI & Cost Per Ticket: Enterprise customers need quantified ROI projections (300% three-year ROI cited) and cost-per-ticket metrics to justify platform investments and compete with internal alternatives.",
+        "Automated resolution rate: Critical for scaling operations without proportional headcount increases; targets of 70-80% are common expectations",
+        "Agent productivity/efficiency: Measured by tickets handled per agent, time saved on administrative tasks, and ability to focus on complex issues rather than repetitive queries",
+        "Response time: Speed is directly tied to customer satisfaction and competitive advantage, especially in high-volume environments"
+      ],
+      "team_size": "100-500+ agents across multiple regions",
+      "product_requirements": [
+        "AI that meets promised performance benchmarks with transparent accuracy metrics",
+        "Native bidirectional Salesforce integration with customer data, assets, routing, and service history",
+        "SSO/SAML federation enabling instant access for thousands of users without manual provisioning",
+        "Forced chat/conversation closure for critical escalations preventing further bot interaction",
+        "Native integrations with major CRM/ERP systems",
+        "Multi-channel support including WhatsApp, social media, voice",
+        "Advanced AI with API connectivity for real-time data",
+        "Flexible licensing models (pooled, usage-based)"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "AI that meets promised performance benchmarks with transparent accuracy metrics",
+          "frequency": "low"
+        },
+        {
+          "text": "Native bidirectional Salesforce integration with customer data, assets, routing, and service history",
+          "frequency": "low"
+        },
+        {
+          "text": "SSO/SAML federation enabling instant access for thousands of users without manual provisioning",
+          "frequency": "low"
+        },
+        {
+          "text": "Forced chat/conversation closure for critical escalations preventing further bot interaction",
+          "frequency": "low"
+        },
+        {
+          "text": "Native integrations with major CRM/ERP systems",
+          "frequency": "low"
+        },
+        {
+          "text": "Multi-channel support including WhatsApp, social media, voice",
+          "frequency": "low"
+        },
+        {
+          "text": "Advanced AI with API connectivity for real-time data",
+          "frequency": "low"
+        },
+        {
+          "text": "Flexible licensing models (pooled, usage-based)",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Relate Conference",
+        "Zendesk CSM & Technical Architects",
+        "Partner recommendations",
+        "Internal proof of concept",
+        "Direct vendor demonstrations and sandbox trials",
+        "Internal IT/security team assessments",
+        "Zendesk CSM and Account Team",
+        "Zendesk Product Documentation"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Relate Conference",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk CSM & Technical Architects",
+          "frequency": "low"
+        },
+        {
+          "text": "Partner recommendations",
+          "frequency": "low"
+        },
+        {
+          "text": "Internal proof of concept",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct vendor demonstrations and sandbox trials",
+          "frequency": "low"
+        },
+        {
+          "text": "Internal IT/security team assessments",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk CSM and Account Team",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Product Documentation",
+          "frequency": "low"
+        }
+      ],
+      "messaging_preferences": [
+        "Data-driven business cases with quantified ROI and benchmarks",
+        "Executive-level roadmap presentations showing current state, future state, and required products",
+        "Transparent product roadmap discussions with realistic timelines",
+        "On-site agent shadowing and discovery sessions for deep understanding",
+        "Symbiotic partnership approach with regular strategic check-ins",
+        "Demos focused on specific use cases and integration capabilities",
+        "Executive-level strategic discussions with technical follow-up",
+        "Hands-on demonstrations tailored to specific use cases"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Data-driven business cases with quantified ROI and benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Executive-level roadmap presentations showing current state, future state, and required products",
+          "frequency": "low"
+        },
+        {
+          "text": "Transparent product roadmap discussions with realistic timelines",
+          "frequency": "low"
+        },
+        {
+          "text": "On-site agent shadowing and discovery sessions for deep understanding",
+          "frequency": "low"
+        },
+        {
+          "text": "Symbiotic partnership approach with regular strategic check-ins",
+          "frequency": "low"
+        },
+        {
+          "text": "Demos focused on specific use cases and integration capabilities",
+          "frequency": "low"
+        },
+        {
+          "text": "Executive-level strategic discussions with technical follow-up",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on demonstrations tailored to specific use cases",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "AI Automation Rate: Customers target 30-40% automation rates to reduce manual workload, with specific use cases achieving 18% call deflection. Success is measured by meaningful resolution percentages.",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT: Customer satisfaction remains a critical measure, with best-in-class targets of 95% CSAT. Customers track CSAT for both human and AI-resolved interactions.",
+          "frequency": "low"
+        },
+        {
+          "text": "Agent Capacity Recovery: Organizations aim to recover 15,000 hours of productive capacity (equivalent to 10 FTEs) and reduce offshore contracts by 30% through automation, reallocating staff to higher-value work.",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Volume by Category: Tracking volume by service type, product category, and department helps identify bottlenecks, prioritize resources, and measure impact of process improvements.",
+          "frequency": "low"
+        },
+        {
+          "text": "ROI & Cost Per Ticket: Enterprise customers need quantified ROI projections (300% three-year ROI cited) and cost-per-ticket metrics to justify platform investments and compete with internal alternatives.",
+          "frequency": "low"
+        },
+        {
+          "text": "Automated resolution rate: Critical for scaling operations without proportional headcount increases; targets of 70-80% are common expectations",
+          "frequency": "low"
+        },
+        {
+          "text": "Agent productivity/efficiency: Measured by tickets handled per agent, time saved on administrative tasks, and ability to focus on complex issues rather than repetitive queries",
+          "frequency": "low"
+        },
+        {
+          "text": "Response time: Speed is directly tied to customer satisfaction and competitive advantage, especially in high-volume environments",
+          "frequency": "low"
+        }
+      ]
+    },
+    "Enterprise IT Architect": {
+      "buying_behavior": {
+        "authority_level": "Can block - must approve architecture",
+        "committee_size": "IT architecture board (5-8 people)",
+        "decision_speed": "2-4 months technical evaluation",
+        "prefers": "Technical POC, architecture review, security assessment"
+      },
+      "challenges": [
+        "Enterprise integration requirements - SSO, SCIM, APIs, webhooks",
+        "Security and compliance - SOC 2, ISO, HIPAA, GDPR, FedRAMP",
+        "Disaster recovery and business continuity planning"
+      ],
+      "challenges_from_gong": [
+        "Enterprise integration requirements - SSO, SCIM, APIs, webhooks",
+        "Security and compliance - SOC 2, ISO, HIPAA, GDPR, FedRAMP",
+        "Disaster recovery and business continuity planning"
+      ],
+      "content_preferences": [
+        "Enterprise architecture diagrams",
+        "Security and compliance documentation",
+        "API and integration documentation",
+        "Technical deep-dive sessions",
+        "Reference architectures from similar enterprises"
+      ],
+      "evaluation_criteria": [
+        "Enterprise security certifications (SOC 2 Type 2, ISO 27001, FedRAMP)",
+        "Integration architecture - REST APIs, webhooks, SCIM, enterprise SSO",
+        "Scalability and performance - SLAs for 99.99% uptime",
+        "Data governance - encryption, residency, retention",
+        "Professional services team for complex implementations"
+      ],
+      "goals": [
+        "Ensure enterprise architecture alignment and standards",
+        "Reduce technical debt and platform sprawl",
+        "Maintain security, compliance, and governance"
+      ],
+      "job_titles": [
+        "Enterprise Architect",
+        "VP Technology",
+        "Chief Information Officer",
+        "Director Enterprise Applications"
+      ],
+      "key_messages": [
+        "Enterprise-grade security - SOC 2 Type 2, ISO 27001, FedRAMP authorized",
+        "Pre-built enterprise integrations - SAP, Oracle, ServiceNow",
+        "99.99% uptime SLA with enterprise support",
+        "Global data residency options (US, EU, APAC)",
+        "Dedicated solutions architect for implementation"
+      ],
+      "objections": [
+        "\"Does this meet our enterprise security standards?\"",
+        "\"How will this integrate with our SAP/Oracle/ServiceNow environment?\"",
+        "\"What's the total cost of implementation and maintenance?\""
+      ],
+      "pain_points": [],
+      "prevalence": "85% of Enterprise deals",
+      "reports_to": "CIO or CTO",
+      "role_in_deal": "Technical Approver & Gatekeeper",
+      "success_metrics": [
+        "AI Automation Rate: Customers target 30-40% automation rates to reduce manual workload, with specific use cases achieving 18% call deflection. Success is measured by meaningful resolution percentages.",
+        "CSAT: Customer satisfaction remains a critical measure, with best-in-class targets of 95% CSAT. Customers track CSAT for both human and AI-resolved interactions.",
+        "Agent Capacity Recovery: Organizations aim to recover 15,000 hours of productive capacity (equivalent to 10 FTEs) and reduce offshore contracts by 30% through automation, reallocating staff to higher-value work.",
+        "Ticket Volume by Category: Tracking volume by service type, product category, and department helps identify bottlenecks, prioritize resources, and measure impact of process improvements.",
+        "ROI & Cost Per Ticket: Enterprise customers need quantified ROI projections (300% three-year ROI cited) and cost-per-ticket metrics to justify platform investments and compete with internal alternatives.",
+        "Automated resolution rate: Critical for scaling operations without proportional headcount increases; targets of 70-80% are common expectations",
+        "Agent productivity/efficiency: Measured by tickets handled per agent, time saved on administrative tasks, and ability to focus on complex issues rather than repetitive queries",
+        "Response time: Speed is directly tied to customer satisfaction and competitive advantage, especially in high-volume environments"
+      ],
+      "team_size": "IT department of 50-200+",
+      "product_requirements": [
+        "AI that meets promised performance benchmarks with transparent accuracy metrics",
+        "Native bidirectional Salesforce integration with customer data, assets, routing, and service history",
+        "SSO/SAML federation enabling instant access for thousands of users without manual provisioning",
+        "Forced chat/conversation closure for critical escalations preventing further bot interaction",
+        "Native integrations with major CRM/ERP systems",
+        "Multi-channel support including WhatsApp, social media, voice",
+        "Advanced AI with API connectivity for real-time data",
+        "Flexible licensing models (pooled, usage-based)"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "AI that meets promised performance benchmarks with transparent accuracy metrics",
+          "frequency": "low"
+        },
+        {
+          "text": "Native bidirectional Salesforce integration with customer data, assets, routing, and service history",
+          "frequency": "low"
+        },
+        {
+          "text": "SSO/SAML federation enabling instant access for thousands of users without manual provisioning",
+          "frequency": "low"
+        },
+        {
+          "text": "Forced chat/conversation closure for critical escalations preventing further bot interaction",
+          "frequency": "low"
+        },
+        {
+          "text": "Native integrations with major CRM/ERP systems",
+          "frequency": "low"
+        },
+        {
+          "text": "Multi-channel support including WhatsApp, social media, voice",
+          "frequency": "low"
+        },
+        {
+          "text": "Advanced AI with API connectivity for real-time data",
+          "frequency": "low"
+        },
+        {
+          "text": "Flexible licensing models (pooled, usage-based)",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Relate Conference",
+        "Zendesk CSM & Technical Architects",
+        "Partner recommendations",
+        "Internal proof of concept",
+        "Direct vendor demonstrations and sandbox trials",
+        "Internal IT/security team assessments",
+        "Zendesk CSM and Account Team",
+        "Zendesk Product Documentation"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Relate Conference",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk CSM & Technical Architects",
+          "frequency": "low"
+        },
+        {
+          "text": "Partner recommendations",
+          "frequency": "low"
+        },
+        {
+          "text": "Internal proof of concept",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct vendor demonstrations and sandbox trials",
+          "frequency": "low"
+        },
+        {
+          "text": "Internal IT/security team assessments",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk CSM and Account Team",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Product Documentation",
+          "frequency": "low"
+        }
+      ],
+      "messaging_preferences": [
+        "Data-driven business cases with quantified ROI and benchmarks",
+        "Executive-level roadmap presentations showing current state, future state, and required products",
+        "Transparent product roadmap discussions with realistic timelines",
+        "On-site agent shadowing and discovery sessions for deep understanding",
+        "Symbiotic partnership approach with regular strategic check-ins",
+        "Demos focused on specific use cases and integration capabilities",
+        "Executive-level strategic discussions with technical follow-up",
+        "Hands-on demonstrations tailored to specific use cases"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Data-driven business cases with quantified ROI and benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Executive-level roadmap presentations showing current state, future state, and required products",
+          "frequency": "low"
+        },
+        {
+          "text": "Transparent product roadmap discussions with realistic timelines",
+          "frequency": "low"
+        },
+        {
+          "text": "On-site agent shadowing and discovery sessions for deep understanding",
+          "frequency": "low"
+        },
+        {
+          "text": "Symbiotic partnership approach with regular strategic check-ins",
+          "frequency": "low"
+        },
+        {
+          "text": "Demos focused on specific use cases and integration capabilities",
+          "frequency": "low"
+        },
+        {
+          "text": "Executive-level strategic discussions with technical follow-up",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on demonstrations tailored to specific use cases",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "AI Automation Rate: Customers target 30-40% automation rates to reduce manual workload, with specific use cases achieving 18% call deflection. Success is measured by meaningful resolution percentages.",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT: Customer satisfaction remains a critical measure, with best-in-class targets of 95% CSAT. Customers track CSAT for both human and AI-resolved interactions.",
+          "frequency": "low"
+        },
+        {
+          "text": "Agent Capacity Recovery: Organizations aim to recover 15,000 hours of productive capacity (equivalent to 10 FTEs) and reduce offshore contracts by 30% through automation, reallocating staff to higher-value work.",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Volume by Category: Tracking volume by service type, product category, and department helps identify bottlenecks, prioritize resources, and measure impact of process improvements.",
+          "frequency": "low"
+        },
+        {
+          "text": "ROI & Cost Per Ticket: Enterprise customers need quantified ROI projections (300% three-year ROI cited) and cost-per-ticket metrics to justify platform investments and compete with internal alternatives.",
+          "frequency": "low"
+        },
+        {
+          "text": "Automated resolution rate: Critical for scaling operations without proportional headcount increases; targets of 70-80% are common expectations",
+          "frequency": "low"
+        },
+        {
+          "text": "Agent productivity/efficiency: Measured by tickets handled per agent, time saved on administrative tasks, and ability to focus on complex issues rather than repetitive queries",
+          "frequency": "low"
+        },
+        {
+          "text": "Response time: Speed is directly tied to customer satisfaction and competitive advantage, especially in high-volume environments",
+          "frequency": "low"
+        }
+      ]
+    },
+    "Global Operations Leader": {
+      "buying_behavior": {
+        "authority_level": "High influence - operational approval critical",
+        "committee_size": "Works with CX Executive and regional leaders",
+        "decision_speed": "3-6 months evaluation",
+        "prefers": "Operational deep dives, metrics analysis, phased POC"
+      },
+      "challenges": [
+        "Advanced workforce management - AI forecasting, skills-based routing",
+        "Quality management at scale - automated QA, coaching workflows",
+        "Global process standardization across regions"
+      ],
+      "challenges_from_gong": [
+        "Advanced workforce management - AI forecasting, skills-based routing",
+        "Quality management at scale - automated QA, coaching workflows",
+        "Global process standardization across regions"
+      ],
+      "content_preferences": [
+        "Operational metrics case studies",
+        "WFM integration documentation",
+        "Global deployment playbooks",
+        "ROI calculator for enterprise scale",
+        "Ops leader peer references"
+      ],
+      "evaluation_criteria": [
+        "Workforce management capabilities or integrations",
+        "Quality assurance and coaching tools at scale",
+        "Global reporting and real-time dashboards",
+        "Automation capabilities - routing, triage, responses",
+        "Proven ROI from similar-sized deployments"
+      ],
+      "goals": [
+        "Optimize global workforce across time zones and regions",
+        "Drive operational excellence - 95%+ SLA compliance",
+        "Reduce operational costs by 20-30%"
+      ],
+      "job_titles": [
+        "VP Global Operations",
+        "SVP Service Delivery",
+        "Head of Workforce Management",
+        "Director Global Support Operations"
+      ],
+      "key_messages": [
+        "Enterprise WFM integration - Nice, Verint, Calabrio",
+        "AI-powered quality management - review 100% of interactions",
+        "Global deployment proven - 20+ languages, all time zones",
+        "25-30% efficiency gains within 12 months",
+        "Phased rollout to minimize disruption"
+      ],
+      "objections": [
+        "\"Our operations are too complex for standard solutions\"",
+        "\"Will this work across our 12 global sites?\"",
+        "\"How long until we see efficiency gains?\""
+      ],
+      "pain_points": [],
+      "prevalence": "72% of Enterprise deals",
+      "reports_to": "CX Executive or COO",
+      "role_in_deal": "Key Influencer - operational approval needed",
+      "success_metrics": [
+        "AI Automation Rate: Customers target 30-40% automation rates to reduce manual workload, with specific use cases achieving 18% call deflection. Success is measured by meaningful resolution percentages.",
+        "CSAT: Customer satisfaction remains a critical measure, with best-in-class targets of 95% CSAT. Customers track CSAT for both human and AI-resolved interactions.",
+        "Agent Capacity Recovery: Organizations aim to recover 15,000 hours of productive capacity (equivalent to 10 FTEs) and reduce offshore contracts by 30% through automation, reallocating staff to higher-value work.",
+        "Ticket Volume by Category: Tracking volume by service type, product category, and department helps identify bottlenecks, prioritize resources, and measure impact of process improvements.",
+        "ROI & Cost Per Ticket: Enterprise customers need quantified ROI projections (300% three-year ROI cited) and cost-per-ticket metrics to justify platform investments and compete with internal alternatives.",
+        "Automated resolution rate: Critical for scaling operations without proportional headcount increases; targets of 70-80% are common expectations",
+        "Agent productivity/efficiency: Measured by tickets handled per agent, time saved on administrative tasks, and ability to focus on complex issues rather than repetitive queries",
+        "Response time: Speed is directly tied to customer satisfaction and competitive advantage, especially in high-volume environments"
+      ],
+      "team_size": "Oversees 100-500+ agents globally",
+      "product_requirements": [
+        "AI that meets promised performance benchmarks with transparent accuracy metrics",
+        "Native bidirectional Salesforce integration with customer data, assets, routing, and service history",
+        "SSO/SAML federation enabling instant access for thousands of users without manual provisioning",
+        "Forced chat/conversation closure for critical escalations preventing further bot interaction",
+        "Native integrations with major CRM/ERP systems",
+        "Multi-channel support including WhatsApp, social media, voice",
+        "Advanced AI with API connectivity for real-time data",
+        "Flexible licensing models (pooled, usage-based)"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "AI that meets promised performance benchmarks with transparent accuracy metrics",
+          "frequency": "low"
+        },
+        {
+          "text": "Native bidirectional Salesforce integration with customer data, assets, routing, and service history",
+          "frequency": "low"
+        },
+        {
+          "text": "SSO/SAML federation enabling instant access for thousands of users without manual provisioning",
+          "frequency": "low"
+        },
+        {
+          "text": "Forced chat/conversation closure for critical escalations preventing further bot interaction",
+          "frequency": "low"
+        },
+        {
+          "text": "Native integrations with major CRM/ERP systems",
+          "frequency": "low"
+        },
+        {
+          "text": "Multi-channel support including WhatsApp, social media, voice",
+          "frequency": "low"
+        },
+        {
+          "text": "Advanced AI with API connectivity for real-time data",
+          "frequency": "low"
+        },
+        {
+          "text": "Flexible licensing models (pooled, usage-based)",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Relate Conference",
+        "Zendesk CSM & Technical Architects",
+        "Partner recommendations",
+        "Internal proof of concept",
+        "Direct vendor demonstrations and sandbox trials",
+        "Internal IT/security team assessments",
+        "Zendesk CSM and Account Team",
+        "Zendesk Product Documentation"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Relate Conference",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk CSM & Technical Architects",
+          "frequency": "low"
+        },
+        {
+          "text": "Partner recommendations",
+          "frequency": "low"
+        },
+        {
+          "text": "Internal proof of concept",
+          "frequency": "low"
+        },
+        {
+          "text": "Direct vendor demonstrations and sandbox trials",
+          "frequency": "low"
+        },
+        {
+          "text": "Internal IT/security team assessments",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk CSM and Account Team",
+          "frequency": "low"
+        },
+        {
+          "text": "Zendesk Product Documentation",
+          "frequency": "low"
+        }
+      ],
+      "messaging_preferences": [
+        "Data-driven business cases with quantified ROI and benchmarks",
+        "Executive-level roadmap presentations showing current state, future state, and required products",
+        "Transparent product roadmap discussions with realistic timelines",
+        "On-site agent shadowing and discovery sessions for deep understanding",
+        "Symbiotic partnership approach with regular strategic check-ins",
+        "Demos focused on specific use cases and integration capabilities",
+        "Executive-level strategic discussions with technical follow-up",
+        "Hands-on demonstrations tailored to specific use cases"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Data-driven business cases with quantified ROI and benchmarks",
+          "frequency": "low"
+        },
+        {
+          "text": "Executive-level roadmap presentations showing current state, future state, and required products",
+          "frequency": "low"
+        },
+        {
+          "text": "Transparent product roadmap discussions with realistic timelines",
+          "frequency": "low"
+        },
+        {
+          "text": "On-site agent shadowing and discovery sessions for deep understanding",
+          "frequency": "low"
+        },
+        {
+          "text": "Symbiotic partnership approach with regular strategic check-ins",
+          "frequency": "low"
+        },
+        {
+          "text": "Demos focused on specific use cases and integration capabilities",
+          "frequency": "low"
+        },
+        {
+          "text": "Executive-level strategic discussions with technical follow-up",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on demonstrations tailored to specific use cases",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "AI Automation Rate: Customers target 30-40% automation rates to reduce manual workload, with specific use cases achieving 18% call deflection. Success is measured by meaningful resolution percentages.",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT: Customer satisfaction remains a critical measure, with best-in-class targets of 95% CSAT. Customers track CSAT for both human and AI-resolved interactions.",
+          "frequency": "low"
+        },
+        {
+          "text": "Agent Capacity Recovery: Organizations aim to recover 15,000 hours of productive capacity (equivalent to 10 FTEs) and reduce offshore contracts by 30% through automation, reallocating staff to higher-value work.",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Volume by Category: Tracking volume by service type, product category, and department helps identify bottlenecks, prioritize resources, and measure impact of process improvements.",
+          "frequency": "low"
+        },
+        {
+          "text": "ROI & Cost Per Ticket: Enterprise customers need quantified ROI projections (300% three-year ROI cited) and cost-per-ticket metrics to justify platform investments and compete with internal alternatives.",
+          "frequency": "low"
+        },
+        {
+          "text": "Automated resolution rate: Critical for scaling operations without proportional headcount increases; targets of 70-80% are common expectations",
+          "frequency": "low"
+        },
+        {
+          "text": "Agent productivity/efficiency: Measured by tickets handled per agent, time saved on administrative tasks, and ability to focus on complex issues rather than repetitive queries",
+          "frequency": "low"
+        },
+        {
+          "text": "Response time: Speed is directly tied to customer satisfaction and competitive advantage, especially in high-volume environments",
+          "frequency": "low"
+        }
+      ]
+    }
+  },
+  "SMB": {
+    "C-Suite Decision Maker": {
+      "buying_behavior": {
+        "authority_level": "Ultimate - final say on budget",
+        "committee_size": "2-3 (CEO, CX Champion, sometimes CFO)",
+        "decision_speed": "Fast (30-60 days once engaged)",
+        "prefers": "Concise business case, minimal meetings"
+      },
+      "challenges": [
+        "Scaling challenges - can't keep hiring agents to handle volume",
+        "Lack of automation - too much manual work",
+        "Poor customer experience hurting brand reputation"
+      ],
+      "challenges_from_gong": [
+        "Scaling challenges - can't keep hiring agents to handle volume",
+        "Lack of automation - too much manual work",
+        "Poor customer experience hurting brand reputation"
+      ],
+      "content_preferences": [
+        "Executive briefings (15 min max)",
+        "ROI case studies from similar companies",
+        "Analyst reports (Gartner, Forrester)",
+        "Board-ready business case templates",
+        "CFO-approved pricing models"
+      ],
+      "evaluation_criteria": [
+        "**#1 Priority:** Clear ROI - will this help us grow without adding headcount?",
+        "Total cost of ownership (not just license cost)",
+        "Implementation risk - can we do this without disrupting business?",
+        "Scalability - will this grow with us to 500 employees?",
+        "Vendor stability - is this company going to be around?"
+      ],
+      "goals": [
+        "Enable company growth without proportional headcount increases",
+        "Improve customer satisfaction and retention",
+        "Operational efficiency - do more with less"
+      ],
+      "job_titles": [
+        "CEO",
+        "COO",
+        "President",
+        "Founder"
+      ],
+      "key_messages": [
+        "Grow support capacity 2x without doubling headcount (AI + automation)",
+        "Predictable pricing - no surprise costs as you scale",
+        "Fast implementation = minimal business disruption",
+        "Proven ROI: customers see 30% productivity gains in 90 days",
+        "Modern platform - won't need to replace again in 3 years"
+      ],
+      "objections": [
+        "\"How do I know this will actually improve our metrics?\"",
+        "\"What if implementation goes wrong and our support grinds to a halt?\"",
+        "\"Can we really afford this in this economy?\""
+      ],
+      "pain_points": [],
+      "prevalence": "68% of SMB deals",
+      "reports_to": "Board or self (Owner)",
+      "role_in_deal": "Budget Holder & Final Approver",
+      "success_metrics": [
+        "Automated Resolution Rate: Leaders want to measure the percentage of tickets resolved by AI without human intervention to justify automation investments and demonstrate ROI",
+        "First Response Time: Critical for customer satisfaction and competitive positioning, especially when metrics are declining and clients are escalating issues",
+        "Average Resolution Time: Key indicator of efficiency and resource utilization, directly impacts customer satisfaction and operational costs",
+        "CSAT (Customer Satisfaction): Primary measure of service quality and customer experience, though some leaders prioritize actual problem resolution over survey scores",
+        "Cost Per Ticket: Essential for justifying technology investments to boards and CFOs by demonstrating efficiency gains and ROI",
+        "Ticket Volume Deflection: Measures effectiveness of self-service and AI in preventing ticket creation, directly impacts staffing needs",
+        "CSAT (Customer Satisfaction Score): Users track CSAT to measure customer experience quality and justify investment in support tools, with specific recovery targets when scores drop.",
+        "First Reply Time / Response Time: Critical for meeting SLAs and demonstrating efficiency improvements, especially when handling increased volume without additional staff."
+      ],
+      "team_size": "Entire company (50-249 employees)",
+      "product_requirements": [
+        "Per-resolution pricing model for AI with no platform fees or minimum commitments",
+        "Flexible licensing that allows seat reduction when automation is successful",
+        "Built-in omnichannel integration (WhatsApp, email, chat, phone) in single interface",
+        "Advanced reporting and dashboards accessible without technical expertise",
+        "Ability to track time spent at each ticket status for resolution measurement",
+        "Automated ticket routing and distribution without manual assignment",
+        "Native reporting on ticket topics, handling time, and team involvement",
+        "API integration capabilities for backend systems and actions"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "Per-resolution pricing model for AI with no platform fees or minimum commitments",
+          "frequency": "low"
+        },
+        {
+          "text": "Flexible licensing that allows seat reduction when automation is successful",
+          "frequency": "low"
+        },
+        {
+          "text": "Built-in omnichannel integration (WhatsApp, email, chat, phone) in single interface",
+          "frequency": "low"
+        },
+        {
+          "text": "Advanced reporting and dashboards accessible without technical expertise",
+          "frequency": "low"
+        },
+        {
+          "text": "Ability to track time spent at each ticket status for resolution measurement",
+          "frequency": "low"
+        },
+        {
+          "text": "Automated ticket routing and distribution without manual assignment",
+          "frequency": "low"
+        },
+        {
+          "text": "Native reporting on ticket topics, handling time, and team involvement",
+          "frequency": "low"
+        },
+        {
+          "text": "API integration capabilities for backend systems and actions",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Internal champion or previous company experience",
+        "Competitive vendor demos and direct comparison",
+        "Competitor platforms (Intercom, Freshdesk, HubSpot)",
+        "Zendesk customer success managers and support",
+        "Peer recommendations and industry networks",
+        "Zendesk account team and customer success",
+        "Industry-specific case studies and ROI calculators",
+        "Zendesk implementation partners"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Internal champion or previous company experience",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitive vendor demos and direct comparison",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitor platforms (Intercom, Freshdesk, HubSpot)",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk customer success managers and support",
+          "frequency": "medium"
+        },
+        {
+          "text": "Peer recommendations and industry networks",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk account team and customer success",
+          "frequency": "medium"
+        },
+        {
+          "text": "Industry-specific case studies and ROI calculators",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk implementation partners",
+          "frequency": "medium"
+        }
+      ],
+      "messaging_preferences": [
+        "Direct, no-nonsense communication with rapid response times on critical issues",
+        "Concrete pricing and ROI calculations upfront, not post-demo",
+        "Quarterly strategic reviews rather than frequent tactical check-ins",
+        "Technical demonstrations with hands-on trial access for team evaluation",
+        "Written proposals with detailed breakdowns before meetings with boards or finance",
+        "In-person or virtual events for strategic networking and product roadmap visibility",
+        "Hands-on demos with actual customer data and use cases",
+        "Clear documentation of what's included versus additional cost"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Direct, no-nonsense communication with rapid response times on critical issues",
+          "frequency": "low"
+        },
+        {
+          "text": "Concrete pricing and ROI calculations upfront, not post-demo",
+          "frequency": "low"
+        },
+        {
+          "text": "Quarterly strategic reviews rather than frequent tactical check-ins",
+          "frequency": "low"
+        },
+        {
+          "text": "Technical demonstrations with hands-on trial access for team evaluation",
+          "frequency": "low"
+        },
+        {
+          "text": "Written proposals with detailed breakdowns before meetings with boards or finance",
+          "frequency": "low"
+        },
+        {
+          "text": "In-person or virtual events for strategic networking and product roadmap visibility",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on demos with actual customer data and use cases",
+          "frequency": "low"
+        },
+        {
+          "text": "Clear documentation of what's included versus additional cost",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "Automated Resolution Rate: Leaders want to measure the percentage of tickets resolved by AI without human intervention to justify automation investments and demonstrate ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "First Response Time: Critical for customer satisfaction and competitive positioning, especially when metrics are declining and clients are escalating issues",
+          "frequency": "low"
+        },
+        {
+          "text": "Average Resolution Time: Key indicator of efficiency and resource utilization, directly impacts customer satisfaction and operational costs",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT (Customer Satisfaction): Primary measure of service quality and customer experience, though some leaders prioritize actual problem resolution over survey scores",
+          "frequency": "low"
+        },
+        {
+          "text": "Cost Per Ticket: Essential for justifying technology investments to boards and CFOs by demonstrating efficiency gains and ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Volume Deflection: Measures effectiveness of self-service and AI in preventing ticket creation, directly impacts staffing needs",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT (Customer Satisfaction Score): Users track CSAT to measure customer experience quality and justify investment in support tools, with specific recovery targets when scores drop.",
+          "frequency": "low"
+        },
+        {
+          "text": "First Reply Time / Response Time: Critical for meeting SLAs and demonstrating efficiency improvements, especially when handling increased volume without additional staff.",
+          "frequency": "low"
+        }
+      ]
+    },
+    "CX Champion": {
+      "buying_behavior": {
+        "authority_level": "High - can often drive decision with C-Suite approval",
+        "committee_size": "3-4 people (CX Champion, C-Suite, Finance, sometimes IT)",
+        "decision_speed": "45-60 days",
+        "prefers": "Fast-moving pilots over long enterprise sales cycles"
+      },
+      "challenges": [
+        "Integration gaps - switching between Zendesk, CRM, and 3+ other tools",
+        "Incomplete help center - lacking self-service articles",
+        "No AI/automation - manually routing and responding to every ticket"
+      ],
+      "challenges_from_gong": [
+        "Integration gaps - switching between Zendesk, CRM, and 3+ other tools",
+        "Incomplete help center - lacking self-service articles",
+        "No AI/automation - manually routing and responding to every ticket"
+      ],
+      "content_preferences": [
+        "Customer testimonials from similar-sized companies",
+        "Quick demo videos (5-10 min)",
+        "ROI calculators",
+        "Implementation timelines",
+        "Free trial or POC to test with team"
+      ],
+      "evaluation_criteria": [
+        "**#1 Priority:** Ease of implementation & time to value (want live in 2-4 weeks)",
+        "Simple, intuitive interface agents can learn in days",
+        "Out-of-box integrations with existing tools (Salesforce, Slack)",
+        "Clear ROI story - ticket deflection, faster resolution times",
+        "Responsive support during onboarding"
+      ],
+      "goals": [
+        "Reduce agent handle time and improve productivity",
+        "Meet or exceed SLA targets (1-4 hour first response)",
+        "Improve CSAT/NPS scores"
+      ],
+      "job_titles": [
+        "VP Customer Service",
+        "Director of Customer Support",
+        "Head of Customer Experience",
+        "Customer Service Manager",
+        "Support Manager"
+      ],
+      "key_messages": [
+        "Live in 2 weeks with minimal IT involvement",
+        "Agents love it - 4.5\u2605 ease of use rating",
+        "Agent productivity up 30% in first 90 days (via automation)",
+        "Self-service deflects 30-40% of tickets automatically",
+        "Real-time dashboards replace Excel reporting",
+        "95% AI accuracy rate with built-in safeguards and human oversight"
+      ],
+      "objections": [
+        "\"We don't have time for a long implementation\"",
+        "\"Our agents are already learning too many new tools\"",
+        "\"We tried AI before and it gave wrong answers to customers\""
+      ],
+      "pain_points": [],
+      "prevalence": "98% of SMB deals",
+      "reports_to": "COO or CEO",
+      "role_in_deal": "Primary Champion & Decision Driver",
+      "success_metrics": [
+        "Automated Resolution Rate: Leaders want to measure the percentage of tickets resolved by AI without human intervention to justify automation investments and demonstrate ROI",
+        "First Response Time: Critical for customer satisfaction and competitive positioning, especially when metrics are declining and clients are escalating issues",
+        "Average Resolution Time: Key indicator of efficiency and resource utilization, directly impacts customer satisfaction and operational costs",
+        "CSAT (Customer Satisfaction): Primary measure of service quality and customer experience, though some leaders prioritize actual problem resolution over survey scores",
+        "Cost Per Ticket: Essential for justifying technology investments to boards and CFOs by demonstrating efficiency gains and ROI",
+        "Ticket Volume Deflection: Measures effectiveness of self-service and AI in preventing ticket creation, directly impacts staffing needs",
+        "CSAT (Customer Satisfaction Score): Users track CSAT to measure customer experience quality and justify investment in support tools, with specific recovery targets when scores drop.",
+        "First Reply Time / Response Time: Critical for meeting SLAs and demonstrating efficiency improvements, especially when handling increased volume without additional staff."
+      ],
+      "team_size": "5-25 agents",
+      "product_requirements": [
+        "Per-resolution pricing model for AI with no platform fees or minimum commitments",
+        "Flexible licensing that allows seat reduction when automation is successful",
+        "Built-in omnichannel integration (WhatsApp, email, chat, phone) in single interface",
+        "Advanced reporting and dashboards accessible without technical expertise",
+        "Ability to track time spent at each ticket status for resolution measurement",
+        "Automated ticket routing and distribution without manual assignment",
+        "Native reporting on ticket topics, handling time, and team involvement",
+        "API integration capabilities for backend systems and actions"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "Per-resolution pricing model for AI with no platform fees or minimum commitments",
+          "frequency": "low"
+        },
+        {
+          "text": "Flexible licensing that allows seat reduction when automation is successful",
+          "frequency": "low"
+        },
+        {
+          "text": "Built-in omnichannel integration (WhatsApp, email, chat, phone) in single interface",
+          "frequency": "low"
+        },
+        {
+          "text": "Advanced reporting and dashboards accessible without technical expertise",
+          "frequency": "low"
+        },
+        {
+          "text": "Ability to track time spent at each ticket status for resolution measurement",
+          "frequency": "low"
+        },
+        {
+          "text": "Automated ticket routing and distribution without manual assignment",
+          "frequency": "low"
+        },
+        {
+          "text": "Native reporting on ticket topics, handling time, and team involvement",
+          "frequency": "low"
+        },
+        {
+          "text": "API integration capabilities for backend systems and actions",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Internal champion or previous company experience",
+        "Competitive vendor demos and direct comparison",
+        "Competitor platforms (Intercom, Freshdesk, HubSpot)",
+        "Zendesk customer success managers and support",
+        "Peer recommendations and industry networks",
+        "Zendesk account team and customer success",
+        "Industry-specific case studies and ROI calculators",
+        "Zendesk implementation partners"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Internal champion or previous company experience",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitive vendor demos and direct comparison",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitor platforms (Intercom, Freshdesk, HubSpot)",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk customer success managers and support",
+          "frequency": "medium"
+        },
+        {
+          "text": "Peer recommendations and industry networks",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk account team and customer success",
+          "frequency": "medium"
+        },
+        {
+          "text": "Industry-specific case studies and ROI calculators",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk implementation partners",
+          "frequency": "medium"
+        }
+      ],
+      "messaging_preferences": [
+        "Direct, no-nonsense communication with rapid response times on critical issues",
+        "Concrete pricing and ROI calculations upfront, not post-demo",
+        "Quarterly strategic reviews rather than frequent tactical check-ins",
+        "Technical demonstrations with hands-on trial access for team evaluation",
+        "Written proposals with detailed breakdowns before meetings with boards or finance",
+        "In-person or virtual events for strategic networking and product roadmap visibility",
+        "Hands-on demos with actual customer data and use cases",
+        "Clear documentation of what's included versus additional cost"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Direct, no-nonsense communication with rapid response times on critical issues",
+          "frequency": "low"
+        },
+        {
+          "text": "Concrete pricing and ROI calculations upfront, not post-demo",
+          "frequency": "low"
+        },
+        {
+          "text": "Quarterly strategic reviews rather than frequent tactical check-ins",
+          "frequency": "low"
+        },
+        {
+          "text": "Technical demonstrations with hands-on trial access for team evaluation",
+          "frequency": "low"
+        },
+        {
+          "text": "Written proposals with detailed breakdowns before meetings with boards or finance",
+          "frequency": "low"
+        },
+        {
+          "text": "In-person or virtual events for strategic networking and product roadmap visibility",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on demos with actual customer data and use cases",
+          "frequency": "low"
+        },
+        {
+          "text": "Clear documentation of what's included versus additional cost",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "Automated Resolution Rate: Leaders want to measure the percentage of tickets resolved by AI without human intervention to justify automation investments and demonstrate ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "First Response Time: Critical for customer satisfaction and competitive positioning, especially when metrics are declining and clients are escalating issues",
+          "frequency": "low"
+        },
+        {
+          "text": "Average Resolution Time: Key indicator of efficiency and resource utilization, directly impacts customer satisfaction and operational costs",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT (Customer Satisfaction): Primary measure of service quality and customer experience, though some leaders prioritize actual problem resolution over survey scores",
+          "frequency": "low"
+        },
+        {
+          "text": "Cost Per Ticket: Essential for justifying technology investments to boards and CFOs by demonstrating efficiency gains and ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Volume Deflection: Measures effectiveness of self-service and AI in preventing ticket creation, directly impacts staffing needs",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT (Customer Satisfaction Score): Users track CSAT to measure customer experience quality and justify investment in support tools, with specific recovery targets when scores drop.",
+          "frequency": "low"
+        },
+        {
+          "text": "First Reply Time / Response Time: Critical for meeting SLAs and demonstrating efficiency improvements, especially when handling increased volume without additional staff.",
+          "frequency": "low"
+        }
+      ]
+    },
+    "Finance/Procurement Gatekeeper": {
+      "buying_behavior": {
+        "authority_level": "High - can block deals",
+        "committee_size": "Solo review or with CEO",
+        "decision_speed": "Gatekeeper (adds 1-2 weeks)",
+        "prefers": "Financial analysis, minimal sales fluff"
+      },
+      "challenges": [
+        "Economic sensitivity - longer approval cycles, more scrutiny",
+        "Preference for monthly/quarterly payment terms (cash flow)",
+        "ROI justification requirements increasing"
+      ],
+      "challenges_from_gong": [
+        "Economic sensitivity - longer approval cycles, more scrutiny",
+        "Preference for monthly/quarterly payment terms (cash flow)",
+        "ROI justification requirements increasing"
+      ],
+      "content_preferences": [
+        "ROI calculators",
+        "TCO comparisons",
+        "Pricing guides",
+        "Payment terms options",
+        "Reference customers with similar budget profiles"
+      ],
+      "evaluation_criteria": [
+        "Total cost of ownership (license + implementation + training)",
+        "Payment terms flexibility (monthly vs. annual)",
+        "ROI evidence from similar companies",
+        "Contract terms (auto-renewal, cancellation policy)",
+        "Price predictability as we scale"
+      ],
+      "goals": [
+        "Control costs and maintain budget discipline",
+        "Ensure ROI on technology investments",
+        "Predictable, manageable cash flow"
+      ],
+      "job_titles": [
+        "CFO",
+        "Finance Director",
+        "Controller",
+        "VP Finance"
+      ],
+      "key_messages": [
+        "Clear ROI: 30% productivity gain = 5-6 month payback",
+        "Flexible payment terms available",
+        "Predictable per-agent pricing - no surprise fees",
+        "Cheaper than hiring: one agent salary = 10+ licenses",
+        "Vendor consolidation - replace 3 tools with one"
+      ],
+      "objections": [
+        "\"Can we really afford this right now?\"",
+        "\"What's the payback period?\"",
+        "\"Why is this better than just hiring another agent?\""
+      ],
+      "pain_points": [],
+      "prevalence": "42% of SMB deals",
+      "reports_to": "CEO or Board",
+      "role_in_deal": "Budget Approver",
+      "success_metrics": [
+        "Automated Resolution Rate: Leaders want to measure the percentage of tickets resolved by AI without human intervention to justify automation investments and demonstrate ROI",
+        "First Response Time: Critical for customer satisfaction and competitive positioning, especially when metrics are declining and clients are escalating issues",
+        "Average Resolution Time: Key indicator of efficiency and resource utilization, directly impacts customer satisfaction and operational costs",
+        "CSAT (Customer Satisfaction): Primary measure of service quality and customer experience, though some leaders prioritize actual problem resolution over survey scores",
+        "Cost Per Ticket: Essential for justifying technology investments to boards and CFOs by demonstrating efficiency gains and ROI",
+        "Ticket Volume Deflection: Measures effectiveness of self-service and AI in preventing ticket creation, directly impacts staffing needs",
+        "CSAT (Customer Satisfaction Score): Users track CSAT to measure customer experience quality and justify investment in support tools, with specific recovery targets when scores drop.",
+        "First Reply Time / Response Time: Critical for meeting SLAs and demonstrating efficiency improvements, especially when handling increased volume without additional staff."
+      ],
+      "team_size": "Finance team (2-10 people)",
+      "product_requirements": [
+        "Per-resolution pricing model for AI with no platform fees or minimum commitments",
+        "Flexible licensing that allows seat reduction when automation is successful",
+        "Built-in omnichannel integration (WhatsApp, email, chat, phone) in single interface",
+        "Advanced reporting and dashboards accessible without technical expertise",
+        "Ability to track time spent at each ticket status for resolution measurement",
+        "Automated ticket routing and distribution without manual assignment",
+        "Native reporting on ticket topics, handling time, and team involvement",
+        "API integration capabilities for backend systems and actions"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "Per-resolution pricing model for AI with no platform fees or minimum commitments",
+          "frequency": "low"
+        },
+        {
+          "text": "Flexible licensing that allows seat reduction when automation is successful",
+          "frequency": "low"
+        },
+        {
+          "text": "Built-in omnichannel integration (WhatsApp, email, chat, phone) in single interface",
+          "frequency": "low"
+        },
+        {
+          "text": "Advanced reporting and dashboards accessible without technical expertise",
+          "frequency": "low"
+        },
+        {
+          "text": "Ability to track time spent at each ticket status for resolution measurement",
+          "frequency": "low"
+        },
+        {
+          "text": "Automated ticket routing and distribution without manual assignment",
+          "frequency": "low"
+        },
+        {
+          "text": "Native reporting on ticket topics, handling time, and team involvement",
+          "frequency": "low"
+        },
+        {
+          "text": "API integration capabilities for backend systems and actions",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Internal champion or previous company experience",
+        "Competitive vendor demos and direct comparison",
+        "Competitor platforms (Intercom, Freshdesk, HubSpot)",
+        "Zendesk customer success managers and support",
+        "Peer recommendations and industry networks",
+        "Zendesk account team and customer success",
+        "Industry-specific case studies and ROI calculators",
+        "Zendesk implementation partners"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Internal champion or previous company experience",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitive vendor demos and direct comparison",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitor platforms (Intercom, Freshdesk, HubSpot)",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk customer success managers and support",
+          "frequency": "medium"
+        },
+        {
+          "text": "Peer recommendations and industry networks",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk account team and customer success",
+          "frequency": "medium"
+        },
+        {
+          "text": "Industry-specific case studies and ROI calculators",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk implementation partners",
+          "frequency": "medium"
+        }
+      ],
+      "messaging_preferences": [
+        "Direct, no-nonsense communication with rapid response times on critical issues",
+        "Concrete pricing and ROI calculations upfront, not post-demo",
+        "Quarterly strategic reviews rather than frequent tactical check-ins",
+        "Technical demonstrations with hands-on trial access for team evaluation",
+        "Written proposals with detailed breakdowns before meetings with boards or finance",
+        "In-person or virtual events for strategic networking and product roadmap visibility",
+        "Hands-on demos with actual customer data and use cases",
+        "Clear documentation of what's included versus additional cost"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Direct, no-nonsense communication with rapid response times on critical issues",
+          "frequency": "low"
+        },
+        {
+          "text": "Concrete pricing and ROI calculations upfront, not post-demo",
+          "frequency": "low"
+        },
+        {
+          "text": "Quarterly strategic reviews rather than frequent tactical check-ins",
+          "frequency": "low"
+        },
+        {
+          "text": "Technical demonstrations with hands-on trial access for team evaluation",
+          "frequency": "low"
+        },
+        {
+          "text": "Written proposals with detailed breakdowns before meetings with boards or finance",
+          "frequency": "low"
+        },
+        {
+          "text": "In-person or virtual events for strategic networking and product roadmap visibility",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on demos with actual customer data and use cases",
+          "frequency": "low"
+        },
+        {
+          "text": "Clear documentation of what's included versus additional cost",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "Automated Resolution Rate: Leaders want to measure the percentage of tickets resolved by AI without human intervention to justify automation investments and demonstrate ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "First Response Time: Critical for customer satisfaction and competitive positioning, especially when metrics are declining and clients are escalating issues",
+          "frequency": "low"
+        },
+        {
+          "text": "Average Resolution Time: Key indicator of efficiency and resource utilization, directly impacts customer satisfaction and operational costs",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT (Customer Satisfaction): Primary measure of service quality and customer experience, though some leaders prioritize actual problem resolution over survey scores",
+          "frequency": "low"
+        },
+        {
+          "text": "Cost Per Ticket: Essential for justifying technology investments to boards and CFOs by demonstrating efficiency gains and ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Volume Deflection: Measures effectiveness of self-service and AI in preventing ticket creation, directly impacts staffing needs",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT (Customer Satisfaction Score): Users track CSAT to measure customer experience quality and justify investment in support tools, with specific recovery targets when scores drop.",
+          "frequency": "low"
+        },
+        {
+          "text": "First Reply Time / Response Time: Critical for meeting SLAs and demonstrating efficiency improvements, especially when handling increased volume without additional staff.",
+          "frequency": "low"
+        }
+      ]
+    },
+    "IT Influencer": {
+      "buying_behavior": {
+        "authority_level": "Advisory - can flag risks but rarely blocks",
+        "committee_size": "Solo or with CISO",
+        "decision_speed": "Quick review (1-2 weeks)",
+        "prefers": "Technical documentation, sandbox access"
+      },
+      "challenges": [
+        "Security concerns even in SMB (SOC 2, encryption, SSO)",
+        "Integration requirements - need to connect to existing stack",
+        "Limited IT resources - can't support complex implementations"
+      ],
+      "challenges_from_gong": [
+        "Security concerns even in SMB (SOC 2, encryption, SSO)",
+        "Integration requirements - need to connect to existing stack",
+        "Limited IT resources - can't support complex implementations"
+      ],
+      "content_preferences": [
+        "Security whitepapers",
+        "API documentation",
+        "Integration guides",
+        "Architecture diagrams",
+        "Compliance certifications"
+      ],
+      "evaluation_criteria": [
+        "Security certifications (SOC 2 Type 2, ISO 27001)",
+        "SSO support (SAML, Okta, Azure AD)",
+        "API quality and documentation",
+        "Pre-built integrations vs. custom development needs",
+        "IT support load - how much will this require from our team?"
+      ],
+      "goals": [
+        "Ensure security and compliance (SOC 2, data encryption)",
+        "Minimize IT support burden - want tools that \"just work\"",
+        "Protect existing infrastructure investments"
+      ],
+      "job_titles": [
+        "IT Manager",
+        "Head of IT",
+        "Director of IT",
+        "Systems Administrator"
+      ],
+      "key_messages": [
+        "Enterprise-grade security built in (SOC 2, SSO, encryption)",
+        "Zero IT burden - cloud-hosted, auto-updates, 99.9% uptime",
+        "Pre-built integrations with 1000+ tools",
+        "Robust APIs for custom workflows",
+        "Dedicated security documentation for audits"
+      ],
+      "objections": [
+        "\"Does this meet our security requirements?\"",
+        "\"How much custom development will we need?\"",
+        "\"What happens if the integration breaks?\""
+      ],
+      "pain_points": [],
+      "prevalence": "30% of SMB deals",
+      "reports_to": "COO, CEO, or CTO",
+      "role_in_deal": "Advisor & Validator (not blocker)",
+      "success_metrics": [
+        "Automated Resolution Rate: Leaders want to measure the percentage of tickets resolved by AI without human intervention to justify automation investments and demonstrate ROI",
+        "First Response Time: Critical for customer satisfaction and competitive positioning, especially when metrics are declining and clients are escalating issues",
+        "Average Resolution Time: Key indicator of efficiency and resource utilization, directly impacts customer satisfaction and operational costs",
+        "CSAT (Customer Satisfaction): Primary measure of service quality and customer experience, though some leaders prioritize actual problem resolution over survey scores",
+        "Cost Per Ticket: Essential for justifying technology investments to boards and CFOs by demonstrating efficiency gains and ROI",
+        "Ticket Volume Deflection: Measures effectiveness of self-service and AI in preventing ticket creation, directly impacts staffing needs",
+        "CSAT (Customer Satisfaction Score): Users track CSAT to measure customer experience quality and justify investment in support tools, with specific recovery targets when scores drop.",
+        "First Reply Time / Response Time: Critical for meeting SLAs and demonstrating efficiency improvements, especially when handling increased volume without additional staff."
+      ],
+      "team_size": "1-5 IT staff",
+      "product_requirements": [
+        "Per-resolution pricing model for AI with no platform fees or minimum commitments",
+        "Flexible licensing that allows seat reduction when automation is successful",
+        "Built-in omnichannel integration (WhatsApp, email, chat, phone) in single interface",
+        "Advanced reporting and dashboards accessible without technical expertise",
+        "Ability to track time spent at each ticket status for resolution measurement",
+        "Automated ticket routing and distribution without manual assignment",
+        "Native reporting on ticket topics, handling time, and team involvement",
+        "API integration capabilities for backend systems and actions"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "Per-resolution pricing model for AI with no platform fees or minimum commitments",
+          "frequency": "low"
+        },
+        {
+          "text": "Flexible licensing that allows seat reduction when automation is successful",
+          "frequency": "low"
+        },
+        {
+          "text": "Built-in omnichannel integration (WhatsApp, email, chat, phone) in single interface",
+          "frequency": "low"
+        },
+        {
+          "text": "Advanced reporting and dashboards accessible without technical expertise",
+          "frequency": "low"
+        },
+        {
+          "text": "Ability to track time spent at each ticket status for resolution measurement",
+          "frequency": "low"
+        },
+        {
+          "text": "Automated ticket routing and distribution without manual assignment",
+          "frequency": "low"
+        },
+        {
+          "text": "Native reporting on ticket topics, handling time, and team involvement",
+          "frequency": "low"
+        },
+        {
+          "text": "API integration capabilities for backend systems and actions",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Internal champion or previous company experience",
+        "Competitive vendor demos and direct comparison",
+        "Competitor platforms (Intercom, Freshdesk, HubSpot)",
+        "Zendesk customer success managers and support",
+        "Peer recommendations and industry networks",
+        "Zendesk account team and customer success",
+        "Industry-specific case studies and ROI calculators",
+        "Zendesk implementation partners"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Internal champion or previous company experience",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitive vendor demos and direct comparison",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitor platforms (Intercom, Freshdesk, HubSpot)",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk customer success managers and support",
+          "frequency": "medium"
+        },
+        {
+          "text": "Peer recommendations and industry networks",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk account team and customer success",
+          "frequency": "medium"
+        },
+        {
+          "text": "Industry-specific case studies and ROI calculators",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk implementation partners",
+          "frequency": "medium"
+        }
+      ],
+      "messaging_preferences": [
+        "Direct, no-nonsense communication with rapid response times on critical issues",
+        "Concrete pricing and ROI calculations upfront, not post-demo",
+        "Quarterly strategic reviews rather than frequent tactical check-ins",
+        "Technical demonstrations with hands-on trial access for team evaluation",
+        "Written proposals with detailed breakdowns before meetings with boards or finance",
+        "In-person or virtual events for strategic networking and product roadmap visibility",
+        "Hands-on demos with actual customer data and use cases",
+        "Clear documentation of what's included versus additional cost"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Direct, no-nonsense communication with rapid response times on critical issues",
+          "frequency": "low"
+        },
+        {
+          "text": "Concrete pricing and ROI calculations upfront, not post-demo",
+          "frequency": "low"
+        },
+        {
+          "text": "Quarterly strategic reviews rather than frequent tactical check-ins",
+          "frequency": "low"
+        },
+        {
+          "text": "Technical demonstrations with hands-on trial access for team evaluation",
+          "frequency": "low"
+        },
+        {
+          "text": "Written proposals with detailed breakdowns before meetings with boards or finance",
+          "frequency": "low"
+        },
+        {
+          "text": "In-person or virtual events for strategic networking and product roadmap visibility",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on demos with actual customer data and use cases",
+          "frequency": "low"
+        },
+        {
+          "text": "Clear documentation of what's included versus additional cost",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "Automated Resolution Rate: Leaders want to measure the percentage of tickets resolved by AI without human intervention to justify automation investments and demonstrate ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "First Response Time: Critical for customer satisfaction and competitive positioning, especially when metrics are declining and clients are escalating issues",
+          "frequency": "low"
+        },
+        {
+          "text": "Average Resolution Time: Key indicator of efficiency and resource utilization, directly impacts customer satisfaction and operational costs",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT (Customer Satisfaction): Primary measure of service quality and customer experience, though some leaders prioritize actual problem resolution over survey scores",
+          "frequency": "low"
+        },
+        {
+          "text": "Cost Per Ticket: Essential for justifying technology investments to boards and CFOs by demonstrating efficiency gains and ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Volume Deflection: Measures effectiveness of self-service and AI in preventing ticket creation, directly impacts staffing needs",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT (Customer Satisfaction Score): Users track CSAT to measure customer experience quality and justify investment in support tools, with specific recovery targets when scores drop.",
+          "frequency": "low"
+        },
+        {
+          "text": "First Reply Time / Response Time: Critical for meeting SLAs and demonstrating efficiency improvements, especially when handling increased volume without additional staff.",
+          "frequency": "low"
+        }
+      ]
+    },
+    "Operations Leader": {
+      "buying_behavior": {
+        "authority_level": "Low - provides input to CX Champion",
+        "committee_size": "Consulted when present",
+        "decision_speed": "N/A - not decision maker",
+        "prefers": "Detailed operational demos"
+      },
+      "challenges": [
+        "Workforce management gaps - scheduling, forecasting",
+        "Quality assurance limitations - can't review at scale",
+        "Reporting fragmented across multiple tools"
+      ],
+      "challenges_from_gong": [
+        "Workforce management gaps - scheduling, forecasting",
+        "Quality assurance limitations - can't review at scale",
+        "Reporting fragmented across multiple tools"
+      ],
+      "content_preferences": [
+        "WFM integration guides",
+        "QA best practices",
+        "Operational metrics benchmarks",
+        "Process optimization case studies"
+      ],
+      "evaluation_criteria": [
+        "WFM capabilities or integrations",
+        "QA and coaching tools",
+        "Reporting and analytics depth",
+        "Real-time operational dashboards",
+        "Process automation capabilities"
+      ],
+      "goals": [
+        "Optimize agent scheduling and capacity planning",
+        "Improve quality assurance and coaching",
+        "Reduce operational costs"
+      ],
+      "job_titles": [
+        "Operations Manager",
+        "Service Delivery Manager",
+        "Director of Operations"
+      ],
+      "key_messages": [
+        "Built-in QA tools to review 100% of interactions (AI-powered)",
+        "Integrates with WFM platforms (Calabrio, Verint, etc.)",
+        "Real-time operational dashboards",
+        "Agent performance analytics and coaching tools",
+        "Workflow automation to eliminate manual processes"
+      ],
+      "objections": [
+        "\"We already have WFM tools - will this integrate?\"",
+        "\"Can this handle our QA workflows?\"",
+        "\"Is the reporting customizable enough?\""
+      ],
+      "pain_points": [],
+      "prevalence": "22% of SMB deals",
+      "reports_to": "COO or CX Champion",
+      "role_in_deal": "Influencer (when present)",
+      "success_metrics": [
+        "Automated Resolution Rate: Leaders want to measure the percentage of tickets resolved by AI without human intervention to justify automation investments and demonstrate ROI",
+        "First Response Time: Critical for customer satisfaction and competitive positioning, especially when metrics are declining and clients are escalating issues",
+        "Average Resolution Time: Key indicator of efficiency and resource utilization, directly impacts customer satisfaction and operational costs",
+        "CSAT (Customer Satisfaction): Primary measure of service quality and customer experience, though some leaders prioritize actual problem resolution over survey scores",
+        "Cost Per Ticket: Essential for justifying technology investments to boards and CFOs by demonstrating efficiency gains and ROI",
+        "Ticket Volume Deflection: Measures effectiveness of self-service and AI in preventing ticket creation, directly impacts staffing needs",
+        "CSAT (Customer Satisfaction Score): Users track CSAT to measure customer experience quality and justify investment in support tools, with specific recovery targets when scores drop.",
+        "First Reply Time / Response Time: Critical for meeting SLAs and demonstrating efficiency improvements, especially when handling increased volume without additional staff."
+      ],
+      "team_size": "Oversees support ops + WFM",
+      "product_requirements": [
+        "Per-resolution pricing model for AI with no platform fees or minimum commitments",
+        "Flexible licensing that allows seat reduction when automation is successful",
+        "Built-in omnichannel integration (WhatsApp, email, chat, phone) in single interface",
+        "Advanced reporting and dashboards accessible without technical expertise",
+        "Ability to track time spent at each ticket status for resolution measurement",
+        "Automated ticket routing and distribution without manual assignment",
+        "Native reporting on ticket topics, handling time, and team involvement",
+        "API integration capabilities for backend systems and actions"
+      ],
+      "product_requirements_enhanced": [
+        {
+          "text": "Per-resolution pricing model for AI with no platform fees or minimum commitments",
+          "frequency": "low"
+        },
+        {
+          "text": "Flexible licensing that allows seat reduction when automation is successful",
+          "frequency": "low"
+        },
+        {
+          "text": "Built-in omnichannel integration (WhatsApp, email, chat, phone) in single interface",
+          "frequency": "low"
+        },
+        {
+          "text": "Advanced reporting and dashboards accessible without technical expertise",
+          "frequency": "low"
+        },
+        {
+          "text": "Ability to track time spent at each ticket status for resolution measurement",
+          "frequency": "low"
+        },
+        {
+          "text": "Automated ticket routing and distribution without manual assignment",
+          "frequency": "low"
+        },
+        {
+          "text": "Native reporting on ticket topics, handling time, and team involvement",
+          "frequency": "low"
+        },
+        {
+          "text": "API integration capabilities for backend systems and actions",
+          "frequency": "low"
+        }
+      ],
+      "information_sources": [
+        "Internal champion or previous company experience",
+        "Competitive vendor demos and direct comparison",
+        "Competitor platforms (Intercom, Freshdesk, HubSpot)",
+        "Zendesk customer success managers and support",
+        "Peer recommendations and industry networks",
+        "Zendesk account team and customer success",
+        "Industry-specific case studies and ROI calculators",
+        "Zendesk implementation partners"
+      ],
+      "information_sources_enhanced": [
+        {
+          "text": "Internal champion or previous company experience",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitive vendor demos and direct comparison",
+          "frequency": "medium"
+        },
+        {
+          "text": "Competitor platforms (Intercom, Freshdesk, HubSpot)",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk customer success managers and support",
+          "frequency": "medium"
+        },
+        {
+          "text": "Peer recommendations and industry networks",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk account team and customer success",
+          "frequency": "medium"
+        },
+        {
+          "text": "Industry-specific case studies and ROI calculators",
+          "frequency": "medium"
+        },
+        {
+          "text": "Zendesk implementation partners",
+          "frequency": "medium"
+        }
+      ],
+      "messaging_preferences": [
+        "Direct, no-nonsense communication with rapid response times on critical issues",
+        "Concrete pricing and ROI calculations upfront, not post-demo",
+        "Quarterly strategic reviews rather than frequent tactical check-ins",
+        "Technical demonstrations with hands-on trial access for team evaluation",
+        "Written proposals with detailed breakdowns before meetings with boards or finance",
+        "In-person or virtual events for strategic networking and product roadmap visibility",
+        "Hands-on demos with actual customer data and use cases",
+        "Clear documentation of what's included versus additional cost"
+      ],
+      "messaging_preferences_enhanced": [
+        {
+          "text": "Direct, no-nonsense communication with rapid response times on critical issues",
+          "frequency": "low"
+        },
+        {
+          "text": "Concrete pricing and ROI calculations upfront, not post-demo",
+          "frequency": "low"
+        },
+        {
+          "text": "Quarterly strategic reviews rather than frequent tactical check-ins",
+          "frequency": "low"
+        },
+        {
+          "text": "Technical demonstrations with hands-on trial access for team evaluation",
+          "frequency": "low"
+        },
+        {
+          "text": "Written proposals with detailed breakdowns before meetings with boards or finance",
+          "frequency": "low"
+        },
+        {
+          "text": "In-person or virtual events for strategic networking and product roadmap visibility",
+          "frequency": "low"
+        },
+        {
+          "text": "Hands-on demos with actual customer data and use cases",
+          "frequency": "low"
+        },
+        {
+          "text": "Clear documentation of what's included versus additional cost",
+          "frequency": "low"
+        }
+      ],
+      "success_metrics_enhanced": [
+        {
+          "text": "Automated Resolution Rate: Leaders want to measure the percentage of tickets resolved by AI without human intervention to justify automation investments and demonstrate ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "First Response Time: Critical for customer satisfaction and competitive positioning, especially when metrics are declining and clients are escalating issues",
+          "frequency": "low"
+        },
+        {
+          "text": "Average Resolution Time: Key indicator of efficiency and resource utilization, directly impacts customer satisfaction and operational costs",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT (Customer Satisfaction): Primary measure of service quality and customer experience, though some leaders prioritize actual problem resolution over survey scores",
+          "frequency": "low"
+        },
+        {
+          "text": "Cost Per Ticket: Essential for justifying technology investments to boards and CFOs by demonstrating efficiency gains and ROI",
+          "frequency": "low"
+        },
+        {
+          "text": "Ticket Volume Deflection: Measures effectiveness of self-service and AI in preventing ticket creation, directly impacts staffing needs",
+          "frequency": "low"
+        },
+        {
+          "text": "CSAT (Customer Satisfaction Score): Users track CSAT to measure customer experience quality and justify investment in support tools, with specific recovery targets when scores drop.",
+          "frequency": "low"
+        },
+        {
+          "text": "First Reply Time / Response Time: Critical for meeting SLAs and demonstrating efficiency improvements, especially when handling increased volume without additional staff.",
+          "frequency": "low"
+        }
+      ]
+    }
+  }
+}
