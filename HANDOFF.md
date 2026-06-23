@@ -1,6 +1,6 @@
 # Persona Pipeline Handoff Guide
 
-Welcome! This guide will help you understand and run the persona analysis pipeline. If you're reading this, you're probably taking over maintenance of the buyer persona intelligence system that helps our Sales and Customer Success teams understand who they're talking to.
+Welcome! This guide will help you understand and run the persona analysis pipeline. If you're reading this, you're probably taking over maintenance of the buyer persona intelligence system that helps our Marketing and Sales teams understand who they're talking to.
 
 ---
 
