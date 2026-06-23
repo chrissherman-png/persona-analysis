@@ -1,6 +1,8 @@
 # Google Sheets API Setup for Team Feedback
 
-This guide shows you how to set up service account credentials so `aggregate_team_feedback.py` can read feedback from Google Sheets.
+This guide shows you how to set up service account credentials for reading feedback from Google Sheets.
+
+**Note:** The `aggregate_team_feedback.py` script is not included in this repository. This guide is provided for reference if you want to implement Google Sheets integration for feedback collection.
 
 ## Prerequisites
 
@@ -39,7 +41,7 @@ This guide shows you how to set up service account credentials so `aggregate_tea
 5. Click **Create**
 6. The key file downloads automatically (looks like `projectname-abc123.json`)
 7. **Rename the file** to `google_service_account.json`
-8. **Move it** to: `/Users/chris.sherman/persona_analysis/google_service_account.json`
+8. **Move it** to: `<repo_root>/google_service_account.json`
 
 ## Step 3: Share Google Sheet with Service Account
 
@@ -81,7 +83,7 @@ You should see:
 ## Troubleshooting
 
 ### Error: "Service account credentials not found"
-- Make sure the file is saved to the exact path: `/Users/chris.sherman/persona_analysis/google_service_account.json`
+- Make sure the file is saved to the exact path: `<repo_root>/google_service_account.json`
 - Check the filename is exactly `google_service_account.json`
 
 ### Error: "The caller does not have permission"
@@ -100,5 +102,5 @@ You should see:
 
 ## File Locations
 
-- Service account key: `/Users/chris.sherman/persona_analysis/google_service_account.json`
-- Aggregated output: `/Users/chris.sherman/persona_analysis/team_feedback/aggregated_feedback_Q2_2026.json`
+- Service account key: `<repo_root>/google_service_account.json`
+- Aggregated output: `<repo_root>/team_feedback/aggregated_feedback_Q2_2026.json`

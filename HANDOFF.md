@@ -682,17 +682,18 @@ Then re-run the pipeline.
 
 ### Primary Contacts
 
-**Pipeline Owner**: Chris Sherman (chris.sherman@zendesk.com)
+**Pipeline Owner**: Contact your current pipeline owner or team lead
 - Questions about how the pipeline works
 - Issues with Snowflake or Claude API
 - Requests for new features or persona definitions
+- Previous owner: Chris Sherman
 
-**Data Team**: data-science@zendesk.com
+**Data Team**: Contact your organization's data science team
 - Questions about Gong data structure
 - Snowflake access issues
 - Data quality concerns
 
-**Sales Ops**: sales-ops@zendesk.com
+**Sales Ops**: Contact your organization's sales operations team
 - Questions about persona usage
 - Requests for specific insights
 - Feedback on persona accuracy
