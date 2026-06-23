@@ -6,7 +6,7 @@ Welcome! This guide will help you understand and run the persona analysis pipeli
 
 ## 1. What This Pipeline Does
 
-**The Problem**: Our Sales and CS teams talk to hundreds of different buyer personas across different company sizes (Digital, SMB, Commercial, Enterprise). Each persona has different pain points, goals, objections, and success metrics. Without structured intelligence, reps waste time figuring out what resonates with each role.
+**The Problem**: Our Sales and CS teams talk to hundreds of different buyer personas across different company sizes (Digital, SMB, Commercial, Enterprise). Each persona has different pain points, goals, objections, and success metrics. Without structured intelligence, it can take months for Marketing to pull together comprehensive personas.
 
 **What It Takes as Input**: The pipeline pulls the last 6 months of Gong call transcripts from Snowflake (~79,000+ calls). Each call includes metadata like customer job title, company segment, call date, and AI-generated call summaries (key points, brief, spotlight data).
 
